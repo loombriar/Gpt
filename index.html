@@ -1,276 +1,283 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="description" content="Loom Briar — hand-painted thermochromic keepsakes and woodland-inspired art woven from moonlight, moss, and imagination.">
-  <meta name="theme-color" content="#07100d">
-  <title>Loom Briar | Moonlight, Moss & Imagination</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#07100d">
+<meta name="description" content="Loom Briar — a world woven from moonlight, moss, and imagination.">
+<title>Loom Briar | Moonlight, Moss & Imagination</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#06100d;--bg2:#0a1712;--ink:#f5f1e7;--muted:#aeb8ad;
+  --moss:#516a4f;--gold:#d3c28b;--line:rgba(227,215,169,.16);
+  --glass:rgba(9,20,16,.72);--serif:"Cormorant Garamond",Georgia,serif;
+  --sans:Inter,system-ui,sans-serif;
+}
+*{box-sizing:border-box} html{scroll-behavior:smooth}
+body{
+  margin:0;color:var(--ink);font-family:var(--sans);background:
+  radial-gradient(circle at 50% -10%,rgba(134,151,117,.15),transparent 28rem),
+  linear-gradient(180deg,#06100d,#030705 74%);
+  overflow-x:hidden;
+}
+a{color:inherit;text-decoration:none} button{font:inherit}
+.wrap{width:min(1180px,calc(100% - 36px));margin:auto}
+.eyebrow{margin:0;color:var(--gold);font-size:.68rem;font-weight:600;letter-spacing:.24em;text-transform:uppercase}
+.button{display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:12px 20px;border-radius:999px;border:1px solid var(--line);font-size:.7rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;transition:.25s ease}
+.button:hover{transform:translateY(-2px)}
+.button.primary{background:linear-gradient(180deg,#eadca6,#b5a46d);color:#11170f;border-color:#e7d9a7}
+.button.ghost{background:rgba(9,20,16,.55);color:#eee7d1}
+.actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
 
-  <!-- Add your real favicon to assets/favicon.png when available. -->
-  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+.gate{
+  position:fixed;inset:0;z-index:1000;display:grid;place-items:center;overflow:hidden;
+  background:
+    radial-gradient(circle at 50% 32%,rgba(96,123,84,.18),transparent 24rem),
+    linear-gradient(180deg,#050a08,#020403);
+  transition:opacity .9s ease,visibility .9s ease;
+}
+.gate.open{opacity:0;visibility:hidden;pointer-events:none}
+.gate:before,.gate:after{
+  content:"";position:absolute;top:-8%;bottom:-8%;width:min(34vw,430px);
+  background:
+    repeating-linear-gradient(72deg,transparent 0 28px,rgba(49,74,47,.95) 29px 35px,transparent 36px 66px),
+    repeating-linear-gradient(110deg,transparent 0 46px,rgba(69,93,61,.8) 47px 52px,transparent 53px 80px);
+  filter:drop-shadow(0 0 32px #000);transition:transform 1.4s cubic-bezier(.2,.72,.15,1)
+}
+.gate:before{left:-8%;transform:rotate(-4deg)} .gate:after{right:-8%;transform:rotate(4deg) scaleX(-1)}
+.gate.open:before{transform:translateX(-35%) rotate(-8deg)} .gate.open:after{transform:translateX(35%) rotate(8deg) scaleX(-1)}
+.gate-copy{position:relative;z-index:2;text-align:center;width:min(760px,calc(100% - 36px));padding:40px}
+.gate h1{margin:10px 0 18px;font:600 clamp(3.4rem,8vw,7rem)/.9 var(--serif);letter-spacing:-.04em}
+.gate p:not(.eyebrow){max-width:600px;margin:0 auto;color:#c6cec2;font:500 clamp(1.2rem,2vw,1.5rem)/1.5 var(--serif)}
+.gate small{display:block;margin-top:16px;color:#879083;font-size:.62rem;letter-spacing:.18em;text-transform:uppercase}
+.fireflies{position:absolute;inset:0;pointer-events:none}
+.fireflies i{position:absolute;width:3px;height:3px;border-radius:50%;background:#e7e9a8;box-shadow:0 0 12px 4px rgba(231,233,168,.15);opacity:0;animation:fly 5s ease-in-out infinite}
+.fireflies i:nth-child(1){left:10%;top:22%;animation-delay:.2s}.fireflies i:nth-child(2){left:21%;top:70%;animation-delay:1.6s}
+.fireflies i:nth-child(3){left:38%;top:18%;animation-delay:2.2s}.fireflies i:nth-child(4){left:67%;top:27%;animation-delay:3.4s}
+.fireflies i:nth-child(5){left:82%;top:72%;animation-delay:.8s}.fireflies i:nth-child(6){left:91%;top:21%;animation-delay:4.1s}
+@keyframes fly{0%,100%{opacity:0;transform:translateY(8px)}40%{opacity:.9}65%{opacity:.2;transform:translate(14px,-10px)}}
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+header{
+  position:sticky;top:0;z-index:100;backdrop-filter:blur(16px);
+  background:linear-gradient(180deg,rgba(3,8,6,.95),rgba(3,8,6,.72));
+  border-bottom:1px solid var(--line)
+}
+.nav{min-height:72px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.brand{display:flex;align-items:center;gap:12px}.brand-mark{width:42px;height:42px;border-radius:50%;border:1px solid rgba(218,201,145,.35);background:radial-gradient(circle at 50% 35%,#6a6d68,#353a36)}
+.brand strong{display:block;font:600 1.35rem var(--serif)}.brand small{display:block;color:#8f988c;font-size:.56rem;letter-spacing:.16em;text-transform:uppercase}
+nav{display:flex;gap:24px;align-items:center}nav a{color:#c5cbc0;font-size:.7rem;letter-spacing:.08em;text-transform:uppercase}
+.menu{display:none;background:transparent;border:1px solid var(--line);color:var(--ink);border-radius:50%;width:42px;height:42px}
+
+.hero{min-height:calc(100svh - 72px);display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(36px,7vw,90px);align-items:center;padding:clamp(70px,10vw,140px) 0;position:relative}
+.hero:after{content:"";position:absolute;inset:15% -20% auto 40%;height:60%;background:radial-gradient(ellipse,rgba(81,106,79,.14),transparent 65%);filter:blur(40px);pointer-events:none}
+.hero h1{margin:0;font:600 clamp(5rem,10vw,9rem)/.76 var(--serif);letter-spacing:-.06em}
+.tagline{margin:26px 0 14px;font:600 clamp(1.6rem,3vw,2.35rem)/1.15 var(--serif);color:#dfd7b7}
+.hero .lead{max-width:650px;color:var(--muted);line-height:1.8}
+.hero-art{
+  min-height:540px;border-radius:38px;position:relative;overflow:hidden;
+  background:
+    radial-gradient(circle at 50% 22%,rgba(232,226,195,.18),transparent 18%),
+    radial-gradient(circle at 50% 42%,rgba(90,117,83,.25),transparent 38%),
+    linear-gradient(180deg,#111d18,#08100d);
+  border:1px solid var(--line);box-shadow:0 35px 100px rgba(0,0,0,.45)
+}
+.hero-art:before{content:"☾";position:absolute;top:38px;right:58px;font:600 7rem var(--serif);color:rgba(239,231,192,.75);transform:rotate(14deg)}
+.hero-art:after{content:"";position:absolute;left:-5%;right:-5%;bottom:-2%;height:55%;background:
+  radial-gradient(circle at 15% 88%,#30492d 0 11%,transparent 12%),
+  radial-gradient(circle at 28% 90%,#203b27 0 12%,transparent 13%),
+  radial-gradient(circle at 46% 90%,#365331 0 13%,transparent 14%),
+  radial-gradient(circle at 64% 88%,#263f2b 0 12%,transparent 13%),
+  radial-gradient(circle at 80% 91%,#3c5736 0 13%,transparent 14%),
+  linear-gradient(180deg,transparent,#09110d 60%);
+}
+.hero-art .quote{position:absolute;left:34px;bottom:30px;z-index:2;max-width:320px;color:#c9d0c4;font:500 1.25rem/1.45 var(--serif)}
+
+.divider{height:1px;background:linear-gradient(90deg,transparent,rgba(206,193,139,.32),transparent)}
+.section{padding:clamp(84px,10vw,130px) 0}.section-head{max-width:760px;margin-bottom:48px}
+.section h2{margin:10px 0 14px;font:600 clamp(3rem,6vw,5.2rem)/.92 var(--serif);letter-spacing:-.04em}
+.section-head>p:last-child{color:var(--muted);line-height:1.75}
+
+.editorial{display:grid;gap:28px}
+.feature{display:grid;grid-template-columns:1fr 1fr;min-height:430px;border:1px solid var(--line);border-radius:32px;overflow:hidden;background:rgba(9,20,16,.5);box-shadow:0 25px 80px rgba(0,0,0,.25)}
+.feature:nth-child(even) .feature-visual{order:2}
+.feature-visual{position:relative;background:
+ radial-gradient(circle at 55% 28%,rgba(213,193,130,.2),transparent 25%),
+ radial-gradient(circle at 50% 80%,rgba(73,103,66,.45),transparent 45%),
+ linear-gradient(145deg,#14231b,#09110e)}
+.feature-visual .sigil{position:absolute;inset:0;display:grid;place-items:center;font:600 clamp(5rem,10vw,9rem) var(--serif);color:rgba(230,219,177,.7)}
+.feature-copy{padding:clamp(30px,5vw,58px);display:flex;flex-direction:column;justify-content:center}
+.feature-copy h3{margin:8px 0 14px;font:600 clamp(2.4rem,4vw,4rem)/.95 var(--serif)}
+.feature-copy p{color:var(--muted);line-height:1.7}.price{margin-top:18px;font:600 2rem var(--serif);color:#e8dba6}
+
+.magic{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.magic-card{padding:32px;border:1px solid var(--line);border-radius:28px;background:linear-gradient(180deg,rgba(18,34,26,.72),rgba(7,14,11,.78))}
+.magic-card h3{margin:8px 0 10px;font:600 2.4rem var(--serif)}.magic-card p{color:var(--muted);line-height:1.7}
+
+.pawdrey{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(36px,7vw,90px);align-items:center}
+.pawdrey-symbol{min-height:500px;border-radius:42% 42% 36% 36%;border:1px solid var(--line);background:
+ radial-gradient(circle at 50% 36%,rgba(193,184,151,.18),transparent 24%),
+ linear-gradient(180deg,#1a2c22,#08100d);display:grid;place-items:center;box-shadow:0 30px 90px rgba(0,0,0,.35)}
+.pawdrey-symbol .moon{font:600 10rem var(--serif);color:#d8cfaa;transform:rotate(180deg)}
+.pawdrey p{color:var(--muted);line-height:1.8}
+
+.contact{padding-bottom:120px}.contact-card{text-align:center;padding:clamp(40px,7vw,80px);border:1px solid var(--line);border-radius:36px;background:linear-gradient(180deg,rgba(18,34,26,.75),rgba(6,13,10,.86))}
+.contact-card p{color:var(--muted);max-width:650px;margin:0 auto;line-height:1.7}
+footer{border-top:1px solid var(--line);padding:35px 0 50px;color:#899187;font-size:.72rem}.foot{display:flex;justify-content:space-between;gap:24px}
+.reveal{opacity:0;transform:translateY(18px);transition:.7s ease}.reveal.on{opacity:1;transform:none}
+
+@media(max-width:850px){
+  nav{display:none;position:absolute;top:72px;left:0;right:0;padding:18px;flex-direction:column;align-items:stretch;background:#07100d;border-bottom:1px solid var(--line)}nav.open{display:flex}.menu{display:block}
+  .hero,.feature,.pawdrey,.magic{grid-template-columns:1fr}.hero-art{min-height:430px}.feature:nth-child(even) .feature-visual{order:0}.feature-visual{min-height:300px}
+}
+@media(max-width:560px){.brand small{display:none}.hero h1{font-size:clamp(4.4rem,22vw,6.4rem)}.gate h1{font-size:clamp(3.2rem,16vw,5rem)}.foot{flex-direction:column}}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
+</style>
 </head>
+<body>
 
-<body class="locked">
-  <a class="skip-link" href="#main">Skip to content</a>
-
-  <!-- Enchanted Briar Gate -->
-  <div class="briar-gate" id="briarGate" role="dialog" aria-modal="true" aria-labelledby="gateTitle">
-    <div class="gate-stars" aria-hidden="true"></div>
-    <div class="gate-moon" aria-hidden="true"></div>
-    <div class="gate-briar gate-briar-left" aria-hidden="true"></div>
-    <div class="gate-briar gate-briar-right" aria-hidden="true"></div>
-    <div class="gate-mist gate-mist-one" aria-hidden="true"></div>
-    <div class="gate-mist gate-mist-two" aria-hidden="true"></div>
-    <div class="gate-fireflies" aria-hidden="true">
-      <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+<div class="gate" id="gate">
+  <div class="fireflies" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+  <div class="gate-copy">
+    <p class="eyebrow">Beyond the thorns</p>
+    <h1>The Briar has been waiting.</h1>
+    <p>Step softly into a moonlit world where handmade treasures wake with warmth.</p>
+    <div class="actions" style="justify-content:center">
+      <button class="button primary" id="enter">Enter the Briar Woods</button>
     </div>
-    <div class="gate-copy">
-      <p class="eyebrow">Beyond the thorns</p>
-      <h1 id="gateTitle">The Briar has been waiting.</h1>
-      <p>Step softly into the moonlit woods, where forgotten treasures bloom with warmth.</p>
-      <button class="button primary gate-enter" id="enterWoods">Enter the Briar Woods</button>
-      <small>Moonlight • moss • imagination</small>
-    </div>
+    <small>Moonlight • moss • imagination</small>
   </div>
+</div>
 
-  <div class="ambient" aria-hidden="true">
-    <div class="ambient-moon"></div>
-    <div class="ambient-glow"></div>
-    <div class="ambient-briar ambient-left"></div>
-    <div class="ambient-briar ambient-right"></div>
-  </div>
-
-  <header class="site-header">
-    <a class="brand" href="#home" aria-label="Loom Briar home">
-      <span class="pawdrey-mark" aria-hidden="true">
-        <span class="cat-ear cat-ear-left"></span>
-        <span class="cat-ear cat-ear-right clipped"></span>
-        <span class="cat-face">☾</span>
-      </span>
-      <span class="brand-words">
-        <strong>Loom Briar</strong>
-        <small>Moonlight • Moss • Imagination</small>
-      </span>
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#home">
+      <span class="brand-mark"></span>
+      <span><strong>Loom Briar</strong><small>Moonlight • Moss • Imagination</small></span>
     </a>
-
-    <button class="menu-button" id="menuButton" aria-expanded="false" aria-controls="siteNav">
-      <span></span><span></span><span></span><b class="sr-only">Menu</b>
-    </button>
-
-    <nav class="site-nav" id="siteNav">
-      <a href="#home">Home</a>
-      <a href="#magic">The Magic</a>
-      <a href="#keepsakes">The Briar Floor</a>
-      <a href="#pawdrey">Pawdrey Hepburn</a>
-      <a href="#story">The Story</a>
-      <a class="nav-cta" href="#contact">Inquire</a>
+    <button class="menu" id="menu" aria-label="Open menu">☰</button>
+    <nav id="nav">
+      <a href="#home">Home</a><a href="#works">Featured Works</a><a href="#magic">The Magic</a><a href="#pawdrey">Pawdrey Hepburn</a><a href="#contact">Contact</a>
     </nav>
-  </header>
+  </div>
+</header>
 
-  <main id="main">
-    <section id="home" class="hero section-shell">
-      <div class="hero-forest" aria-hidden="true">
-        <span class="tree tree-1"></span>
-        <span class="tree tree-2"></span>
-        <span class="tree tree-3"></span>
-        <span class="tree tree-4"></span>
-        <span class="tree tree-5"></span>
-      </div>
-      <div class="hero-content reveal">
-        <p class="eyebrow">Welcome to the Briar Woods</p>
-        <h1>Loom Briar</h1>
-        <p class="tagline">A world woven from moonlight, moss, and imagination.</p>
-        <p class="lede">Hand-painted thermochromic keepsakes, original art, and woodland treasures made one at a time for homes that still believe in a little magic.</p>
-        <div class="actions">
-          <a class="button primary" href="#keepsakes">Wander to the Briar Floor</a>
-          <a class="button ghost" href="#pawdrey">Meet Pawdrey Hepburn</a>
-        </div>
-      </div>
-      <div class="hero-card reveal">
-        <p class="eyebrow">The Briar’s secret</p>
-        <h2>Warmth reveals what was hidden.</h2>
-        <p>Selected keepsakes are painted with thermochromic layers that shift as they warm. The transformation appears fastest in hot sunlight.</p>
-        <div class="warmth-demo" aria-label="Thermochromic color shift illustration">
-          <div class="demo-half demo-cool">
-            <span>Cool</span>
-            <b>Moonlit</b>
-          </div>
-          <div class="demo-half demo-warm">
-            <span>Warm</span>
-            <b>Sun-awakened</b>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <div class="briar-divider" aria-hidden="true"><span>✦</span></div>
-
-    <section id="magic" class="content-section section-shell">
-      <div class="section-heading reveal">
-        <p class="eyebrow">Touch the Magic</p>
-        <h2>A painting that changes with warmth.</h2>
-        <p>The artwork does not change all at once. Heat moves through the surface gradually, revealing brighter details and hidden color as the piece warms.</p>
-      </div>
-
-      <div class="magic-grid">
-        <article class="glass-card reveal">
-          <span class="card-icon">☾</span>
-          <h3>Cool</h3>
-          <p>Deeper, moodier tones settle over the artwork like evening in the Briar Woods.</p>
-        </article>
-        <article class="glass-card reveal">
-          <span class="card-icon">☀</span>
-          <h3>Warm</h3>
-          <p>As the surface warms, brighter color awakens. Hot sunlight creates the quickest transformation.</p>
-        </article>
-        <article class="glass-card reveal">
-          <span class="card-icon">✦</span>
-          <h3>One of a kind</h3>
-          <p>Every keepsake is hand painted. Variations are part of the story, and no identical copy is promised.</p>
-        </article>
-      </div>
-    </section>
-
-    <div class="briar-divider" aria-hidden="true"><span>☾</span></div>
-
-    <section id="keepsakes" class="content-section section-shell">
-      <div class="section-heading reveal">
-        <p class="eyebrow">The Briar Floor</p>
-        <h2>Featured treasures</h2>
-        <p>Current signature keepsakes from the Briar Woods. Product photos can be dropped into the included asset folders without changing the layout.</p>
-      </div>
-
-      <div class="product-grid">
-        <article class="product-card reveal">
-          <div class="product-art product-secret">
-            <img class="product-photo optional-photo" src="assets/products/secret-bloom.jpg" alt="" data-fallback="Secret Bloom">
-            <div class="product-fallback" aria-hidden="true">
-              <span class="flower">✿</span><span class="flower f2">❀</span><span class="flower f3">✾</span>
-              <strong>Secret Bloom</strong>
-            </div>
-            <span class="product-badge">Thermochromic</span>
-          </div>
-          <div class="product-body">
-            <p class="eyebrow">Original Keepsake Box</p>
-            <h3>Secret Bloom</h3>
-            <p>A hidden garden that begins in shadow and slowly awakens into color as warmth spreads across the surface.</p>
-            <p class="price">$89.99</p>
-            <div class="product-actions">
-              <a class="button primary" href="https://paypal.me/loombriar" target="_blank" rel="noopener">Pay with PayPal</a>
-              <a class="button ghost etsy-link" href="#" aria-disabled="true" title="Add your Etsy listing URL in index.html">Etsy listing soon</a>
-            </div>
-          </div>
-        </article>
-
-        <article class="product-card reveal">
-          <div class="product-art product-lunastray">
-            <img class="product-photo optional-photo" src="assets/products/lunastray.jpg" alt="" data-fallback="Lunastray">
-            <div class="product-fallback" aria-hidden="true">
-              <span class="moon-orbit">☾</span>
-              <span class="crystal">◆</span><span class="crystal c2">◇</span><span class="crystal c3">◆</span>
-              <strong>Lunastray</strong>
-            </div>
-            <span class="product-badge">Thermochromic</span>
-          </div>
-          <div class="product-body">
-            <p class="eyebrow">Original Keepsake Box</p>
-            <h3>Lunastray</h3>
-            <p>Moonlit wandering, moss, and crystal-like light gathered into a keepsake inspired by the paths between worlds.</p>
-            <p class="price">$89.99</p>
-            <div class="product-actions">
-              <a class="button primary" href="https://paypal.me/loombriar" target="_blank" rel="noopener">Pay with PayPal</a>
-              <a class="button ghost etsy-link" href="#" aria-disabled="true" title="Add your Etsy listing URL in index.html">Etsy listing soon</a>
-            </div>
-          </div>
-        </article>
-
-        <article class="product-card reveal">
-          <div class="product-art product-ocean">
-            <img class="product-photo optional-photo" src="assets/products/ocean-paws.jpg" alt="" data-fallback="Ocean Paws">
-            <div class="product-fallback" aria-hidden="true">
-              <span class="wave">≈</span>
-              <span class="paw">🐾</span>
-              <strong>Ocean Paws</strong>
-            </div>
-            <span class="product-badge">Hand Painted</span>
-          </div>
-          <div class="product-body">
-            <p class="eyebrow">Original Keepsake Box</p>
-            <h3>Ocean Paws</h3>
-            <p>A dreamlike meeting of woodland spirit and sea — presented without altering the original artwork when your real product photo is added.</p>
-            <p class="price">$89.99</p>
-            <div class="product-actions">
-              <a class="button primary" href="https://paypal.me/loombriar" target="_blank" rel="noopener">Pay with PayPal</a>
-              <a class="button ghost etsy-link" href="#" aria-disabled="true" title="Add your Etsy listing URL in index.html">Etsy listing soon</a>
-            </div>
-          </div>
-        </article>
-      </div>
-
-      <p class="photo-note reveal">The included layout intentionally does not regenerate or alter your original product artwork. Add your real photographs to <code>assets/products/</code> using the filenames in the README.</p>
-    </section>
-
-    <div class="briar-divider" aria-hidden="true"><span>✦</span></div>
-
-    <section id="pawdrey" class="pawdrey-section section-shell">
-      <div class="pawdrey-portrait reveal" aria-label="Stylized placeholder for Pawdrey logo">
-        <div class="pawdrey-cat">
-          <span class="portrait-ear left"></span>
-          <span class="portrait-ear right clipped"></span>
-          <div class="portrait-face">
-            <span class="moon-mark">☾</span>
-            <span class="eye e1"></span><span class="eye e2"></span>
-            <span class="nose"></span>
-          </div>
-        </div>
-        <p>Add your approved round Pawdrey logo as <code>assets/pawdrey-logo.png</code>.</p>
-      </div>
-      <div class="pawdrey-copy reveal">
-        <p class="eyebrow">Pawdrey Hepburn — Spirit of the Briar Woods</p>
-        <h2>Meet Pawdrey Hepburn</h2>
-        <p>Pawdrey Hepburn is the gray dilute tortie guardian of Loom Briar — recognizable by her clipped left ear and the upside-down moon marking on her forehead.</p>
-        <p>She is more than a mascot. Pawdrey Hepburn is the quiet spirit who leads visitors through the Briar Woods and anchors the Loom Briar emblem.</p>
-      </div>
-    </section>
-
-    <section id="story" class="story-section section-shell">
-      <div class="section-heading reveal">
-        <p class="eyebrow">A handmade world</p>
-        <h2>Art meant to feel discovered, not manufactured.</h2>
-      </div>
-      <div class="story-panel reveal">
-        <p>Loom Briar is an enchanted woodland artist lifestyle brand built around original art, clothing, art prints, home goods, and signature hand-painted thermochromic keepsake boxes.</p>
-        <p>The visual language is storybook rather than storefront: moss, moonlight, lantern glow, fireflies, crystals, quiet paths, and the feeling of entering a world hidden behind the briars.</p>
-      </div>
-    </section>
-
-    <section id="contact" class="contact-section section-shell">
-      <div class="contact-panel reveal">
-        <p class="eyebrow">Send a message through the woods</p>
-        <h2>Questions, commissions, and collaborations</h2>
-        <p>For product questions, custom inquiries, or collaborations, contact Loom Briar directly.</p>
-        <div class="actions">
-          <a class="button primary" href="mailto:loombriar@gmail.com">loombriar@gmail.com</a>
-          <a class="button ghost" href="https://paypal.me/loombriar" target="_blank" rel="noopener">Loom Briar PayPal</a>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div>
-      <strong>Loom Briar</strong>
-      <p>A world woven from moonlight, moss, and imagination.</p>
+<main>
+<section class="wrap hero" id="home">
+  <div class="reveal">
+    <p class="eyebrow">An enchanted artist world</p>
+    <h1>Loom Briar</h1>
+    <p class="tagline">A world woven from moonlight, moss, and imagination.</p>
+    <p class="lead">Original art, hand-painted thermochromic keepsakes, and woodland treasures created one at a time for homes that still believe in a little magic.</p>
+    <div class="actions">
+      <a class="button primary" href="#works">Explore the Briar Floor</a>
+      <a class="button ghost" href="#pawdrey">Meet Pawdrey Hepburn</a>
     </div>
-    <p>© <span id="year"></span> Loom Briar. Original artwork and designs.</p>
-  </footer>
+  </div>
+  <div class="hero-art reveal">
+    <p class="quote">Not a storefront. A hidden place in the woods where the art happens to be for sale.</p>
+  </div>
+</section>
 
-  <script src="script.js"></script>
+<div class="divider"></div>
+
+<section class="section wrap" id="works">
+  <div class="section-head reveal">
+    <p class="eyebrow">The Briar Floor</p>
+    <h2>Featured works</h2>
+    <p>Three signature pieces presented like art, not inventory.</p>
+  </div>
+
+  <div class="editorial">
+    <article class="feature reveal">
+      <div class="feature-visual"><div class="sigil">✿</div></div>
+      <div class="feature-copy">
+        <p class="eyebrow">Thermochromic keepsake</p>
+        <h3>Secret Bloom</h3>
+        <p>A hidden garden that begins in shadow and slowly awakens into color as warmth moves through the surface.</p>
+        <div class="price">$89.99</div>
+        <div class="actions"><a class="button primary" href="https://paypal.me/loombriar" target="_blank" rel="noopener">Pay with PayPal</a></div>
+      </div>
+    </article>
+
+    <article class="feature reveal">
+      <div class="feature-visual"><div class="sigil">☾</div></div>
+      <div class="feature-copy">
+        <p class="eyebrow">Thermochromic keepsake</p>
+        <h3>Lunastray</h3>
+        <p>Moonlit wandering, moss, and crystal-like light gathered into a keepsake inspired by the paths between worlds.</p>
+        <div class="price">$89.99</div>
+        <div class="actions"><a class="button primary" href="https://paypal.me/loombriar" target="_blank" rel="noopener">Pay with PayPal</a></div>
+      </div>
+    </article>
+
+    <article class="feature reveal">
+      <div class="feature-visual"><div class="sigil">≈</div></div>
+      <div class="feature-copy">
+        <p class="eyebrow">Hand-painted keepsake</p>
+        <h3>Ocean Paws</h3>
+        <p>A dreamlike meeting of woodland spirit and sea, built to showcase the original artwork rather than overpower it.</p>
+        <div class="price">$89.99</div>
+        <div class="actions"><a class="button primary" href="https://paypal.me/loombriar" target="_blank" rel="noopener">Pay with PayPal</a></div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section class="section wrap" id="magic">
+  <div class="section-head reveal">
+    <p class="eyebrow">Touch the magic</p>
+    <h2>Warmth changes the artwork.</h2>
+    <p>Selected keepsakes use thermochromic layers that reveal brighter color as they warm. The quickest transformation happens in hot sunlight.</p>
+  </div>
+  <div class="magic">
+    <div class="magic-card reveal"><p class="eyebrow">Cool</p><h3>Moonlit</h3><p>Deeper, moodier tones settle over the artwork like evening in the Briar Woods.</p></div>
+    <div class="magic-card reveal"><p class="eyebrow">Warm</p><h3>Sun-awakened</h3><p>As the surface warms, brighter color emerges gradually rather than changing all at once.</p></div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section class="section wrap pawdrey" id="pawdrey">
+  <div class="pawdrey-symbol reveal"><div class="moon">☾</div></div>
+  <div class="reveal">
+    <p class="eyebrow">Pawdrey Hepburn — Spirit of the Briar Woods</p>
+    <h2>Meet Pawdrey Hepburn</h2>
+    <p>Pawdrey Hepburn is the gray dilute tortie guardian of Loom Briar, recognizable by her clipped left ear and the upside-down moon marking on her forehead.</p>
+    <p>She is the quiet guide through the Briar Woods and the spirit behind the Loom Briar emblem.</p>
+  </div>
+</section>
+
+<section class="section wrap contact" id="contact">
+  <div class="contact-card reveal">
+    <p class="eyebrow">Send a message through the woods</p>
+    <h2>Questions, commissions, and collaborations</h2>
+    <p>For product questions, custom inquiries, or collaborations, contact Loom Briar directly.</p>
+    <div class="actions" style="justify-content:center">
+      <a class="button primary" href="mailto:loombriar@gmail.com">loombriar@gmail.com</a>
+      <a class="button ghost" href="https://paypal.me/loombriar" target="_blank" rel="noopener">PayPal</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap foot"><span>Loom Briar — A world woven from moonlight, moss, and imagination.</span><span>© <span id="year"></span> Loom Briar</span></div>
+</footer>
+
+<script>
+const gate=document.getElementById('gate'),enter=document.getElementById('enter');
+enter.addEventListener('click',()=>gate.classList.add('open'));
+const menu=document.getElementById('menu'),nav=document.getElementById('nav');
+menu.addEventListener('click',()=>nav.classList.toggle('open'));
+nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>nav.classList.remove('open')));
+document.getElementById('year').textContent=new Date().getFullYear();
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target)}}),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
 </body>
 </html>
