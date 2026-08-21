@@ -1,0 +1,276 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Loom Briar — hand-painted thermochromic keepsakes and woodland-inspired art woven from moonlight, moss, and imagination.">
+  <meta name="theme-color" content="#07100d">
+  <title>Loom Briar | Moonlight, Moss & Imagination</title>
+
+  <!-- Add your real favicon to assets/favicon.png when available. -->
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="locked">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- Enchanted Briar Gate -->
+  <div class="briar-gate" id="briarGate" role="dialog" aria-modal="true" aria-labelledby="gateTitle">
+    <div class="gate-stars" aria-hidden="true"></div>
+    <div class="gate-moon" aria-hidden="true"></div>
+    <div class="gate-briar gate-briar-left" aria-hidden="true"></div>
+    <div class="gate-briar gate-briar-right" aria-hidden="true"></div>
+    <div class="gate-mist gate-mist-one" aria-hidden="true"></div>
+    <div class="gate-mist gate-mist-two" aria-hidden="true"></div>
+    <div class="gate-fireflies" aria-hidden="true">
+      <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+    </div>
+    <div class="gate-copy">
+      <p class="eyebrow">Beyond the thorns</p>
+      <h1 id="gateTitle">The Briar has been waiting.</h1>
+      <p>Step softly into the moonlit woods, where forgotten treasures bloom with warmth.</p>
+      <button class="button primary gate-enter" id="enterWoods">Enter the Briar Woods</button>
+      <small>Moonlight • moss • imagination</small>
+    </div>
+  </div>
+
+  <div class="ambient" aria-hidden="true">
+    <div class="ambient-moon"></div>
+    <div class="ambient-glow"></div>
+    <div class="ambient-briar ambient-left"></div>
+    <div class="ambient-briar ambient-right"></div>
+  </div>
+
+  <header class="site-header">
+    <a class="brand" href="#home" aria-label="Loom Briar home">
+      <span class="pawdrey-mark" aria-hidden="true">
+        <span class="cat-ear cat-ear-left"></span>
+        <span class="cat-ear cat-ear-right clipped"></span>
+        <span class="cat-face">☾</span>
+      </span>
+      <span class="brand-words">
+        <strong>Loom Briar</strong>
+        <small>Moonlight • Moss • Imagination</small>
+      </span>
+    </a>
+
+    <button class="menu-button" id="menuButton" aria-expanded="false" aria-controls="siteNav">
+      <span></span><span></span><span></span><b class="sr-only">Menu</b>
+    </button>
+
+    <nav class="site-nav" id="siteNav">
+      <a href="#home">Home</a>
+      <a href="#magic">The Magic</a>
+      <a href="#keepsakes">The Briar Floor</a>
+      <a href="#pawdrey">Pawdrey</a>
+      <a href="#story">The Story</a>
+      <a class="nav-cta" href="#contact">Inquire</a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section id="home" class="hero section-shell">
+      <div class="hero-forest" aria-hidden="true">
+        <span class="tree tree-1"></span>
+        <span class="tree tree-2"></span>
+        <span class="tree tree-3"></span>
+        <span class="tree tree-4"></span>
+        <span class="tree tree-5"></span>
+      </div>
+      <div class="hero-content reveal">
+        <p class="eyebrow">Welcome to the Briar Woods</p>
+        <h1>Loom Briar</h1>
+        <p class="tagline">A world woven from moonlight, moss, and imagination.</p>
+        <p class="lede">Hand-painted thermochromic keepsakes, original art, and woodland treasures made one at a time for homes that still believe in a little magic.</p>
+        <div class="actions">
+          <a class="button primary" href="#keepsakes">Wander to the Briar Floor</a>
+          <a class="button ghost" href="#pawdrey">Meet Pawdrey</a>
+        </div>
+      </div>
+      <div class="hero-card reveal">
+        <p class="eyebrow">The Briar’s secret</p>
+        <h2>Warmth reveals what was hidden.</h2>
+        <p>Selected keepsakes are painted with thermochromic layers that shift as they warm. The transformation appears fastest in hot sunlight.</p>
+        <div class="warmth-demo" aria-label="Thermochromic color shift illustration">
+          <div class="demo-half demo-cool">
+            <span>Cool</span>
+            <b>Moonlit</b>
+          </div>
+          <div class="demo-half demo-warm">
+            <span>Warm</span>
+            <b>Sun-awakened</b>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="briar-divider" aria-hidden="true"><span>✦</span></div>
+
+    <section id="magic" class="content-section section-shell">
+      <div class="section-heading reveal">
+        <p class="eyebrow">Touch the Magic</p>
+        <h2>A painting that changes with warmth.</h2>
+        <p>The artwork does not change all at once. Heat moves through the surface gradually, revealing brighter details and hidden color as the piece warms.</p>
+      </div>
+
+      <div class="magic-grid">
+        <article class="glass-card reveal">
+          <span class="card-icon">☾</span>
+          <h3>Cool</h3>
+          <p>Deeper, moodier tones settle over the artwork like evening in the Briar Woods.</p>
+        </article>
+        <article class="glass-card reveal">
+          <span class="card-icon">☀</span>
+          <h3>Warm</h3>
+          <p>As the surface warms, brighter color awakens. Hot sunlight creates the quickest transformation.</p>
+        </article>
+        <article class="glass-card reveal">
+          <span class="card-icon">✦</span>
+          <h3>One of a kind</h3>
+          <p>Every keepsake is hand painted. Variations are part of the story, and no identical copy is promised.</p>
+        </article>
+      </div>
+    </section>
+
+    <div class="briar-divider" aria-hidden="true"><span>☾</span></div>
+
+    <section id="keepsakes" class="content-section section-shell">
+      <div class="section-heading reveal">
+        <p class="eyebrow">The Briar Floor</p>
+        <h2>Featured treasures</h2>
+        <p>Current signature keepsakes from the Briar Woods. Product photos can be dropped into the included asset folders without changing the layout.</p>
+      </div>
+
+      <div class="product-grid">
+        <article class="product-card reveal">
+          <div class="product-art product-secret">
+            <img class="product-photo optional-photo" src="assets/products/secret-bloom.jpg" alt="" data-fallback="Secret Bloom">
+            <div class="product-fallback" aria-hidden="true">
+              <span class="flower">✿</span><span class="flower f2">❀</span><span class="flower f3">✾</span>
+              <strong>Secret Bloom</strong>
+            </div>
+            <span class="product-badge">Thermochromic</span>
+          </div>
+          <div class="product-body">
+            <p class="eyebrow">Original Keepsake Box</p>
+            <h3>Secret Bloom</h3>
+            <p>A hidden garden that begins in shadow and slowly awakens into color as warmth spreads across the surface.</p>
+            <p class="price">$89.99</p>
+            <div class="product-actions">
+              <a class="button primary" href="https://paypal.me/loombriar" target="_blank" rel="noopener">Pay with PayPal</a>
+              <a class="button ghost etsy-link" href="#" aria-disabled="true" title="Add your Etsy listing URL in index.html">Etsy listing soon</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-card reveal">
+          <div class="product-art product-lunastray">
+            <img class="product-photo optional-photo" src="assets/products/lunastray.jpg" alt="" data-fallback="Lunastray">
+            <div class="product-fallback" aria-hidden="true">
+              <span class="moon-orbit">☾</span>
+              <span class="crystal">◆</span><span class="crystal c2">◇</span><span class="crystal c3">◆</span>
+              <strong>Lunastray</strong>
+            </div>
+            <span class="product-badge">Thermochromic</span>
+          </div>
+          <div class="product-body">
+            <p class="eyebrow">Original Keepsake Box</p>
+            <h3>Lunastray</h3>
+            <p>Moonlit wandering, moss, and crystal-like light gathered into a keepsake inspired by the paths between worlds.</p>
+            <p class="price">$89.99</p>
+            <div class="product-actions">
+              <a class="button primary" href="https://paypal.me/loombriar" target="_blank" rel="noopener">Pay with PayPal</a>
+              <a class="button ghost etsy-link" href="#" aria-disabled="true" title="Add your Etsy listing URL in index.html">Etsy listing soon</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-card reveal">
+          <div class="product-art product-ocean">
+            <img class="product-photo optional-photo" src="assets/products/ocean-paws.jpg" alt="" data-fallback="Ocean Paws">
+            <div class="product-fallback" aria-hidden="true">
+              <span class="wave">≈</span>
+              <span class="paw">🐾</span>
+              <strong>Ocean Paws</strong>
+            </div>
+            <span class="product-badge">Hand Painted</span>
+          </div>
+          <div class="product-body">
+            <p class="eyebrow">Original Keepsake Box</p>
+            <h3>Ocean Paws</h3>
+            <p>A dreamlike meeting of woodland spirit and sea — presented without altering the original artwork when your real product photo is added.</p>
+            <p class="price">$89.99</p>
+            <div class="product-actions">
+              <a class="button primary" href="https://paypal.me/loombriar" target="_blank" rel="noopener">Pay with PayPal</a>
+              <a class="button ghost etsy-link" href="#" aria-disabled="true" title="Add your Etsy listing URL in index.html">Etsy listing soon</a>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <p class="photo-note reveal">The included layout intentionally does not regenerate or alter your original product artwork. Add your real photographs to <code>assets/products/</code> using the filenames in the README.</p>
+    </section>
+
+    <div class="briar-divider" aria-hidden="true"><span>✦</span></div>
+
+    <section id="pawdrey" class="pawdrey-section section-shell">
+      <div class="pawdrey-portrait reveal" aria-label="Stylized placeholder for Pawdrey logo">
+        <div class="pawdrey-cat">
+          <span class="portrait-ear left"></span>
+          <span class="portrait-ear right clipped"></span>
+          <div class="portrait-face">
+            <span class="moon-mark">☾</span>
+            <span class="eye e1"></span><span class="eye e2"></span>
+            <span class="nose"></span>
+          </div>
+        </div>
+        <p>Add your approved round Pawdrey logo as <code>assets/pawdrey-logo.png</code>.</p>
+      </div>
+      <div class="pawdrey-copy reveal">
+        <p class="eyebrow">Spirit of the Briar Woods</p>
+        <h2>Meet Pawdrey</h2>
+        <p>Pawdrey is the gray dilute tortie guardian of Loom Briar — recognizable by her clipped left ear and the upside-down moon marking on her forehead.</p>
+        <p>She is more than a mascot. Pawdrey is the quiet spirit who leads visitors through the Briar Woods and anchors the Loom Briar emblem.</p>
+      </div>
+    </section>
+
+    <section id="story" class="story-section section-shell">
+      <div class="section-heading reveal">
+        <p class="eyebrow">A handmade world</p>
+        <h2>Art meant to feel discovered, not manufactured.</h2>
+      </div>
+      <div class="story-panel reveal">
+        <p>Loom Briar is an enchanted woodland artist lifestyle brand built around original art, clothing, art prints, home goods, and signature hand-painted thermochromic keepsake boxes.</p>
+        <p>The visual language is storybook rather than storefront: moss, moonlight, lantern glow, fireflies, crystals, quiet paths, and the feeling of entering a world hidden behind the briars.</p>
+      </div>
+    </section>
+
+    <section id="contact" class="contact-section section-shell">
+      <div class="contact-panel reveal">
+        <p class="eyebrow">Send a message through the woods</p>
+        <h2>Questions, commissions, and collaborations</h2>
+        <p>For product questions, custom inquiries, or collaborations, contact Loom Briar directly.</p>
+        <div class="actions">
+          <a class="button primary" href="mailto:loombriar@gmail.com">loombriar@gmail.com</a>
+          <a class="button ghost" href="https://paypal.me/loombriar" target="_blank" rel="noopener">Loom Briar PayPal</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div>
+      <strong>Loom Briar</strong>
+      <p>A world woven from moonlight, moss, and imagination.</p>
+    </div>
+    <p>© <span id="year"></span> Loom Briar. Original artwork and designs.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
