@@ -3,7 +3,7 @@
 Add the approved/real assets here.
 
 ## Logo
-- `pawdrey-logo.png` — approved round Pawdrey logo
+- `pawdrey-logo.png` — approved round Pawdrey Hepburn
 - `favicon.png` — optional final favicon
 
 ## Product photographs
