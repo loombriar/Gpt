@@ -1,43 +1,94 @@
-/* Loom Briar atmosphere pass */
-:root{--firefly:#f7e7a0}
-body{cursor:none}
+/* Loom Briar atmosphere + polish */
+:root{--firefly:#f7e7a0;--panel-soft:rgba(6,15,11,.88);--edge:rgba(212,174,105,.22)}
+body{cursor:none;background:#020504}
 a,button,input,textarea,select,label{cursor:none}
-.briar-cursor{position:fixed;left:0;top:0;width:12px;height:12px;border:1px solid rgba(247,231,160,.9);border-radius:50%;pointer-events:none;z-index:2000;transform:translate(-50%,-50%);box-shadow:0 0 8px rgba(247,231,160,.8),0 0 18px rgba(173,217,124,.55);transition:width .15s,height .15s,background .15s}
-.briar-cursor:after{content:"";position:absolute;inset:4px;border-radius:50%;background:#f7e7a0;box-shadow:0 0 12px #f7e7a0}
-.briar-cursor.hover{width:24px;height:24px;background:rgba(109,151,82,.16)}
+
+/* Cursor */
+.briar-cursor{position:fixed;left:0;top:0;width:11px;height:11px;border:1px solid rgba(247,231,160,.86);border-radius:50%;pointer-events:none;z-index:2000;transform:translate(-50%,-50%);box-shadow:0 0 7px rgba(247,231,160,.65),0 0 15px rgba(173,217,124,.38);transition:width .15s,height .15s,background .15s,opacity .15s}
+.briar-cursor:after{content:"";position:absolute;inset:3px;border-radius:50%;background:#f7e7a0;box-shadow:0 0 9px #f7e7a0}
+.briar-cursor.hover{width:20px;height:20px;background:rgba(109,151,82,.12)}
+
+/* Fireflies */
 .firefly-field{position:fixed;inset:0;pointer-events:none;z-index:45;overflow:hidden}
-.firefly{position:absolute;width:4px;height:4px;border-radius:50%;background:var(--firefly);box-shadow:0 0 7px 2px rgba(247,231,160,.72),0 0 18px 5px rgba(152,204,94,.28);animation:fly var(--dur) ease-in-out infinite alternate,blink 2.8s ease-in-out infinite;opacity:.72}
-@keyframes fly{to{transform:translate(var(--dx),var(--dy)) scale(.75)}}
-@keyframes blink{0%,100%{opacity:.18}45%,65%{opacity:.95}}
-.floor-section{background:linear-gradient(rgba(2,6,4,.52),rgba(2,6,4,.7)),url("assets/moss-clearing.jpg") center/cover fixed!important;box-shadow:inset 0 60px 100px rgba(27,62,30,.18)}
-.moss-backdrop{filter:saturate(1.18) brightness(1.08)!important}
-.hero-art{background-position:center 34%!important}
-.pawdrey-image img{object-fit:contain;object-position:center top}
-.briar-clock-section{padding:80px clamp(22px,7vw,105px);background:radial-gradient(circle at 50% 10%,rgba(66,99,57,.22),transparent 42%),#030806;border-top:1px solid rgba(212,174,105,.16);text-align:center}
-.briar-clock{position:relative;width:min(340px,86vw);height:430px;margin:35px auto 0;filter:drop-shadow(0 30px 45px rgba(0,0,0,.6))}
-.clock-house{position:absolute;inset:70px 25px 0;background:linear-gradient(135deg,#24180f,#4c3020 52%,#1d140e);clip-path:polygon(50% 0,100% 30%,92% 100%,8% 100%,0 30%);border-radius:12px}
-.clock-face{position:absolute;left:50%;top:160px;transform:translateX(-50%);width:145px;height:145px;border-radius:50%;background:#e6d3a7;border:8px solid #5b3922;box-shadow:inset 0 0 0 2px #9c7742;color:#21170f;font:600 1.2rem Georgia,serif}
+.firefly{position:absolute;width:3px;height:3px;border-radius:50%;background:var(--firefly);box-shadow:0 0 6px 2px rgba(247,231,160,.62),0 0 15px 4px rgba(152,204,94,.22);animation:fly var(--dur) ease-in-out infinite alternate,blink 3.2s ease-in-out infinite;opacity:.58}
+@keyframes fly{to{transform:translate(var(--dx),var(--dy)) scale(.78)}}
+@keyframes blink{0%,100%{opacity:.12}45%,65%{opacity:.78}}
+
+/* Overall spacing and hierarchy */
+.story-section,.floor-section,.magic-section,.pawdrey-section,.journal-section,.contact-section,.briar-clock-section{scroll-margin-top:92px}
+.section-heading{max-width:760px!important;margin-bottom:42px!important}
+.section-heading h2{font-size:clamp(2.7rem,5vw,5.2rem)!important}
+.story-section,.floor-section,.magic-section,.pawdrey-section,.journal-section,.contact-section{padding-top:clamp(72px,8vw,112px)!important;padding-bottom:clamp(72px,8vw,112px)!important}
+
+/* Header */
+.site-header{height:76px!important;background:rgba(3,8,6,.94)!important;border-bottom:1px solid var(--edge)!important}
+.brand img{width:50px!important;height:50px!important;object-position:center!important}
+.site-nav{gap:18px!important;font-size:.82rem!important}
+.site-nav a{padding-block:8px}
+
+/* Gate + hero: keep Pawdrey visible and reduce crop */
+.gate-copy{padding-top:90px!important}
+.gate-copy h1{font-size:clamp(3.6rem,7vw,7rem)!important}
+.gate-crow{max-width:280px!important;opacity:.82!important}
+.hero{min-height:min(880px,calc(100svh - 76px))!important}
+.hero-art{background-position:center 26%!important;filter:saturate(.9) contrast(1.02) brightness(.9)!important}
+.hero-shade{background:linear-gradient(90deg,rgba(1,3,2,.87) 0%,rgba(1,3,2,.54) 36%,rgba(1,3,2,.08) 68%),linear-gradient(180deg,rgba(1,3,2,.03) 50%,rgba(1,4,3,.72))!important}
+.hero-copy{padding-block:62px!important}
+.hero-copy h2{font-size:clamp(4.4rem,8.5vw,8.5rem)!important;line-height:.79!important}
+.hero-note{right:4vw!important;bottom:3vh!important}
+
+/* Moss is visible, but text stays readable */
+.floor-section{background:linear-gradient(rgba(2,6,4,.42),rgba(2,6,4,.62)),url("assets/moss-clearing.jpg") center/cover fixed!important;box-shadow:inset 0 65px 110px rgba(27,62,30,.16)}
+.moss-backdrop{filter:saturate(1.12) brightness(1.04)!important}
+
+/* Product cards */
+.feature-product{max-width:1120px!important;min-height:500px!important;margin-bottom:42px!important;border-color:var(--edge)!important;border-radius:4px 30px 4px 30px!important;background:rgba(4,10,7,.91)!important;box-shadow:0 22px 55px rgba(0,0,0,.42)!important}
+.feature-copy{padding:clamp(28px,5vw,58px)!important}
+.feature-copy h3{font-size:clamp(2.4rem,4vw,3.5rem)!important}
+.feature-image img{max-height:620px;object-position:center}
+.price{font-size:1.8rem!important}
+
+/* Pawdrey */
+.pawdrey-section{gap:48px!important;max-width:1280px;margin-inline:auto}
+.pawdrey-image img{object-fit:contain;object-position:center top;max-height:620px}
+.pawdrey-copy{max-width:560px}
+
+/* Briar clock: smaller, integrated, less like a separate app */
+.briar-clock-section{padding:74px clamp(22px,7vw,96px);background:radial-gradient(circle at 50% 8%,rgba(66,99,57,.17),transparent 38%),linear-gradient(180deg,#030806,#020504);border-top:1px solid rgba(212,174,105,.14);text-align:center}
+.briar-clock-section>.section-heading{margin-inline:auto}
+.briar-clock{position:relative;width:min(285px,80vw);height:350px;margin:24px auto 0;filter:drop-shadow(0 22px 34px rgba(0,0,0,.55))}
+.clock-house{position:absolute;inset:58px 22px 0;background:linear-gradient(135deg,#24180f,#4c3020 52%,#1d140e);clip-path:polygon(50% 0,100% 30%,92% 100%,8% 100%,0 30%);border-radius:10px}
+.clock-face{position:absolute;left:50%;top:132px;transform:translateX(-50%);width:118px;height:118px;border-radius:50%;background:#e6d3a7;border:7px solid #5b3922;box-shadow:inset 0 0 0 2px #9c7742;color:#21170f}
 .clock-face:before,.clock-face:after{content:"";position:absolute;left:50%;bottom:50%;transform-origin:bottom;width:3px;border-radius:3px;background:#24180f}
-.clock-face:before{height:42px;transform:rotate(18deg)}.clock-face:after{height:54px;transform:rotate(112deg)}
-.clock-door{position:absolute;left:50%;top:91px;transform:translateX(-50%);width:92px;height:72px;border:5px solid #5b3922;border-radius:45px 45px 4px 4px;background:#120e0a;overflow:visible}
-.clock-door:before,.clock-door:after{content:"";position:absolute;top:0;width:50%;height:100%;background:#3f281a;border:1px solid #785238;transition:transform .45s ease;transform-origin:left center}.clock-door:before{left:0;transform-origin:left}.clock-door:after{right:0;transform-origin:right}
+.clock-face:before{height:34px;transform:rotate(18deg)}.clock-face:after{height:43px;transform:rotate(112deg)}
+.clock-door{position:absolute;left:50%;top:75px;transform:translateX(-50%);width:76px;height:58px;border:4px solid #5b3922;border-radius:40px 40px 4px 4px;background:#120e0a;overflow:visible}
+.clock-door:before,.clock-door:after{content:"";position:absolute;top:0;width:50%;height:100%;background:#3f281a;border:1px solid #785238;transition:transform .45s ease}.clock-door:before{left:0;transform-origin:left}.clock-door:after{right:0;transform-origin:right}
 .briar-clock.awake .clock-door:before{transform:perspective(100px) rotateY(-70deg)}.briar-clock.awake .clock-door:after{transform:perspective(100px) rotateY(70deg)}
-.clock-crow{position:absolute;left:50%;top:103px;width:64px;height:44px;transform:translate(-50%,15px) scale(.45);opacity:0;transition:.5s cubic-bezier(.2,.9,.2,1.2);z-index:3}
-.clock-crow:before{content:"";position:absolute;width:42px;height:30px;border-radius:55% 45% 48% 52%;background:#090b0b;box-shadow:20px 9px 0 -9px #090b0b}.clock-crow:after{content:"";position:absolute;right:-15px;top:9px;border-left:19px solid #b48739;border-top:5px solid transparent;border-bottom:5px solid transparent}
-.briar-clock.awake .clock-crow{opacity:1;transform:translate(-50%,-32px) scale(1)}
-.clock-pendulum{position:absolute;left:50%;top:294px;width:3px;height:105px;background:#a77b42;transform-origin:top;animation:pendulum 2s ease-in-out infinite alternate}.clock-pendulum:after{content:"";position:absolute;left:50%;bottom:-13px;transform:translateX(-50%);width:28px;height:28px;border-radius:50%;background:#b78c4e}
-@keyframes pendulum{to{transform:rotate(13deg)}}
-.clock-button{margin-top:20px}
-.ferret-faucet{max-width:820px;margin:55px auto 0;padding:28px;border:1px solid rgba(212,174,105,.28);border-radius:4px 28px;background:rgba(7,16,12,.82);text-align:left}.ferret-faucet h3{font-size:2.2rem}.ferret-mark{font-size:2.2rem;float:left;margin-right:14px}
+.clock-crow{position:absolute;left:50%;top:86px;width:56px;height:38px;transform:translate(-50%,12px) scale(.45);opacity:0;transition:.5s cubic-bezier(.2,.9,.2,1.2);z-index:3}
+.clock-crow:before{content:"";position:absolute;width:38px;height:27px;border-radius:55% 45% 48% 52%;background:#090b0b;box-shadow:18px 8px 0 -8px #090b0b}.clock-crow:after{content:"";position:absolute;right:-13px;top:8px;border-left:17px solid #b48739;border-top:5px solid transparent;border-bottom:5px solid transparent}
+.briar-clock.awake .clock-crow{opacity:1;transform:translate(-50%,-26px) scale(1)}
+.clock-pendulum{position:absolute;left:50%;top:239px;width:3px;height:82px;background:#a77b42;transform-origin:top;animation:pendulum 2s ease-in-out infinite alternate}.clock-pendulum:after{content:"";position:absolute;left:50%;bottom:-11px;transform:translateX(-50%);width:23px;height:23px;border-radius:50%;background:#b78c4e}
+@keyframes pendulum{to{transform:rotate(11deg)}}
+.clock-button{margin-top:14px}
+.ferret-faucet{max-width:720px;margin:42px auto 0;padding:24px 26px;border:1px solid rgba(212,174,105,.2);border-radius:4px 24px;background:rgba(7,16,12,.72);text-align:left}.ferret-faucet h3{font-size:2rem!important}.ferret-mark{font-size:2rem;float:left;margin-right:12px}
 
-/* The Briar Thread — crow-loosened thorn spool */
-.briar-thread{position:fixed;left:clamp(8px,2vw,28px);top:82px;width:78px;height:calc(100vh - 94px);z-index:44;pointer-events:none;opacity:0;transition:opacity .9s ease}.briar-thread.loose{opacity:1}
-.briar-thread-line{position:absolute;left:37px;top:0;width:3px;height:var(--thread-length,0%);max-height:calc(100% - 36px);border-radius:50%;background:linear-gradient(90deg,#24170e,#76502c 45%,#24170e);box-shadow:0 0 8px rgba(90,124,61,.25);transform-origin:top;transition:height .08s linear}
-.briar-thread-line:before,.briar-thread-line:after{content:"";position:absolute;width:11px;height:5px;border-top:2px solid #50683a;transform:rotate(-38deg)}.briar-thread-line:before{left:-8px;top:24%}.briar-thread-line:after{left:1px;top:67%;transform:rotate(38deg)}
-.thorn-spool{position:absolute;left:5px;top:var(--spool-y,0%);width:66px;height:66px;border-radius:50%;overflow:hidden;border:2px solid rgba(196,155,89,.75);background:#1a120c url("assets/thorn-spool-needle.jpg") center/cover no-repeat;box-shadow:0 7px 20px rgba(0,0,0,.65),0 0 14px rgba(99,132,68,.22);transform:rotate(var(--spool-rotate,0deg));transition:top .08s linear;will-change:top,transform}
-.thorn-spool:after{content:"";position:absolute;inset:17px;border-radius:50%;border:3px solid rgba(225,194,137,.5);box-shadow:inset 0 0 9px #000}
-.spool-crow-nudge{position:absolute;left:43px;top:-25px;width:24px;height:18px;background:#080b0a;border-radius:55% 45% 50% 50%;opacity:0;transform:translate(20px,-10px) rotate(-12deg)}.spool-crow-nudge:after{content:"";position:absolute;right:-8px;top:5px;border-left:10px solid #a87a35;border-top:3px solid transparent;border-bottom:3px solid transparent}.briar-thread.loose .spool-crow-nudge{animation:spoolCrow 1.45s ease-out forwards}
-@keyframes spoolCrow{0%{opacity:0;transform:translate(32px,-20px) rotate(-12deg)}25%,58%{opacity:1}72%{opacity:1;transform:translate(2px,7px) rotate(8deg)}100%{opacity:0;transform:translate(-26px,-20px) rotate(-16deg)}}
+/* Journal + contact */
+.journal-grid{max-width:1080px!important;gap:18px!important}.journal-card{padding:26px!important;border-color:var(--edge)!important;background:linear-gradient(155deg,rgba(10,21,16,.9),rgba(3,8,6,.94))!important}.journal-card h3{font-size:1.95rem!important}
+.contact-section{max-width:1280px;margin-inline:auto}.contact-form{border-color:var(--edge)!important;background:rgba(7,16,12,.88)!important}
 
-@media(max-width:700px){body,a,button,input,textarea,select,label{cursor:auto}.briar-cursor{display:none}.firefly-field{z-index:20}.hero-art{background-position:60% 20%!important}.briar-clock-section{padding-top:60px}.briar-thread{left:2px;width:52px;opacity:.55}.briar-thread-line{left:25px}.thorn-spool{width:46px;height:46px;left:3px}.thorn-spool:after{inset:12px;border-width:2px}.spool-crow-nudge{display:none}}
+/* The Briar Thread — subtle page guide */
+.briar-thread{position:fixed;left:clamp(6px,1.5vw,20px);top:80px;width:58px;height:calc(100vh - 96px);z-index:44;pointer-events:none;opacity:0;transition:opacity .9s ease}.briar-thread.loose{opacity:.78}
+.briar-thread-line{position:absolute;left:28px;top:0;width:2px;height:var(--thread-length,0%);max-height:calc(100% - 30px);border-radius:50%;background:linear-gradient(90deg,#24170e,#76502c 48%,#24170e);box-shadow:0 0 6px rgba(90,124,61,.18);transform-origin:top;transition:height .08s linear}
+.briar-thread-line:before,.briar-thread-line:after{content:"";position:absolute;width:9px;height:4px;border-top:1px solid #50683a;transform:rotate(-38deg)}.briar-thread-line:before{left:-7px;top:24%}.briar-thread-line:after{left:1px;top:67%;transform:rotate(38deg)}
+.thorn-spool{position:absolute;left:5px;top:var(--spool-y,0%);width:48px;height:48px;border-radius:50%;overflow:hidden;border:1px solid rgba(196,155,89,.62);background:#1a120c url("assets/thorn-spool-needle.jpg") center/cover no-repeat;box-shadow:0 5px 14px rgba(0,0,0,.55),0 0 10px rgba(99,132,68,.16);transform:rotate(var(--spool-rotate,0deg));transition:top .08s linear;will-change:top,transform}
+.thorn-spool:after{content:"";position:absolute;inset:12px;border-radius:50%;border:2px solid rgba(225,194,137,.42);box-shadow:inset 0 0 7px #000}
+.spool-crow-nudge{position:absolute;left:34px;top:-22px;width:22px;height:16px;background:#080b0a;border-radius:55% 45% 50% 50%;opacity:0;transform:translate(20px,-10px) rotate(-12deg)}.spool-crow-nudge:after{content:"";position:absolute;right:-7px;top:5px;border-left:9px solid #a87a35;border-top:3px solid transparent;border-bottom:3px solid transparent}.briar-thread.loose .spool-crow-nudge{animation:spoolCrow 1.45s ease-out forwards}
+@keyframes spoolCrow{0%{opacity:0;transform:translate(28px,-18px) rotate(-12deg)}25%,58%{opacity:1}72%{opacity:1;transform:translate(2px,6px) rotate(8deg)}100%{opacity:0;transform:translate(-22px,-18px) rotate(-16deg)}}
+
+/* Buttons/forms */
+.button,.enter-button{min-height:46px!important;padding-inline:1.2rem!important}
+.contact-form input,.contact-form textarea,.contact-form select{background:#020705!important;border-color:rgba(212,174,105,.28)!important}
+
+@media(max-width:980px){.site-header{height:72px!important}.hero{min-height:calc(100svh - 72px)!important}.story-section{gap:22px!important}.feature-product{max-width:760px!important}.pawdrey-section{gap:28px!important}.firefly-field{z-index:20}}
+@media(max-width:700px){body,a,button,input,textarea,select,label{cursor:auto}.briar-cursor{display:none}.hero-art{background-position:58% 18%!important;background-size:cover!important}.hero-copy{padding:94px 18px 34px!important}.hero-copy h2{font-size:clamp(3.8rem,18vw,5.6rem)!important}.gate-copy{padding-top:74px!important}.gate-crow{width:150px!important;left:-26px!important;top:3vh!important}.briar-clock-section{padding:58px 18px}.briar-thread{left:0;width:38px;opacity:.42}.briar-thread-line{left:19px}.thorn-spool{width:34px;height:34px;left:2px}.thorn-spool:after{inset:9px;border-width:1px}.spool-crow-nudge{display:none}.floor-section{background-attachment:scroll!important}.journal-card{padding:22px!important}}
 @media(prefers-reduced-motion:reduce){.firefly,.clock-pendulum,.spool-crow-nudge{animation:none}.briar-cursor{display:none}body{cursor:auto}.briar-thread{display:none}}
