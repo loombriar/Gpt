@@ -1,11 +1,18 @@
 const gate = document.getElementById("briarGate");
 const enter = document.getElementById("enterBriar");
+const world = document.getElementById("briarWorld");
 
-if (gate && enter) {
+if (gate && world) {
+  world.setAttribute("aria-hidden", "true");
+}
+
+if (gate && enter && world) {
   enter.addEventListener("click", () => {
     gate.classList.add("open");
     document.body.classList.remove("gate-locked");
-    window.setTimeout(() => gate.setAttribute("hidden", ""), 1750);
+    world.classList.add("entered");
+    world.setAttribute("aria-hidden", "false");
+    window.setTimeout(() => gate.setAttribute("hidden", ""), 1100);
   });
 }
 
@@ -40,7 +47,7 @@ document.querySelectorAll(".reveal").forEach(el => observer.observe(el));
 const year = document.getElementById("year");
 if (year) year.textContent = new Date().getFullYear();
 
-/* Keep Pawdrey artwork on the homepage hero only. Gate visuals now live entirely in CSS. */
+/* Keep Pawdrey artwork on the homepage hero only. Gate visuals live entirely in CSS. */
 const heroArt = document.querySelector(".hero-art");
 if (heroArt) {
   heroArt.style.backgroundImage = 'url("assets/pawdrey-hero.png")';
