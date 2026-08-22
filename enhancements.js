@@ -8,4 +8,26 @@
 
   const clock=document.querySelector('.briar-clock'); const button=document.getElementById('wakeCrow');
   if(clock&&button){const wake=()=>{clock.classList.add('awake');button.textContent='The crow is out';setTimeout(()=>{clock.classList.remove('awake');button.textContent='Call the Crow'},3600)};button.addEventListener('click',wake);clock.addEventListener('click',e=>{if(e.target!==button)wake()})}
+
+  // The Briar Thread: the crow knocks a thorn-wrapped spool loose, then it unravels as the visitor travels deeper.
+  const thread=document.createElement('div');
+  thread.className='briar-thread';
+  thread.setAttribute('aria-hidden','true');
+  thread.innerHTML='<i class="spool-crow-nudge"></i><i class="briar-thread-line"></i><i class="thorn-spool"></i>';
+  document.body.appendChild(thread);
+  let loosened=false;
+  const loosen=()=>{if(loosened)return;loosened=true;thread.classList.add('loose')};
+  const gateButton=document.getElementById('enterBriar');
+  if(gateButton) gateButton.addEventListener('click',()=>setTimeout(loosen,900)); else setTimeout(loosen,700);
+  const updateThread=()=>{
+    const max=Math.max(1,document.documentElement.scrollHeight-window.innerHeight);
+    const p=Math.min(1,Math.max(0,window.scrollY/max));
+    const travel=Math.min(88,6+p*82);
+    thread.style.setProperty('--thread-length',travel+'%');
+    thread.style.setProperty('--spool-y',travel+'%');
+    thread.style.setProperty('--spool-rotate',(p*1080)+'deg');
+  };
+  updateThread();
+  window.addEventListener('scroll',updateThread,{passive:true});
+  window.addEventListener('resize',updateThread);
 })();
