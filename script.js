@@ -4,7 +4,7 @@ if (gate && enter) {
   enter.addEventListener("click", () => {
     gate.classList.add("open");
     document.body.classList.remove("gate-locked");
-    setTimeout(() => gate.setAttribute("hidden",""), 1050);
+    setTimeout(() => gate.setAttribute("hidden",""), 1650);
   });
 }
 const menuButton = document.getElementById("menuToggle");
@@ -30,188 +30,120 @@ const observer = new IntersectionObserver(entries => {
 document.querySelectorAll(".reveal").forEach(el => observer.observe(el));
 document.getElementById("year").textContent = new Date().getFullYear();
 
-// IMPORTANT: use the real Pawdrey artwork for the entrance and hero, not the old website mockup image.
+// Use the real Pawdrey artwork for the entrance and hero.
 const heroOverride = document.createElement("style");
 heroOverride.textContent = `
-  .gate-art{
-    background-image:linear-gradient(rgba(0,0,0,.18),rgba(0,0,0,.50)),url("assets/pawdrey-hero.png")!important;
-    background-position:center 24%!important;
-    background-size:cover!important;
-  }
-  .hero-art{
-    background-image:url("assets/pawdrey-hero.png")!important;
-    background-position:center 20%!important;
-    background-size:cover!important;
-  }
-  @media (max-width:980px){
-    .hero-art{background-position:center 15%!important;}
-  }
-  @media (max-width:640px){
-    .hero-art{background-position:center 10%!important;}
-  }
+  .gate-art{background-image:linear-gradient(rgba(0,0,0,.18),rgba(0,0,0,.50)),url("assets/pawdrey-hero.png")!important;background-position:center 24%!important;background-size:cover!important;}
+  .hero-art{background-image:url("assets/pawdrey-hero.png")!important;background-position:center 20%!important;background-size:cover!important;}
+  @media (max-width:980px){.hero-art{background-position:center 15%!important;}}
+  @media (max-width:640px){.hero-art{background-position:center 10%!important;}}
 `;
 document.head.appendChild(heroOverride);
 
-// Final clock/layout pass. This runs after the stylesheet links, so these overrides win.
+// Rebuilt Briar Woods entrance: moonlit thorn gates physically part when entered.
+const gateRebuild = document.createElement('style');
+gateRebuild.textContent = `
+  .briar-gate{
+    perspective:1500px!important;
+    background:#010403!important;
+    transition:visibility 0s linear 1.55s!important;
+  }
+  .briar-gate.open{opacity:1!important;visibility:hidden!important;transition:visibility 0s linear 1.55s!important;}
+  .gate-art{
+    inset:0!important;z-index:-8!important;
+    filter:brightness(.42) saturate(.78) contrast(1.08)!important;
+    transform:scale(1.035)!important;
+    animation:gateBreath 14s ease-in-out infinite alternate!important;
+  }
+  @keyframes gateBreath{to{transform:scale(1.075) translateY(-.8%)}}
+  .gate-vignette{
+    z-index:-2!important;
+    background:
+      radial-gradient(circle at 50% 19%,rgba(236,220,163,.20) 0 4%,transparent 18%),
+      radial-gradient(ellipse at center,transparent 0 18%,rgba(0,0,0,.24) 46%,rgba(0,0,0,.92) 100%)!important;
+  }
+  .briar-gate:before,.briar-gate:after{
+    content:"";position:absolute;top:-5%;bottom:-5%;width:52%;z-index:2;pointer-events:none;
+    background:
+      radial-gradient(ellipse at 16% 22%,rgba(84,106,54,.55) 0 2.5%,transparent 3.2%),
+      radial-gradient(ellipse at 82% 35%,rgba(69,92,45,.52) 0 2.4%,transparent 3.1%),
+      radial-gradient(ellipse at 24% 68%,rgba(76,101,49,.48) 0 2.8%,transparent 3.5%),
+      repeating-linear-gradient(90deg,rgba(12,8,5,.22) 0 3px,transparent 3px 54px),
+      linear-gradient(90deg,#080705 0%,#17130d 18%,#0c0a07 43%,#21190f 72%,#080705 100%);
+    border-color:rgba(173,132,70,.46);border-style:solid;
+    box-shadow:inset 0 0 80px #000,0 0 50px rgba(0,0,0,.72);
+    transition:transform 1.45s cubic-bezier(.68,.02,.22,1),filter 1.45s ease;
+  }
+  .briar-gate:before{
+    left:-1%;border-width:0 2px 0 0;transform-origin:left center;
+    clip-path:polygon(0 0,100% 0,100% 7%,94% 10%,100% 14%,100% 23%,93% 27%,100% 31%,100% 100%,0 100%);
+  }
+  .briar-gate:after{
+    right:-1%;border-width:0 0 0 2px;transform-origin:right center;
+    clip-path:polygon(0 0,100% 0,100% 100%,0 100%,0 31%,7% 27%,0 23%,0 14%,6% 10%,0 7%);
+  }
+  .briar-gate.open:before{transform:rotateY(-78deg) translateX(-10%);filter:brightness(.42)}
+  .briar-gate.open:after{transform:rotateY(78deg) translateX(10%);filter:brightness(.42)}
+  .gate-copy{
+    position:relative;z-index:5;width:min(690px,88vw)!important;padding:44px 34px!important;
+    border:1px solid rgba(212,174,105,.18);border-radius:50% 50% 7px 7px/18% 18% 7px 7px;
+    background:radial-gradient(ellipse at center,rgba(3,10,7,.78),rgba(2,6,4,.42) 62%,transparent 76%);
+    backdrop-filter:blur(2px);transition:opacity .55s ease,transform .75s ease;
+  }
+  .briar-gate.open .gate-copy{opacity:0;transform:scale(.94) translateY(18px)}
+  .gate-copy:before{
+    content:"✦";display:grid;place-items:center;width:58px;height:58px;margin:0 auto 18px;
+    border:1px solid rgba(216,179,106,.46);border-radius:50%;color:#e5ca8e;font-size:1rem;
+    box-shadow:0 0 30px rgba(207,177,107,.12),inset 0 0 20px rgba(207,177,107,.08);
+  }
+  .gate-copy .kicker{font-size:.74rem!important;letter-spacing:.32em!important;color:#d8b66f!important}
+  .gate-copy h1{font-size:clamp(4.2rem,8vw,7.7rem)!important;line-height:.78!important;text-shadow:0 5px 28px #000,0 0 42px rgba(215,188,124,.09)!important}
+  .gate-intro{font-size:clamp(1.15rem,2vw,1.42rem)!important;max-width:520px!important;color:#d8ccb5!important}
+  .enter-button{
+    position:relative;overflow:hidden;min-width:230px!important;min-height:56px!important;
+    border:1px solid rgba(220,184,111,.62)!important;border-radius:2px 20px 2px 20px!important;
+    background:linear-gradient(145deg,rgba(72,50,30,.92),rgba(17,27,19,.96))!important;
+    box-shadow:0 12px 34px rgba(0,0,0,.5),inset 0 0 24px rgba(212,174,105,.06),0 0 24px rgba(112,148,77,.07)!important;
+    color:#f1dfb5!important;
+  }
+  .enter-button:before{content:"";position:absolute;inset:0;transform:translateX(-120%);background:linear-gradient(105deg,transparent 30%,rgba(244,224,169,.15),transparent 70%);transition:transform .7s ease}
+  .enter-button:hover:before{transform:translateX(120%)}
+  .gate-crow{
+    z-index:4!important;left:auto!important;right:5vw!important;top:auto!important;bottom:5vh!important;
+    width:min(230px,22vw)!important;opacity:.62!important;mix-blend-mode:screen!important;
+    transform:rotate(-5deg);transition:opacity .4s ease,transform 1.2s ease!important;
+  }
+  .briar-gate.open .gate-crow{opacity:0!important;transform:translate(80px,-50px) rotate(8deg) scale(.8)!important}
+  .gate-mist{z-index:3!important;pointer-events:none!important;background:rgba(190,210,196,.07)!important;mix-blend-mode:screen}
+  .briar-gate.open .gate-mist{opacity:0;transition:opacity .8s ease}
+  @media(max-width:700px){
+    .briar-gate:before,.briar-gate:after{width:54%}
+    .gate-copy{padding:30px 18px!important;background:radial-gradient(ellipse at center,rgba(3,10,7,.83),rgba(2,6,4,.54) 66%,transparent 82%)}
+    .gate-copy:before{width:46px;height:46px;margin-bottom:14px}
+    .gate-copy h1{font-size:clamp(3.6rem,17vw,5.6rem)!important}
+    .gate-intro{font-size:1.08rem!important}
+    .gate-crow{width:120px!important;right:3vw!important;bottom:3vh!important;opacity:.48!important}
+  }
+  @media(prefers-reduced-motion:reduce){
+    .briar-gate:before,.briar-gate:after,.gate-copy,.gate-crow{transition-duration:.2s!important}
+    .gate-art{animation:none!important}
+  }
+`;
+document.head.appendChild(gateRebuild);
+
+// Clock/layout overrides.
 const finalClockOverride = document.createElement("style");
 finalClockOverride.textContent = `
-  .briar-clock-section{
-    min-height:0!important;
-    height:auto!important;
-    padding:84px clamp(22px,6vw,92px) 70px!important;
-  }
+  .briar-clock-section{min-height:0!important;height:auto!important;padding:84px clamp(22px,6vw,92px) 70px!important;}
   .briar-clock-section>.section-heading{margin-bottom:18px!important;}
-  .briar-clock{
-    transform:scale(1.14)!important;
-    transform-origin:top center!important;
-    margin-top:26px!important;
-    margin-bottom:86px!important;
-  }
-  .clock-house{
-    box-shadow:inset 0 0 0 3px rgba(24,13,7,.68),inset 0 0 60px rgba(0,0,0,.52),0 18px 42px rgba(0,0,0,.55)!important;
-  }
-  .clock-face{
-    background:
-      radial-gradient(circle at 50% 50%,transparent 0 61%,rgba(78,52,28,.13) 62% 64%,transparent 65%),
-      radial-gradient(circle at 48% 42%,#f2e5c0 0%,#dcc89d 58%,#af936a 100%)!important;
-  }
-  .clock-button{font-size:.94rem!important;letter-spacing:.04em!important;}
-  .ferret-faucet{margin-top:18px!important;}
-
-  /* Never leave invisible reveal sections occupying giant blank areas. */
-  .journal-section .reveal,.contact-section .reveal{
-    opacity:1!important;
-    transform:none!important;
-  }
-  .journal-section,.contact-section{
-    min-height:0!important;
-    height:auto!important;
-  }
-  @media(max-width:700px){
-    .briar-clock{transform:scale(1.04)!important;margin-bottom:34px!important;}
-    .briar-clock-section{padding-bottom:54px!important;}
-  }
+  .briar-clock{transform:scale(1.14)!important;transform-origin:top center!important;margin-top:26px!important;margin-bottom:86px!important;}
+  .clock-house{box-shadow:inset 0 0 0 3px rgba(24,13,7,.68),inset 0 0 60px rgba(0,0,0,.52),0 18px 42px rgba(0,0,0,.55)!important;}
+  .clock-face{background:radial-gradient(circle at 50% 50%,transparent 0 61%,rgba(78,52,28,.13) 62% 64%,transparent 65%),radial-gradient(circle at 48% 42%,#f2e5c0 0%,#dcc89d 58%,#af936a 100%)!important;}
+  .clock-button{font-size:.94rem!important;letter-spacing:.04em!important;}.ferret-faucet{margin-top:18px!important;}
+  .journal-section .reveal,.contact-section .reveal{opacity:1!important;transform:none!important;}
+  .journal-section,.contact-section{min-height:0!important;height:auto!important;}
+  @media(max-width:700px){.briar-clock{transform:scale(1.04)!important;margin-bottom:34px!important;}.briar-clock-section{padding-bottom:54px!important;}}
 `;
 document.head.appendChild(finalClockOverride);
 
-// Failsafe: reveal everything after load so long-page screenshots and slower browsers do not show blank sections.
-window.setTimeout(() => {
-  document.querySelectorAll('.reveal').forEach(el => el.classList.add('visible'));
-}, 1200);
-
-// True final visual pass: added on load so it comes after enhancements.js and wins the cascade.
-window.addEventListener('load', () => {
-  const relic = document.createElement('style');
-  relic.textContent = `
-    .briar-clock-section{
-      position:relative!important;
-      padding:92px clamp(22px,6vw,92px) 78px!important;
-      background:
-        radial-gradient(ellipse at 50% 34%,rgba(145,121,69,.12) 0%,rgba(53,86,47,.16) 28%,transparent 53%),
-        radial-gradient(circle at 18% 28%,rgba(61,104,61,.11),transparent 28%),
-        linear-gradient(180deg,#04110b 0%,#020806 62%,#020504 100%)!important;
-      box-shadow:inset 0 1px rgba(214,185,112,.08),inset 0 -1px rgba(214,185,112,.05)!important;
-    }
-    .briar-clock-section:before,
-    .briar-clock-section:after{
-      content:"";position:absolute;pointer-events:none;opacity:.32;
-      width:220px;height:430px;top:120px;
-      background:
-        radial-gradient(ellipse at 30% 10%,rgba(102,128,70,.45) 0 3%,transparent 4%),
-        radial-gradient(ellipse at 52% 24%,rgba(81,111,59,.4) 0 3%,transparent 4%),
-        radial-gradient(ellipse at 35% 41%,rgba(81,111,59,.34) 0 3%,transparent 4%),
-        linear-gradient(74deg,transparent 48%,rgba(98,72,39,.46) 49% 50%,transparent 51%);
-      filter:blur(.2px);
-    }
-    .briar-clock-section:before{left:-55px;transform:rotate(-7deg)}
-    .briar-clock-section:after{right:-55px;transform:scaleX(-1) rotate(-7deg)}
-    .briar-clock-section>.section-heading{position:relative;z-index:2;margin-bottom:16px!important}
-    .briar-clock-section>.section-heading p:last-child{max-width:610px;margin-inline:auto;color:#bcae94!important}
-
-    .briar-clock{
-      width:min(390px,88vw)!important;height:540px!important;
-      margin:22px auto 8px!important;transform:none!important;
-      filter:drop-shadow(0 30px 30px rgba(0,0,0,.7)) drop-shadow(0 0 28px rgba(116,142,75,.08))!important;
-    }
-    .clock-house{
-      top:62px!important;width:300px!important;height:425px!important;
-      clip-path:polygon(50% 0,88% 12%,96% 28%,91% 100%,9% 100%,4% 28%,12% 12%)!important;
-      background:
-        radial-gradient(ellipse at 50% 18%,rgba(133,91,48,.22),transparent 25%),
-        linear-gradient(90deg,rgba(0,0,0,.48),transparent 14% 86%,rgba(0,0,0,.5)),
-        repeating-linear-gradient(94deg,#24150d 0 15px,#382216 15px 30px,#4a2c1a 30px 44px,#2e1c12 44px 60px)!important;
-      border:2px solid rgba(185,137,75,.5)!important;
-      border-radius:22px 22px 42px 42px!important;
-      box-shadow:
-        inset 0 0 0 3px rgba(21,12,7,.7),
-        inset 0 0 0 8px rgba(108,72,37,.12),
-        inset 0 0 64px rgba(0,0,0,.56),
-        0 22px 45px rgba(0,0,0,.56)!important;
-    }
-    .clock-house:before{
-      left:30px!important;right:30px!important;top:-20px!important;height:72px!important;
-      border-radius:50% 50% 20% 20%!important;
-      background:
-        radial-gradient(ellipse at 22% 55%,#536b43 0 8%,transparent 9%),
-        radial-gradient(ellipse at 40% 33%,#415837 0 9%,transparent 10%),
-        radial-gradient(ellipse at 60% 47%,#5a7148 0 8%,transparent 9%),
-        radial-gradient(ellipse at 78% 35%,#3d5232 0 9%,transparent 10%),
-        linear-gradient(180deg,#35462d,#1e2b1c 66%,#121a11)!important;
-      box-shadow:0 8px 0 rgba(15,24,14,.82),0 0 26px rgba(102,137,74,.16)!important;
-    }
-    .clock-house:after{
-      left:40px!important;right:40px!important;bottom:18px!important;height:42px!important;
-      border-radius:50%!important;
-      background:repeating-linear-gradient(90deg,rgba(173,127,68,.18) 0 10px,rgba(40,24,14,.3) 10px 20px)!important;
-      opacity:.8!important;
-    }
-
-    .clock-door{
-      top:112px!important;width:108px!important;height:75px!important;
-      border:5px solid #3f2819!important;border-radius:54px 54px 10px 10px!important;
-      background:radial-gradient(circle at 50% 65%,#040504,#0b0907 72%)!important;
-      box-shadow:0 7px 18px rgba(0,0,0,.62),0 0 0 2px rgba(145,100,52,.26),inset 0 0 20px #000!important;
-    }
-    .clock-door:before,.clock-door:after{
-      background:linear-gradient(90deg,#21140d,#51311d 55%,#2a190f)!important;
-      border-color:#78502f!important;
-    }
-
-    .clock-face{
-      top:231px!important;width:168px!important;height:168px!important;
-      border:10px solid #3f291a!important;
-      background:
-        repeating-conic-gradient(from -1deg,#3a2b1d 0deg 1deg,transparent 1deg 30deg),
-        radial-gradient(circle at 50% 50%,transparent 0 66%,rgba(69,47,29,.26) 67% 68%,transparent 69%),
-        radial-gradient(circle at 42% 34%,#e4d4aa 0%,#cbb889 56%,#9b8057 100%)!important;
-      box-shadow:0 0 0 3px #86623a,0 0 0 5px rgba(39,24,14,.8),inset 0 0 24px rgba(83,59,33,.34),0 11px 24px rgba(0,0,0,.55)!important;
-    }
-    .clock-face:before,.clock-face:after{background:#1b140e!important;box-shadow:0 0 0 1px rgba(255,255,255,.05)!important}
-
-    .clock-pendulum{top:390px!important;height:108px!important;background:linear-gradient(#60401f,#b28649 52%,#5e3b20)!important}
-    .clock-pendulum:after{width:34px!important;height:38px!important;border-radius:48% 48% 55% 55%!important;background:radial-gradient(circle at 38% 28%,#d0ac6e,#8c6638 62%,#4c321d)!important}
-
-    .clock-crow{top:134px!important}
-    .briar-clock.awake .clock-crow{transform:translate(-50%,-42px) scale(1.08)!important}
-    .clock-button{
-      margin-top:6px!important;min-width:164px!important;
-      background:linear-gradient(180deg,rgba(76,52,31,.78),rgba(30,21,14,.92))!important;
-      border-color:rgba(203,162,93,.48)!important;
-      box-shadow:inset 0 0 16px rgba(226,192,123,.05),0 8px 18px rgba(0,0,0,.3)!important;
-    }
-    .ferret-faucet{max-width:650px!important;margin-top:34px!important;background:linear-gradient(145deg,rgba(7,16,12,.82),rgba(4,10,7,.92))!important}
-
-    @media(max-width:620px){
-      .briar-clock-section{padding-top:70px!important;padding-bottom:60px!important}
-      .briar-clock{width:min(330px,92vw)!important;height:470px!important}
-      .clock-house{width:255px!important;height:352px!important;top:62px!important}
-      .clock-house:before{left:24px!important;right:24px!important;height:58px!important}
-      .clock-door{top:101px!important;width:90px!important;height:63px!important}
-      .clock-crow{top:119px!important}
-      .clock-face{top:196px!important;width:142px!important;height:142px!important;border-width:8px!important}
-      .clock-pendulum{top:326px!important;height:90px!important}
-      .briar-clock-section:before,.briar-clock-section:after{opacity:.18;width:140px}
-    }
-  `;
-  document.head.appendChild(relic);
-});
+window.setTimeout(() => {document.querySelectorAll('.reveal').forEach(el => el.classList.add('visible'));}, 1200);
