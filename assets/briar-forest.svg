@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+<defs>
+ <radialGradient id="sky" cx="50%" cy="5%" r="78%"><stop offset="0" stop-color="#68766d"/><stop offset=".22" stop-color="#25342e"/><stop offset=".65" stop-color="#0b1511"/><stop offset="1" stop-color="#020604"/></radialGradient>
+ <radialGradient id="moon"><stop offset="0" stop-color="#fff9d7"/><stop offset=".62" stop-color="#d9d8bc"/><stop offset="1" stop-color="#9da79a"/></radialGradient>
+ <radialGradient id="glow"><stop stop-color="#c9f7cf" stop-opacity=".9"/><stop offset="1" stop-color="#70b88b" stop-opacity="0"/></radialGradient>
+ <linearGradient id="ground" x2="0" y2="1"><stop stop-color="#102019"/><stop offset="1" stop-color="#020604"/></linearGradient>
+ <filter id="blur"><feGaussianBlur stdDeviation="10"/></filter>
+</defs>
+<rect width="1600" height="900" fill="url(#sky)"/>
+<circle cx="800" cy="125" r="88" fill="url(#moon)" opacity=".72"/><circle cx="800" cy="125" r="145" fill="#dce8d9" opacity=".07" filter="url(#blur)"/>
+<!-- distant woodland -->
+<g fill="#07100c" opacity=".78"><path d="M0 0h250l-38 900H0z"/><path d="M1600 0h-250l38 900h212z"/><path d="M170 0l85 0 45 900H130z"/><path d="M1430 0h-80l-48 900h190z"/><path d="M350 0h55l-8 900H290z"/><path d="M1250 0h-58l8 900h115z"/></g>
+<g stroke="#13251c" stroke-width="18" fill="none" opacity=".72"><path d="M0 190Q260 250 455 120T800 180"/><path d="M1600 160Q1370 230 1180 115T800 180"/><path d="M80 420Q310 320 500 380"/><path d="M1520 390Q1310 300 1110 370"/></g>
+<!-- low forest floor --> <path d="M0 655Q210 605 410 670T790 650T1190 665T1600 625V900H0z" fill="url(#ground)"/>
+<g fill="#172a1c" opacity=".9"><ellipse cx="150" cy="710" rx="210" ry="90"/><ellipse cx="420" cy="755" rx="240" ry="80"/><ellipse cx="1190" cy="750" rx="250" ry="88"/><ellipse cx="1490" cy="705" rx="210" ry="95"/></g>
+<!-- Pawdrey-like shadow, intentionally subtle -->
+<g fill="#0a0e0c" opacity=".72" transform="translate(185 500)"><ellipse cx="95" cy="165" rx="100" ry="135"/><circle cx="105" cy="70" r="72"/><path d="M52 22L70-72l48 76zM125 5l58-72-10 105z"/></g>
+<!-- painted-style bioluminescent mushroom clusters inspired by the Pawdrey painting -->
+<g stroke="#8bc49b" stroke-width="4" stroke-linecap="round"><g transform="translate(300 735)"><ellipse cx="0" cy="0" rx="34" ry="12" fill="#bfd6ad"/><path d="M0 8v55"/><ellipse cx="54" cy="25" rx="23" ry="9" fill="#9fcf9f"/><path d="M54 31v42"/><ellipse cx="-45" cy="35" rx="18" ry="7" fill="#d0c7a0"/><path d="M-45 40v31"/></g><g transform="translate(1260 755) scale(.78)"><ellipse cx="0" cy="0" rx="34" ry="12" fill="#bfd6ad"/><path d="M0 8v55"/><ellipse cx="54" cy="25" rx="23" ry="9" fill="#9fcf9f"/><path d="M54 31v42"/></g></g>
+<g opacity=".26"><circle cx="300" cy="760" r="90" fill="url(#glow)"/><circle cx="1260" cy="775" r="70" fill="url(#glow)"/></g>
+<!-- purple Briar flowers -->
+<g fill="#6d557e" opacity=".68"><circle cx="210" cy="790" r="9"/><circle cx="235" cy="805" r="7"/><circle cx="365" cy="815" r="8"/><circle cx="1160" cy="812" r="8"/><circle cx="1330" cy="805" r="9"/><circle cx="1380" cy="780" r="7"/></g>
+<!-- fireflies -->
+<g fill="#e9d993"><circle cx="460" cy="420" r="3"/><circle cx="570" cy="560" r="2.5"/><circle cx="1010" cy="470" r="3"/><circle cx="1110" cy="585" r="2"/><circle cx="720" cy="365" r="2"/><circle cx="900" cy="390" r="2.5"/></g>
+<rect width="1600" height="900" fill="none" stroke="#000" stroke-width="170" opacity=".34"/>
+</svg>
