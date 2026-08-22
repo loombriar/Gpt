@@ -1,86 +1,131 @@
-/* Loom Briar — dedicated entrance scene */
-
+/* Loom Briar — photographic entrance scene */
 body.gate-locked{overflow:hidden!important;background:#000201!important}
 
 #briarGate.briar-gate{
-  position:fixed!important;
-  inset:0!important;
-  z-index:999!important;
-  display:grid!important;
-  place-items:center!important;
-  overflow:hidden!important;
-  isolation:isolate!important;
-  background:#000201!important;
-  opacity:1!important;
-  visibility:visible!important;
+  position:fixed!important;inset:0!important;z-index:999!important;display:grid!important;place-items:center!important;
+  overflow:hidden!important;isolation:isolate!important;background:#000201!important;opacity:1!important;visibility:visible!important;
   transition:visibility 0s linear 1.05s!important;
 }
 #briarGate.briar-gate[hidden]{display:none!important}
 
-#briarGate .gate-art{position:absolute!important;inset:-4%!important;z-index:-8!important;background:linear-gradient(180deg,rgba(0,3,2,.05) 0%,rgba(0,3,2,.28) 48%,rgba(0,2,1,.82) 100%),url("assets/moss-clearing.jpg") 47% 68%/cover no-repeat!important;filter:brightness(.34) saturate(.92) contrast(1.18)!important;transform:scale(1.055)!important;animation:briarForestDrift 18s ease-in-out infinite alternate!important}
-@keyframes briarForestDrift{to{transform:scale(1.085) translate(-.5%,-.7%)}}
-#briarGate .gate-vignette{position:absolute!important;inset:0!important;z-index:-5!important;background:radial-gradient(ellipse at 58% 73%,rgba(237,221,160,.26) 0 3%,rgba(181,188,128,.13) 11%,rgba(116,137,89,.06) 21%,transparent 34%),radial-gradient(ellipse at 56% 49%,rgba(222,199,137,.11) 0 8%,transparent 29%),linear-gradient(98deg,rgba(0,0,0,.94) 0 17%,rgba(0,0,0,.40) 36%,rgba(0,0,0,.18) 55%,rgba(0,0,0,.52) 76%,rgba(0,0,0,.96) 96%),linear-gradient(180deg,rgba(0,0,0,.42) 0%,transparent 38%,rgba(0,0,0,.56) 100%)!important}
+/* Real forest photograph is the scene. CSS only grades and lights it. */
+#briarGate .gate-art{
+  position:absolute!important;inset:-5%!important;z-index:-10!important;
+  background:
+    linear-gradient(180deg,rgba(0,2,1,.12) 0%,rgba(0,3,2,.18) 45%,rgba(0,2,1,.72) 100%),
+    url("assets/moss-clearing.jpg") 50% 66%/cover no-repeat!important;
+  filter:brightness(.48) saturate(.82) contrast(1.12)!important;
+  transform:scale(1.06)!important;
+  animation:briarPhotoDrift 20s ease-in-out infinite alternate!important;
+}
+@keyframes briarPhotoDrift{to{transform:scale(1.085) translate(-.35%,-.65%)}}
 
-#briarGate.briar-gate:before,#briarGate.briar-gate:after{content:""!important;position:absolute!important;pointer-events:none!important;z-index:7!important;transition:transform 1.05s cubic-bezier(.2,.75,.2,1),opacity .85s ease!important}
-#briarGate.briar-gate:before{left:-18%!important;top:-24%!important;bottom:-20%!important;width:53%!important;transform:rotate(12deg)!important;background:radial-gradient(ellipse at 77% 13%,rgba(55,83,39,.88) 0 4%,transparent 5%),radial-gradient(ellipse at 89% 34%,rgba(68,98,46,.66) 0 3%,transparent 4%),radial-gradient(ellipse at 83% 61%,rgba(48,77,37,.62) 0 3.6%,transparent 4.6%),linear-gradient(66deg,transparent 0 43%,#22160d 44% 51%,#0c0805 52% 56%,transparent 57%),linear-gradient(80deg,transparent 0 63%,#100b07 64% 68%,transparent 69%),linear-gradient(28deg,transparent 0 72%,rgba(30,20,12,.95) 73% 74.5%,transparent 75.5%)!important;filter:drop-shadow(22px 10px 28px #000)!important}
-#briarGate.briar-gate:after{right:-14%!important;top:-11%!important;bottom:-26%!important;width:47%!important;transform:scaleX(-1) rotate(-16deg)!important;background:radial-gradient(ellipse at 79% 20%,rgba(62,91,43,.82) 0 4%,transparent 5%),radial-gradient(ellipse at 88% 52%,rgba(74,101,48,.63) 0 3%,transparent 4%),radial-gradient(ellipse at 85% 74%,rgba(48,75,36,.57) 0 3%,transparent 4%),linear-gradient(70deg,transparent 0 45%,#1b120b 46% 53%,#0a0705 54% 58%,transparent 59%),linear-gradient(87deg,transparent 0 67%,#100a07 68% 72%,transparent 73%),linear-gradient(32deg,transparent 0 73%,rgba(26,17,10,.96) 74% 75.4%,transparent 76.4%)!important;filter:drop-shadow(-22px 10px 28px #000)!important}
+/* Dark canopy and a soft opening in the clearing. */
+#briarGate .gate-vignette{
+  position:absolute!important;inset:0!important;z-index:-7!important;
+  background:
+    radial-gradient(ellipse at 54% 61%,rgba(234,216,155,.16) 0 7%,rgba(134,145,95,.08) 19%,transparent 34%),
+    radial-gradient(ellipse at 52% 90%,rgba(195,198,148,.11) 0 5%,transparent 26%),
+    linear-gradient(90deg,rgba(0,0,0,.92) 0 13%,rgba(0,0,0,.38) 34%,rgba(0,0,0,.15) 55%,rgba(0,0,0,.43) 76%,rgba(0,0,0,.94) 100%),
+    linear-gradient(180deg,rgba(0,0,0,.5) 0%,transparent 35%,rgba(0,0,0,.5) 100%)!important;
+}
 
-#briarGate .gate-copy{position:relative!important;z-index:9!important;width:min(490px,68vw)!important;margin:12vh 0 0 12vw!important;padding:32px 34px 38px!important;text-align:left!important;transform:rotate(-1.1deg)!important;background:transparent!important;backdrop-filter:none!important;text-shadow:0 3px 16px #000,0 1px 5px #000!important;transition:opacity .48s ease,transform .8s ease!important}
-#briarGate .gate-copy:before{content:""!important;position:absolute!important;left:49%!important;top:-112px!important;width:min(430px,61vw)!important;height:475px!important;transform:translateX(-50%) rotate(-2.4deg)!important;z-index:-1!important;border:7px solid rgba(68,49,29,.92)!important;border-bottom-width:11px!important;border-radius:47% 53% 8px 12px/29% 34% 7px 9px!important;background:linear-gradient(90deg,transparent 0 9%,rgba(21,15,9,.94) 10% 12%,transparent 13% 29%,rgba(28,19,11,.94) 30% 32%,transparent 33% 47%,rgba(19,14,9,.94) 48% 51%,transparent 52% 69%,rgba(30,20,12,.94) 70% 72%,transparent 73% 88%,rgba(19,13,8,.92) 89% 91%,transparent 92%),radial-gradient(ellipse at 53% 62%,rgba(224,164,74,.19) 0 12%,rgba(104,75,39,.08) 26%,transparent 52%),linear-gradient(180deg,rgba(13,12,8,.62),rgba(4,6,4,.22))!important;box-shadow:inset 0 0 62px rgba(0,0,0,.72),0 0 0 2px rgba(27,18,11,.76),0 26px 60px rgba(0,0,0,.78),0 0 52px rgba(193,145,67,.07)!important}
-#briarGate .gate-copy:after{content:""!important;position:absolute!important;left:55%!important;top:322px!important;width:min(410px,58vw)!important;height:250px!important;transform:translateX(-50%) perspective(250px) rotateX(61deg) rotateZ(-3deg)!important;transform-origin:top!important;z-index:-2!important;border-radius:48% 52% 10% 10%!important;background:linear-gradient(90deg,transparent 0%,rgba(177,188,136,.06) 20%,rgba(229,221,163,.24) 50%,rgba(177,188,136,.06) 80%,transparent 100%),repeating-linear-gradient(103deg,transparent 0 26px,rgba(118,135,88,.07) 27px 29px,transparent 30px 49px)!important;box-shadow:0 -18px 42px rgba(216,175,99,.06)!important;opacity:.92!important}
+/* Foreground is now made from cropped pieces of the real forest photo, not vector branches. */
+#briarGate.briar-gate:before,#briarGate.briar-gate:after{
+  content:""!important;position:absolute!important;top:-8%!important;bottom:-10%!important;width:42%!important;z-index:6!important;
+  pointer-events:none!important;background-image:linear-gradient(rgba(0,0,0,.2),rgba(0,0,0,.48)),url("assets/moss-clearing.jpg")!important;
+  background-size:auto 118%!important;filter:brightness(.25) saturate(.68) contrast(1.3) blur(.2px)!important;
+  box-shadow:0 0 50px rgba(0,0,0,.7)!important;transition:transform 1.05s cubic-bezier(.2,.75,.2,1),opacity .85s ease!important;
+}
+#briarGate.briar-gate:before{
+  left:-16%!important;background-position:12% 58%!important;
+  clip-path:polygon(0 0,77% 0,70% 8%,82% 18%,66% 28%,77% 39%,61% 52%,73% 65%,56% 77%,64% 100%,0 100%)!important;
+  transform:rotate(1.6deg)!important;
+}
+#briarGate.briar-gate:after{
+  right:-15%!important;background-position:88% 54%!important;
+  clip-path:polygon(23% 0,100% 0,100% 100%,35% 100%,41% 87%,28% 73%,44% 60%,30% 47%,47% 34%,34% 21%,45% 10%)!important;
+  transform:rotate(-2.1deg)!important;
+}
 
-#briarGate .gate-copy .kicker{margin:0 0 .5rem!important;color:rgba(210,178,111,.74)!important;font-size:.64rem!important;letter-spacing:.28em!important}
-#briarGate .gate-copy h1{margin:.02em 0 .16em!important;color:#eee0ba!important;font-size:clamp(3.25rem,6vw,5.5rem)!important;line-height:.84!important;letter-spacing:-.025em!important;text-shadow:0 4px 19px #000!important}
-#briarGate .gate-intro{max-width:385px!important;margin:1rem 0 1.25rem!important;color:#c9bea7!important;font-size:clamp(.98rem,1.5vw,1.14rem)!important;font-family:var(--serif)!important}
-#briarGate .gate-copy small{display:block!important;margin-top:.8rem!important;margin-left:4px!important;color:#897e6b!important;font-size:.6rem!important;letter-spacing:.18em!important}
-#briarGate .enter-button{min-width:190px!important;min-height:48px!important;padding:0 1.15rem!important;margin:0!important;border:1px solid rgba(190,153,90,.57)!important;border-radius:2px 15px 2px 15px!important;background:linear-gradient(180deg,rgba(49,40,25,.8),rgba(9,16,11,.96))!important;color:#eadab1!important;font-size:.72rem!important;letter-spacing:.13em!important;box-shadow:0 10px 28px rgba(0,0,0,.64),0 0 15px rgba(222,179,94,.08),inset 0 0 16px rgba(244,220,157,.035)!important}
-#briarGate .enter-button:hover{border-color:rgba(226,191,118,.75)!important;box-shadow:0 12px 30px rgba(0,0,0,.7),0 0 28px rgba(224,184,103,.15),inset 0 0 18px rgba(244,220,157,.06)!important}
-#briarGate .gate-crow{position:absolute!important;left:auto!important;right:9vw!important;top:17vh!important;bottom:auto!important;width:min(105px,10vw)!important;max-width:none!important;opacity:.2!important;mix-blend-mode:screen!important;filter:brightness(.48) contrast(1.28) drop-shadow(0 12px 18px #000)!important;transform:rotate(11deg)!important;z-index:8!important;transition:opacity .45s ease,transform .9s ease!important}
-#briarGate .gate-mist{z-index:6!important;pointer-events:none!important;filter:blur(46px)!important;mix-blend-mode:screen!important;background:rgba(185,202,189,.045)!important}
-#briarGate .mist-one{left:23%!important;width:65%!important;bottom:-3%!important;height:19%!important;opacity:.28!important}
-#briarGate .mist-two{left:45%!important;width:40%!important;bottom:25%!important;height:17%!important;opacity:.13!important}
+/* The threshold itself: old wood/iron silhouette, deliberately imperfect and partly buried. */
+#briarGate .gate-copy{
+  position:relative!important;z-index:9!important;width:min(500px,67vw)!important;margin:13vh 0 0 11vw!important;padding:33px 34px 42px!important;
+  text-align:left!important;transform:rotate(-1deg)!important;background:transparent!important;backdrop-filter:none!important;
+  text-shadow:0 3px 18px #000,0 1px 5px #000!important;transition:opacity .48s ease,transform .8s ease!important;
+}
+#briarGate .gate-copy:before{
+  content:""!important;position:absolute!important;left:48%!important;top:-118px!important;width:min(430px,59vw)!important;height:490px!important;
+  transform:translateX(-50%) rotate(-2.3deg)!important;z-index:-1!important;
+  border-style:solid!important;border-width:9px 7px 15px 10px!important;border-color:rgba(55,40,26,.88)!important;
+  border-radius:44% 56% 8px 17px/28% 38% 8px 13px!important;
+  background:
+    radial-gradient(ellipse at 18% 97%,rgba(51,70,38,.88) 0 7%,transparent 8%),
+    radial-gradient(ellipse at 35% 94%,rgba(67,84,45,.68) 0 5%,transparent 6%),
+    radial-gradient(ellipse at 77% 98%,rgba(48,67,36,.8) 0 7%,transparent 8%),
+    linear-gradient(90deg,
+      transparent 0 7%,rgba(19,14,10,.96) 8% 11%,transparent 12% 25%,
+      rgba(28,20,13,.92) 26% 30%,transparent 31% 43%,
+      rgba(17,13,9,.98) 44% 47%,transparent 48% 63%,
+      rgba(31,22,14,.92) 64% 68%,transparent 69% 82%,
+      rgba(20,14,10,.95) 83% 87%,transparent 88%),
+    linear-gradient(180deg,rgba(12,10,7,.66),rgba(4,5,4,.16))!important;
+  box-shadow:inset 0 0 78px rgba(0,0,0,.84),inset 18px 0 30px rgba(0,0,0,.18),0 0 0 2px rgba(20,14,10,.72),0 30px 70px rgba(0,0,0,.84)!important;
+}
 
-/* REALISM PASS — break the graphic symmetry and make the threshold feel old, damp, and half-swallowed. */
-#briarGate .gate-art{background-position:52% 73%!important;filter:brightness(.29) saturate(.78) contrast(1.24)!important}
-#briarGate .gate-vignette{background:radial-gradient(ellipse at 55% 62%,rgba(237,220,157,.16) 0 5%,rgba(112,129,82,.07) 15%,transparent 31%),radial-gradient(ellipse at 53% 88%,rgba(181,190,139,.11) 0 4%,transparent 24%),linear-gradient(92deg,rgba(0,0,0,.97) 0 16%,rgba(0,0,0,.5) 35%,rgba(0,0,0,.19) 54%,rgba(0,0,0,.58) 76%,rgba(0,0,0,.97) 95%),linear-gradient(180deg,rgba(0,0,0,.56),transparent 34%,rgba(0,0,0,.66) 100%)!important}
-#briarGate.briar-gate:before{left:-23%!important;top:-30%!important;width:59%!important;transform:rotate(8deg)!important;background:radial-gradient(ellipse at 81% 13%,rgba(43,67,34,.78) 0 4%,transparent 5%),radial-gradient(ellipse at 91% 37%,rgba(53,78,38,.6) 0 2.6%,transparent 3.7%),radial-gradient(ellipse at 76% 72%,rgba(44,68,33,.56) 0 3.4%,transparent 4.5%),linear-gradient(63deg,transparent 0 47%,#1a110b 48% 54%,#080604 55% 57%,transparent 58%),linear-gradient(76deg,transparent 0 67%,#0d0906 68% 71%,transparent 72%),linear-gradient(18deg,transparent 0 74%,#19110b 75% 76.2%,transparent 77.2%),linear-gradient(121deg,transparent 0 61%,rgba(18,13,9,.95) 62% 63.4%,transparent 64.4%)!important;filter:drop-shadow(19px 11px 28px #000)!important}
-#briarGate.briar-gate:after{right:-20%!important;top:-17%!important;width:53%!important;transform:scaleX(-1) rotate(-12deg)!important;background:radial-gradient(ellipse at 82% 18%,rgba(49,73,35,.75) 0 3.8%,transparent 4.8%),radial-gradient(ellipse at 90% 54%,rgba(60,84,40,.58) 0 2.7%,transparent 3.8%),radial-gradient(ellipse at 79% 82%,rgba(39,62,31,.52) 0 3.4%,transparent 4.4%),linear-gradient(67deg,transparent 0 47%,#17100a 48% 55%,#070504 56% 58%,transparent 59%),linear-gradient(84deg,transparent 0 69%,#0d0906 70% 73%,transparent 74%),linear-gradient(27deg,transparent 0 76%,#17100a 77% 78.1%,transparent 79%),linear-gradient(114deg,transparent 0 64%,rgba(20,14,9,.94) 65% 66.3%,transparent 67.3%)!important}
+/* Dirt/leaf-litter trail: no more perspective-grid lines. */
+#briarGate .gate-copy:after{
+  content:""!important;position:absolute!important;left:53%!important;top:326px!important;width:min(390px,55vw)!important;height:260px!important;
+  transform:translateX(-50%) perspective(270px) rotateX(60deg) rotateZ(-2deg)!important;transform-origin:top!important;z-index:-2!important;
+  border-radius:46% 54% 18% 14%!important;
+  background:
+    radial-gradient(ellipse at 48% 11%,rgba(226,214,160,.18),transparent 34%),
+    radial-gradient(circle at 23% 49%,rgba(67,52,36,.55) 0 2%,transparent 3%),
+    radial-gradient(circle at 72% 63%,rgba(82,62,39,.45) 0 2%,transparent 3%),
+    radial-gradient(circle at 39% 79%,rgba(55,72,38,.42) 0 3%,transparent 4%),
+    radial-gradient(circle at 81% 84%,rgba(58,77,41,.36) 0 2.5%,transparent 3.5%),
+    linear-gradient(90deg,transparent 0,rgba(124,112,77,.06) 25%,rgba(172,164,116,.13) 52%,rgba(102,98,68,.05) 78%,transparent 100%)!important;
+  box-shadow:0 -22px 46px rgba(214,174,100,.045)!important;opacity:.95!important;
+}
 
-#briarGate .gate-copy{margin:14vh 0 0 15vw!important;width:min(470px,65vw)!important;transform:rotate(-1.8deg)!important}
-#briarGate .gate-copy:before{left:48%!important;top:-108px!important;width:min(408px,58vw)!important;height:468px!important;transform:translateX(-50%) rotate(-3.4deg) skewX(-1deg)!important;border-width:6px 8px 12px 5px!important;border-color:rgba(57,42,27,.93)!important;border-radius:43% 57% 7px 15px/27% 37% 6px 11px!important;background:
-  radial-gradient(ellipse at 19% 96%,rgba(51,70,36,.72) 0 5%,transparent 6%),
-  radial-gradient(ellipse at 34% 93%,rgba(64,83,43,.55) 0 4%,transparent 5%),
-  radial-gradient(ellipse at 76% 97%,rgba(45,66,34,.68) 0 5%,transparent 6%),
-  linear-gradient(91deg,transparent 0 8%,rgba(19,14,9,.96) 9% 11.5%,transparent 12.5% 26%,rgba(28,19,11,.96) 27% 30.5%,transparent 31.5% 45%,rgba(16,12,8,.97) 46% 49%,transparent 50% 65%,rgba(31,21,12,.95) 66% 70%,transparent 71% 86%,rgba(18,13,8,.94) 87% 90%,transparent 91%),
-  radial-gradient(ellipse at 52% 66%,rgba(211,153,70,.12) 0 11%,rgba(93,69,38,.05) 29%,transparent 52%),
-  linear-gradient(180deg,rgba(12,11,8,.68),rgba(3,5,3,.3))!important;
-box-shadow:inset 0 0 70px rgba(0,0,0,.82),inset 17px 0 25px rgba(0,0,0,.22),0 0 0 2px rgba(25,17,10,.78),0 28px 62px rgba(0,0,0,.82)!important}
+/* Copy is quieter so the found object reads first. */
+#briarGate .gate-copy .kicker{margin:0 0 .5rem!important;color:rgba(202,174,112,.66)!important;font-size:.61rem!important;letter-spacing:.27em!important}
+#briarGate .gate-copy h1{margin:.02em 0 .16em!important;color:#e9dbb7!important;font-size:clamp(3.05rem,5.7vw,5.15rem)!important;line-height:.85!important;letter-spacing:-.025em!important;text-shadow:0 4px 20px #000!important}
+#briarGate .gate-intro{max-width:370px!important;margin:1rem 0 1.2rem!important;color:#bfb49f!important;font-size:clamp(.95rem,1.45vw,1.08rem)!important;font-family:var(--serif)!important}
+#briarGate .gate-copy small{display:block!important;margin-top:.78rem!important;margin-left:4px!important;color:#817665!important;font-size:.58rem!important;letter-spacing:.17em!important}
+#briarGate .enter-button{min-width:184px!important;min-height:47px!important;padding:0 1.1rem!important;margin:0!important;border:1px solid rgba(179,146,89,.5)!important;border-radius:2px 13px 2px 13px!important;background:linear-gradient(180deg,rgba(40,33,22,.72),rgba(8,14,10,.94))!important;color:#e6d5ac!important;font-size:.7rem!important;letter-spacing:.12em!important;box-shadow:0 10px 26px rgba(0,0,0,.62),0 0 13px rgba(216,175,92,.06),inset 0 0 15px rgba(244,220,157,.03)!important}
+#briarGate .enter-button:hover{border-color:rgba(220,188,120,.72)!important;box-shadow:0 12px 30px rgba(0,0,0,.7),0 0 24px rgba(224,184,103,.13),inset 0 0 17px rgba(244,220,157,.05)!important}
 
-/* Dirt track: irregular pools of damp earth and moss, no perspective grid. */
-#briarGate .gate-copy:after{left:54%!important;top:318px!important;width:min(430px,60vw)!important;height:270px!important;transform:translateX(-50%) perspective(290px) rotateX(64deg) rotateZ(-4deg)!important;border-radius:47% 53% 19% 15%!important;background:
-  radial-gradient(ellipse at 50% 12%,rgba(210,203,151,.19) 0 9%,transparent 24%),
-  radial-gradient(ellipse at 41% 38%,rgba(91,83,55,.24) 0 9%,transparent 17%),
-  radial-gradient(ellipse at 62% 54%,rgba(77,70,47,.22) 0 11%,transparent 20%),
-  radial-gradient(ellipse at 47% 77%,rgba(54,49,35,.38) 0 14%,transparent 25%),
-  linear-gradient(90deg,transparent 0 15%,rgba(102,111,76,.08) 29%,rgba(178,172,123,.15) 49%,rgba(93,104,72,.08) 70%,transparent 86%)!important;
-filter:blur(.25px)!important;box-shadow:none!important;opacity:.86!important}
+/* Thorn scratches crossing the real scene, thin and irregular rather than chunky vectors. */
+#briarGate .gate-mist{position:absolute!important;z-index:8!important;pointer-events:none!important;mix-blend-mode:screen!important;filter:none!important;background:transparent!important}
+#briarGate .mist-one{left:4%!important;right:30%!important;top:29%!important;bottom:auto!important;width:auto!important;height:2px!important;opacity:.42!important;background:linear-gradient(96deg,transparent 0 12%,rgba(41,30,20,.8) 13% 14%,transparent 15% 46%,rgba(48,34,21,.72) 47% 48%,transparent 49%)!important;transform:rotate(8deg)!important;box-shadow:90px 106px 0 -0.5px rgba(42,30,20,.62),220px 210px 0 -0.5px rgba(42,30,20,.5)!important}
+#briarGate .mist-two{right:2%!important;left:43%!important;top:43%!important;bottom:auto!important;width:auto!important;height:2px!important;opacity:.36!important;background:linear-gradient(82deg,transparent 0 22%,rgba(45,31,20,.8) 23% 24%,transparent 25% 65%,rgba(48,34,21,.68) 66% 67%,transparent 68%)!important;transform:rotate(-13deg)!important;box-shadow:-80px 145px 0 -0.5px rgba(42,30,20,.54)!important}
 
-/* Thorn scratches crossing in front of the old opening. */
-#briarGate .gate-copy h1:before,#briarGate .gate-copy h1:after{content:"";position:absolute;pointer-events:none;z-index:12;height:2px;background:linear-gradient(90deg,transparent,#26170d 15% 88%,transparent);box-shadow:58px -8px 0 -1px #1b110a,114px 11px 0 -1px #21150c;opacity:.8}
-#briarGate .gate-copy h1:before{width:245px;left:-95px;top:28%;transform:rotate(17deg)}
-#briarGate .gate-copy h1:after{width:220px;right:-120px;top:67%;transform:rotate(-21deg)}
+/* Crow remains a hidden detail. */
+#briarGate .gate-crow{position:absolute!important;left:auto!important;right:8vw!important;top:18vh!important;bottom:auto!important;width:min(92px,9vw)!important;max-width:none!important;opacity:.14!important;mix-blend-mode:screen!important;filter:brightness(.43) contrast(1.32) drop-shadow(0 12px 18px #000)!important;transform:rotate(10deg)!important;z-index:10!important;transition:opacity .45s ease,transform .9s ease!important}
 
-#briarGate .gate-copy h1{font-size:clamp(3.05rem,5.6vw,5.05rem)!important;color:#e8dbb9!important;text-shadow:0 4px 20px #000!important;opacity:.94}
-#briarGate .gate-intro{color:#bdb29d!important;max-width:370px!important}
-#briarGate .enter-button{background:linear-gradient(180deg,rgba(39,33,22,.76),rgba(7,13,9,.97))!important;border-color:rgba(176,143,83,.5)!important;box-shadow:0 12px 30px rgba(0,0,0,.7),0 0 11px rgba(220,176,92,.06),inset 0 0 16px rgba(244,220,157,.025)!important}
-#briarGate .gate-crow{right:12vw!important;top:20vh!important;width:min(92px,9vw)!important;opacity:.13!important;transform:rotate(7deg)!important}
-
+/* Opening motion: photo edges and growth pull away while the clearing brightens. */
 #briarGate.open{opacity:1!important;visibility:hidden!important;pointer-events:none!important}
-#briarGate.open:before{transform:translateX(-18%) rotate(17deg)!important;opacity:.45!important}
-#briarGate.open:after{transform:scaleX(-1) translateX(-18%) rotate(-20deg)!important;opacity:.45!important}
-#briarGate.open .gate-copy{opacity:0!important;transform:translate(2vw,10px) scale(.97) rotate(-1.1deg)!important}
-#briarGate.open .gate-crow{opacity:0!important;transform:translate(55px,-35px) rotate(18deg) scale(.8)!important}
-#briarGate.open .gate-vignette{background:radial-gradient(ellipse at 56% 68%,rgba(244,224,157,.31),transparent 33%),rgba(0,0,0,.26)!important;transition:background .65s ease!important}
+#briarGate.open:before{transform:translateX(-22%) rotate(-1deg)!important;opacity:.36!important}
+#briarGate.open:after{transform:translateX(22%) rotate(1deg)!important;opacity:.36!important}
+#briarGate.open .gate-copy{opacity:0!important;transform:translate(2vw,10px) scale(.97) rotate(-1deg)!important}
+#briarGate.open .gate-crow{opacity:0!important;transform:translate(52px,-34px) rotate(18deg) scale(.8)!important}
+#briarGate.open .gate-vignette{background:radial-gradient(ellipse at 54% 68%,rgba(244,224,157,.27),transparent 34%),rgba(0,0,0,.22)!important;transition:background .65s ease!important}
 
-@media(max-width:700px){#briarGate .gate-art{background-position:49% 73%!important;filter:brightness(.32) saturate(.8) contrast(1.2)!important}#briarGate.briar-gate:before{left:-36%!important;width:72%!important}#briarGate.briar-gate:after{right:-32%!important;width:68%!important}#briarGate .gate-copy{width:72vw!important;margin:14vh 0 0 18vw!important;padding:25px 17px 31px!important;transform:rotate(-1.2deg)!important}#briarGate .gate-copy:before{top:-80px!important;width:78vw!important;height:405px!important;border-width:5px 6px 10px 4px!important}#briarGate .gate-copy:after{top:296px!important;width:74vw!important;height:200px!important}#briarGate .gate-copy h1{font-size:clamp(2.75rem,12vw,4.3rem)!important}#briarGate .gate-copy h1:before{width:150px;left:-75px}#briarGate .gate-copy h1:after{width:140px;right:-80px}#briarGate .gate-intro{font-size:.98rem!important;max-width:94%!important}#briarGate .enter-button{min-width:164px!important;font-size:.65rem!important}#briarGate .gate-crow{top:12vh!important;right:4vw!important;width:58px!important;opacity:.1!important}}
-@media(prefers-reduced-motion:reduce){#briarGate .gate-art{animation:none!important}#briarGate.briar-gate:before,#briarGate.briar-gate:after,#briarGate .gate-copy,#briarGate .gate-crow{transition-duration:.15s!important}}
+@media(max-width:700px){
+  #briarGate .gate-art{background-position:48% 71%!important;filter:brightness(.43) saturate(.82) contrast(1.1)!important}
+  #briarGate.briar-gate:before{left:-29%!important;width:61%!important;background-position:15% 58%!important}
+  #briarGate.briar-gate:after{right:-27%!important;width:59%!important;background-position:86% 55%!important}
+  #briarGate .gate-copy{width:75vw!important;margin:13vh 0 0 16vw!important;padding:25px 18px 31px!important;transform:rotate(-.7deg)!important}
+  #briarGate .gate-copy:before{top:-86px!important;width:78vw!important;height:420px!important;border-width:6px 5px 11px 7px!important}
+  #briarGate .gate-copy:after{top:300px!important;width:72vw!important;height:195px!important}
+  #briarGate .gate-copy h1{font-size:clamp(2.85rem,12.5vw,4.55rem)!important}
+  #briarGate .gate-intro{font-size:.98rem!important;max-width:92%!important}
+  #briarGate .enter-button{min-width:165px!important;font-size:.65rem!important}
+  #briarGate .gate-crow{top:11vh!important;right:3vw!important;width:62px!important;opacity:.12!important}
+}
+
+@media(prefers-reduced-motion:reduce){
+  #briarGate .gate-art{animation:none!important}
+  #briarGate.briar-gate:before,#briarGate.briar-gate:after,#briarGate .gate-copy,#briarGate .gate-crow{transition-duration:.15s!important}
+}
