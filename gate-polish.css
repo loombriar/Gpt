@@ -1,0 +1,15 @@
+/* Loom Briar gate — richer painted forest pass */
+#briarGate .gate-art{background-image:linear-gradient(180deg,rgba(1,6,4,.08),rgba(0,3,2,.32) 58%,rgba(0,2,1,.82)),linear-gradient(90deg,rgba(0,0,0,.58),transparent 28% 72%,rgba(0,0,0,.62)),url("assets/pawdrey-moonlight.png"),url("assets/hero-moonbathing.jpg")!important;background-position:center,center,left -4vw center,center 38%!important;background-size:cover,cover,min(31vw,430px) auto,cover!important;background-repeat:no-repeat!important;filter:saturate(.78) contrast(1.12) brightness(.68)!important;transform:scale(1.018)!important}
+#briarGate .gate-vignette{background:radial-gradient(circle at 50% 6%,rgba(244,237,202,.28) 0 2.5%,rgba(205,210,190,.09) 9%,transparent 24%),radial-gradient(ellipse at 50% 59%,rgba(189,169,111,.06),transparent 30%),linear-gradient(90deg,rgba(0,0,0,.42),transparent 22% 78%,rgba(0,0,0,.46)),linear-gradient(180deg,rgba(0,0,0,.06),transparent 36%,rgba(0,3,2,.62))!important}
+/* real painted mushroom fragments from Pawdrey artwork */
+#briarGate .gate-art:before,#briarGate .gate-art:after{content:"";position:absolute;bottom:2.5vh;width:min(280px,23vw);height:min(165px,20vh);background-image:url("assets/pawdrey-hero.png");background-repeat:no-repeat;background-size:340% auto;opacity:.72;filter:saturate(.9) brightness(.72) drop-shadow(0 12px 18px #000);pointer-events:none;z-index:3;mix-blend-mode:screen;mask-image:linear-gradient(180deg,transparent 0,black 26%,black 78%,transparent 100%)}
+#briarGate .gate-art:before{left:6vw;background-position:17% 91%;transform:rotate(-2deg)}
+#briarGate .gate-art:after{right:6vw;background-position:82% 91%;transform:scaleX(-1) rotate(-1deg);opacity:.58}
+/* soften the generated-looking foliage and make the iron sit in front */
+#briarGate.briar-gate:before,#briarGate.briar-gate:after{width:10%!important;opacity:.86!important;filter:blur(1.8px) drop-shadow(10px 0 22px #000)!important}
+#briarGate .gate-copy:before{box-shadow:0 0 0 1px rgba(213,181,116,.28),0 0 0 4px rgba(10,8,6,.9),inset 0 0 90px rgba(0,0,0,.68),0 35px 96px rgba(0,0,0,.86),-5px -4px 14px rgba(233,218,171,.11)!important}
+#briarGate .gate-copy:after{opacity:.46!important}
+#briarGate .mist-one{left:11vw!important;top:52vh!important;transform:rotate(-2deg) scale(.94)!important}
+#briarGate .mist-two{right:12vw!important;top:49vh!important;transform:rotate(1deg) scale(.58)!important;opacity:.25!important;filter:brightness(.48) blur(1.4px)!important}
+@media(max-width:900px){#briarGate .gate-art{background-position:center,center,left -12vw center,center!important;background-size:cover,cover,48vw auto,cover!important}#briarGate .gate-art:before,#briarGate .gate-art:after{width:32vw;height:18vh}}
+@media(max-width:600px){#briarGate .gate-art{background-position:center,center,left -26vw center,center!important;background-size:cover,cover,68vw auto,cover!important}#briarGate .gate-art:before{left:-2vw}#briarGate .gate-art:after{right:-2vw}}
