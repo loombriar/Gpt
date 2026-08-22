@@ -109,7 +109,23 @@ nav{display:flex;gap:24px} nav a{font-size:.69rem;letter-spacing:.08em;text-tran
     <h2>The Briar Clock</h2>
     <p>A woodland cuckoo clock with a Loom Briar twist. Call it, and the crow slips out from behind the little doors.</p>
   </div>
+<section class="briar-clock-section">
+  <div class="section-head">
+    <p class="eyebrow">A sound in the branches</p>
+    <h2>The Briar Clock</h2>
+    <p>A woodland cuckoo clock with a Loom Briar twist. Call it, and the crow slips out from behind the little doors.</p>
+  </div>
 
+  <div class="briar-clock">
+    <div class="clock-house"></div>
+    <div class="clock-door"></div>
+    <div class="clock-crow"></div>
+    <div class="clock-face"></div>
+    <div class="clock-pendulum"></div>
+  </div>
+
+  <button class="btn primary clock-button" type="button">Call the Crow</button>
+</section>
   <div class="briar-clock" aria-label="Interactive Briar cuckoo clock">
     <div class="clock-house"></div>
     <div class="clock-door"></div>
@@ -173,7 +189,287 @@ footer{padding:34px 0 46px;border-top:1px solid rgba(225,203,138,.16);background
 
   <button id="wakeCrow" class="button primary clock-button">Call the Crow</button>
 </section>
-</style>
+<//* ===== BRIAR CLOCK ===== */
+.briar-clock-section{
+  padding:90px 20px;
+  text-align:center;
+  position:relative;
+  overflow:hidden;
+}
+
+.briar-clock{
+  width:290px;
+  height:410px;
+  margin:42px auto 26px;
+  position:relative;
+  filter:drop-shadow(0 24px 30px rgba(0,0,0,.55));
+}
+
+.clock-house{
+  position:absolute;
+  inset:55px 25px 55px;
+  background:#382719;
+  border:3px solid #8e7548;
+  border-radius:14px 14px 28px 28px;
+  box-shadow:inset 0 0 35px #0c120c;
+}
+
+.clock-house:before{
+  content:"";
+  position:absolute;
+  width:205px;
+  height:205px;
+  left:15px;
+  top:-82px;
+  background:#302216;
+  border-left:3px solid #8e7548;
+  border-top:3px solid #8e7548;
+  transform:rotate(45deg);
+  border-radius:12px;
+  z-index:-1;
+}
+
+.clock-door{
+  position:absolute;
+  top:72px;
+  left:105px;
+  width:80px;
+  height:62px;
+  border:2px solid #b69b60;
+  border-radius:40px 40px 6px 6px;
+  background:#10160f;
+}
+
+.clock-crow{
+  position:absolute;
+  top:90px;
+  left:132px;
+  width:32px;
+  height:25px;
+  background:#050706;
+  border-radius:55%;
+  z-index:4;
+}
+
+.clock-crow:before{
+  content:"";
+  position:absolute;
+  width:16px;
+  height:16px;
+  right:-5px;
+  top:-7px;
+  background:#050706;
+  border-radius:50%;
+}
+
+.clock-crow:after{
+  content:"";
+  position:absolute;
+  right:-15px;
+  top:-2px;
+  border-left:12px solid #c39b43;
+  border-top:4px solid transparent;
+  border-bottom:4px solid transparent;
+}
+
+.clock-face{
+  position:absolute;
+  top:165px;
+  left:73px;
+  width:145px;
+  height:145px;
+  border-radius:50%;
+  background:radial-gradient(circle,#ded1a8 0 53%,#8d7448 54% 58%,#241b12 59%);
+  border:3px solid #b99b5e;
+}
+
+.clock-face:before,
+.clock-face:after{
+  content:"";
+  position:absolute;
+  left:70px;
+  top:31px;
+  width:4px;
+  height:42px;
+  background:#171711;
+  border-radius:4px;
+  transform-origin:bottom;
+}
+
+.clock-face:before{transform:rotate(35deg)}
+
+.clock-face:after{
+  height:52px;
+  top:21px;
+  transform:rotate(125deg);
+}
+
+.clock-pendulum{
+  position:absolute;
+  left:143px;
+  top:305px;
+  width:4px;
+  height:80px;
+  background:#aa8a50;
+  transform-origin:top;
+  animation:briarPendulum 2s ease-in-out infinite alternate;
+}
+
+.clock-pendulum:after{
+  content:"";
+  position:absolute;
+  width:28px;
+  height:36px;
+  border-radius:50%;
+  background:#a78950;
+  left:-12px;
+  bottom:-18px;
+}
+
+@keyframes briarPendulum{
+  from{transform:rotate(-10deg)}
+  to{transform:rotate(10deg)}
+}/* ===== BRIAR CLOCK ===== */
+.briar-clock-section{
+  padding:90px 20px;
+  text-align:center;
+  position:relative;
+  overflow:hidden;
+}
+
+.briar-clock{
+  width:290px;
+  height:410px;
+  margin:42px auto 26px;
+  position:relative;
+  filter:drop-shadow(0 24px 30px rgba(0,0,0,.55));
+}
+
+.clock-house{
+  position:absolute;
+  inset:55px 25px 55px;
+  background:#382719;
+  border:3px solid #8e7548;
+  border-radius:14px 14px 28px 28px;
+  box-shadow:inset 0 0 35px #0c120c;
+}
+
+.clock-house:before{
+  content:"";
+  position:absolute;
+  width:205px;
+  height:205px;
+  left:15px;
+  top:-82px;
+  background:#302216;
+  border-left:3px solid #8e7548;
+  border-top:3px solid #8e7548;
+  transform:rotate(45deg);
+  border-radius:12px;
+  z-index:-1;
+}
+
+.clock-door{
+  position:absolute;
+  top:72px;
+  left:105px;
+  width:80px;
+  height:62px;
+  border:2px solid #b69b60;
+  border-radius:40px 40px 6px 6px;
+  background:#10160f;
+}
+
+.clock-crow{
+  position:absolute;
+  top:90px;
+  left:132px;
+  width:32px;
+  height:25px;
+  background:#050706;
+  border-radius:55%;
+  z-index:4;
+}
+
+.clock-crow:before{
+  content:"";
+  position:absolute;
+  width:16px;
+  height:16px;
+  right:-5px;
+  top:-7px;
+  background:#050706;
+  border-radius:50%;
+}
+
+.clock-crow:after{
+  content:"";
+  position:absolute;
+  right:-15px;
+  top:-2px;
+  border-left:12px solid #c39b43;
+  border-top:4px solid transparent;
+  border-bottom:4px solid transparent;
+}
+
+.clock-face{
+  position:absolute;
+  top:165px;
+  left:73px;
+  width:145px;
+  height:145px;
+  border-radius:50%;
+  background:radial-gradient(circle,#ded1a8 0 53%,#8d7448 54% 58%,#241b12 59%);
+  border:3px solid #b99b5e;
+}
+
+.clock-face:before,
+.clock-face:after{
+  content:"";
+  position:absolute;
+  left:70px;
+  top:31px;
+  width:4px;
+  height:42px;
+  background:#171711;
+  border-radius:4px;
+  transform-origin:bottom;
+}
+
+.clock-face:before{transform:rotate(35deg)}
+
+.clock-face:after{
+  height:52px;
+  top:21px;
+  transform:rotate(125deg);
+}
+
+.clock-pendulum{
+  position:absolute;
+  left:143px;
+  top:305px;
+  width:4px;
+  height:80px;
+  background:#aa8a50;
+  transform-origin:top;
+  animation:briarPendulum 2s ease-in-out infinite alternate;
+}
+
+.clock-pendulum:after{
+  content:"";
+  position:absolute;
+  width:28px;
+  height:36px;
+  border-radius:50%;
+  background:#a78950;
+  left:-12px;
+  bottom:-18px;
+}
+
+@keyframes briarPendulum{
+  from{transform:rotate(-10deg)}
+  to{transform:rotate(10deg)}
+}style>
 </head>
 <body>
 <header>
