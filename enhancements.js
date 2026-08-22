@@ -11,6 +11,78 @@
     f.style.setProperty('--dur',(7+Math.random()*9)+'s');f.style.animationDelay=(-Math.random()*9)+'s';field.appendChild(f)
   }
 
+  /* Clock refinement pass: larger, richer, and without the dead vertical space. */
+  const clockPolish=document.createElement('style');
+  clockPolish.textContent=`
+    .briar-clock-section{
+      min-height:0!important;height:auto!important;
+      padding:88px clamp(20px,6vw,90px) 96px!important;
+      background:
+        radial-gradient(circle at 50% 18%,rgba(208,177,105,.09),transparent 25%),
+        radial-gradient(circle at 50% 28%,rgba(68,108,58,.28),transparent 42%),
+        linear-gradient(180deg,#031009 0%,#020705 55%,#020504 100%)!important;
+      overflow:hidden!important;
+    }
+    .briar-clock-section>.section-heading{max-width:760px!important;margin:0 auto 22px!important}
+    .briar-clock-section>.section-heading h2{font-size:clamp(3rem,6vw,5.6rem)!important;line-height:.92!important}
+    .briar-clock{
+      width:min(430px,92vw)!important;height:565px!important;margin:26px auto 12px!important;
+      filter:drop-shadow(0 34px 50px rgba(0,0,0,.68))!important;
+      transform:translateZ(0);
+    }
+    .clock-house{
+      left:50%!important;top:82px!important;width:330px!important;height:420px!important;
+      transform:translateX(-50%)!important;
+      clip-path:polygon(50% 0,94% 21%,89% 100%,11% 100%,6% 21%)!important;
+      background:
+        linear-gradient(90deg,rgba(0,0,0,.36),transparent 18% 82%,rgba(0,0,0,.36)),
+        repeating-linear-gradient(90deg,#29190f 0 18px,#3c2516 18px 34px,#4a2c19 34px 51px,#302014 51px 68px)!important;
+      border:2px solid rgba(182,134,75,.5)!important;
+      box-shadow:inset 0 0 0 3px rgba(20,11,6,.6),inset 0 0 54px rgba(0,0,0,.46),0 15px 35px rgba(0,0,0,.4)!important;
+    }
+    .clock-house:before{
+      left:24px!important;right:24px!important;top:-14px!important;height:48px!important;
+      background:linear-gradient(180deg,#536640 0%,#35482b 58%,#1d2a18 100%)!important;
+      box-shadow:0 7px 0 rgba(15,25,14,.8),0 0 24px rgba(116,153,78,.28)!important;
+    }
+    .clock-house:after{left:35px!important;right:35px!important;bottom:22px!important;height:34px!important;opacity:.72!important}
+    .clock-door{
+      top:126px!important;width:112px!important;height:78px!important;
+      border:5px solid #533522!important;border-radius:58px 58px 8px 8px!important;
+      box-shadow:0 8px 18px rgba(0,0,0,.55),inset 0 0 18px #000!important;
+    }
+    .clock-door:before,.clock-door:after{border-color:#7b5130!important;background:linear-gradient(90deg,#2b1b11,#56351f)!important}
+    .clock-crow{
+      top:147px!important;width:82px!important;height:54px!important;
+      transform:translate(-50%,22px) scale(.34)!important;
+      filter:drop-shadow(0 8px 7px rgba(0,0,0,.65))!important;
+    }
+    .clock-crow:before{width:54px!important;height:39px!important;box-shadow:25px 11px 0 -10px #090d0d!important}
+    .clock-crow:after{right:-17px!important;top:11px!important;border-left-width:22px!important;border-top-width:6px!important;border-bottom-width:6px!important}
+    .briar-clock.awake .clock-crow{opacity:1!important;transform:translate(-50%,-34px) scale(1)!important}
+    .clock-face{
+      top:245px!important;width:178px!important;height:178px!important;
+      border-width:9px!important;box-shadow:0 0 0 3px #9f7944,inset 0 0 0 3px rgba(255,244,210,.45),0 10px 28px rgba(0,0,0,.5)!important;
+    }
+    .clock-face:before,.clock-face:after{width:5px!important;left:50%!important}
+    .clock-face:before{height:50px!important}.clock-face:after{height:67px!important}
+    .clock-pendulum{top:406px!important;height:112px!important;width:3px!important}
+    .clock-pendulum:after{width:32px!important;height:32px!important;bottom:-16px!important}
+    .clock-button{margin-top:4px!important;min-width:150px!important}
+    .ferret-faucet{margin-top:34px!important}
+    .journal-section,.contact-section{min-height:0!important;height:auto!important}
+    .journal-section:empty,.contact-section:empty{display:none!important}
+    @media(max-width:620px){
+      .briar-clock{width:min(350px,94vw)!important;height:485px!important}
+      .clock-house{width:275px!important;height:350px!important;top:76px!important}
+      .clock-door{top:114px!important;width:96px!important;height:68px!important}
+      .clock-crow{top:135px!important}
+      .clock-face{top:214px!important;width:150px!important;height:150px!important}
+      .clock-pendulum{top:350px!important;height:94px!important}
+    }
+  `;
+  document.head.appendChild(clockPolish);
+
   const clock=document.querySelector('.briar-clock'); const button=document.getElementById('wakeCrow');
   if(clock&&button){
     let timer;
