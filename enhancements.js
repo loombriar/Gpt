@@ -244,11 +244,38 @@
   };
   updateThread();window.addEventListener('scroll',updateThread,{passive:true});window.addEventListener('resize',updateThread);
 
+  /* Ferret Faucet replaces the spool and follows the center path as the visitor walks. */
+  thread.style.display='none';
+  const ferretRunnerStyle=document.createElement('style');
+  ferretRunnerStyle.textContent=`
+    .ferret-path-runner{position:fixed;left:50%;top:42vh;width:clamp(86px,10vw,150px);aspect-ratio:2/3;z-index:43;pointer-events:none;opacity:0;background:url("assets/ferret-faucet-run.svg?v=20260823-1") center/contain no-repeat;mix-blend-mode:screen;filter:drop-shadow(0 12px 9px rgba(0,0,0,.62)) saturate(.78) brightness(.82);transform:translate(-50%,-50%) scale(var(--ferret-scale,.7)) rotate(var(--ferret-turn,0deg));transform-origin:50% 70%;transition:opacity .35s ease;will-change:transform,left,top;animation:ferretScamper .44s ease-in-out infinite alternate}
+    .ferret-path-runner.visible{opacity:.92}
+    @keyframes ferretScamper{from{margin-top:-3px}to{margin-top:3px}}
+    @media(max-width:760px){.ferret-path-runner{width:82px;top:48vh}}
+    @media(prefers-reduced-motion:reduce){.ferret-path-runner{animation:none}}
+  `;
+  document.head.appendChild(ferretRunnerStyle);
+  const ferretRunner=document.createElement('div');
+  ferretRunner.className='ferret-path-runner';ferretRunner.setAttribute('aria-hidden','true');
+  document.body.appendChild(ferretRunner);
+  const updateFerretRunner=()=>{
+    const start=(document.getElementById('cupcakes')?.offsetTop||window.innerHeight)-window.innerHeight*.35;
+    const finish=(document.querySelector('.character-walk')?.offsetTop||document.documentElement.scrollHeight)-window.innerHeight*.25;
+    const p=Math.min(1,Math.max(0,(window.scrollY-start)/Math.max(1,finish-start)));
+    const onPath=window.scrollY>start&&window.scrollY<finish;
+    ferretRunner.classList.toggle('visible',onPath);
+    ferretRunner.style.left=`${50+Math.sin(p*Math.PI*5)*1.45}%`;
+    ferretRunner.style.top=`${38+p*20}vh`;
+    ferretRunner.style.setProperty('--ferret-scale',String(.54+p*.32));
+    ferretRunner.style.setProperty('--ferret-turn',`${Math.sin(p*Math.PI*5)*-2.2}deg`);
+  };
+  updateFerretRunner();window.addEventListener('scroll',updateFerretRunner,{passive:true});window.addEventListener('resize',updateFerretRunner);
+
   /* The Path — one continuous garden walk with discoveries on either bank. */
   const walkingLayout=document.createElement('style');
   walkingLayout.textContent=`
     main{background:transparent!important}
-    main:before{inset:100svh 0 0!important;background:linear-gradient(90deg,rgba(1,6,4,.18),transparent 24% 76%,rgba(1,6,4,.18)),url("assets/briar-walk-long.svg?v=20260823-zoned-walk-1") center top/100% 100% scroll no-repeat!important;filter:saturate(.88) brightness(.76)!important;opacity:1!important}
+    main:before{inset:100svh 0 0!important;background:linear-gradient(90deg,rgba(1,6,4,.16),transparent 24% 76%,rgba(1,6,4,.16)),url("assets/briar-walk-long.svg?v=20260823-zoned-walk-sharp-1") center top/100% 100% scroll no-repeat!important;filter:saturate(.9) contrast(1.03) brightness(.78)!important;opacity:1!important}
     main>section:not(#home),.character-walk,.character-walk>section{background:transparent!important;background-color:transparent!important;background-image:none!important;backdrop-filter:none!important;border:0!important;box-shadow:none!important}
     main>section:not(#home):after{display:none!important}
     main>section:not(#home){min-height:92vh!important;padding-left:clamp(22px,5vw,74px)!important;padding-right:clamp(22px,5vw,74px)!important}
@@ -269,10 +296,8 @@
     .feature-product:nth-of-type(even) .feature-image,.feature-product:nth-of-type(even) .ocean-stage{grid-column:2!important;justify-self:start!important}
     .feature-product:nth-of-type(even) .feature-copy{grid-column:1!important;justify-self:end!important;text-align:right!important}
     .feature-product img{border:0!important;box-shadow:0 24px 52px rgba(0,0,0,.42)!important}
-    #briar{min-height:78vh!important;display:grid!important;grid-template-columns:minmax(0,1fr) minmax(0,1fr) minmax(0,1fr)!important;gap:clamp(70px,9vw,150px)!important;align-items:center!important}
-    #briar .story-copy{grid-column:1!important;padding:0!important}
-    #briar .motif-card{background:transparent!important;border:0!important;box-shadow:none!important}
-    #briar .motif-card figcaption{background:transparent!important;padding:18px 0!important;text-shadow:0 2px 5px #000}
+    #briar.atelier-section{min-height:86vh!important;padding:8vh 3vw!important;display:flex!important;align-items:center!important;justify-content:center!important;background:transparent!important}
+    #briar .atelier-scene{display:block;width:min(1500px,100%)!important;height:auto!important;max-height:82vh!important;object-fit:cover!important;border-radius:clamp(18px,3vw,46px)!important;box-shadow:0 34px 85px rgba(0,0,0,.58)!important;mask-image:radial-gradient(ellipse 94% 92% at center,#000 74%,transparent 100%);-webkit-mask-image:radial-gradient(ellipse 94% 92% at center,#000 74%,transparent 100%)}
     .character-walk{min-height:100vh!important;padding:90px clamp(22px,5vw,74px)!important;display:grid!important;grid-template-columns:minmax(0,1fr) minmax(0,1fr)!important;gap:clamp(110px,16vw,250px)!important;align-items:center!important}
     .character-walk .pawdrey-section,.character-walk .briar-clock-section{min-width:0!important;padding:0!important;margin:0!important;display:block!important;text-align:left!important}
     .character-walk .pawdrey-section{grid-column:2!important;grid-row:1!important}
@@ -292,8 +317,8 @@
       #floor>.section-heading{width:auto!important;margin:0 0 55px!important}
       .feature-product{min-height:0!important;margin-bottom:90px!important}
       .feature-product:nth-of-type(even) .feature-copy{text-align:left!important}
-      #briar{grid-template-columns:1fr!important;gap:46px!important}
-      #briar .story-copy{grid-column:1!important}
+      #briar.atelier-section{min-height:0!important;padding:64px 14px!important}
+      #briar .atelier-scene{border-radius:20px!important;mask-image:none;-webkit-mask-image:none}
       .character-walk .briar-clock-section{grid-row:1!important}.character-walk .pawdrey-section{grid-row:2!important}
     }
   `;
