@@ -63,15 +63,15 @@ body.pawdrey-secret-open{overflow:hidden}
 
 /* First clearing beyond the gate */
 #home.hero{min-height:100svh!important;background:#020707!important}
-#home .hero-art{background-image:url("assets/pawdrey-mushroom-entrance.svg?v=20260823-pawdrey-left-1")!important;background-position:center!important;background-size:cover!important;filter:saturate(.88) contrast(1.03) brightness(.9)!important}
+#home .hero-art{background-image:url("assets/pawdrey-mushroom-entrance.svg?v=20260823-pawdrey-distant-1")!important;background-position:center!important;background-size:cover!important;filter:saturate(.88) contrast(1.03) brightness(.9)!important}
 #home .hero-copy,#home .hero-note{display:none!important}
 #home .hero-shade{background:radial-gradient(ellipse at 50% 48%,transparent 0 28%,rgba(0,3,5,.08) 62%,rgba(0,2,3,.52) 100%),linear-gradient(180deg,rgba(0,4,5,.04),transparent 68%,rgba(0,3,4,.42))!important}
 @media(max-width:700px){#home .hero-art{background-position:center!important}}
 
 /* Carry the secret garden through the whole page instead of leaving black gaps. */
-body{background:#030806 url("assets/pawdrey-mushroom-entrance.svg?v=20260823-pawdrey-left-1") center top/cover fixed no-repeat!important}
+body{background:#030806 url("assets/pawdrey-mushroom-entrance.svg?v=20260823-pawdrey-distant-1") center top/cover fixed no-repeat!important}
 main{position:relative;isolation:isolate;background:linear-gradient(180deg,rgba(1,7,5,.1),rgba(1,6,4,.3))!important}
-main::before{content:"";position:absolute;z-index:-1;inset:100svh 0 0;pointer-events:none;background:linear-gradient(180deg,rgba(1,7,5,.08),rgba(1,6,4,.38)),url("assets/pawdrey-mushroom-entrance.svg?v=20260823-pawdrey-left-1") center top/cover fixed no-repeat;filter:saturate(.76) brightness(.65);opacity:.92}
+main::before{content:"";position:absolute;z-index:-1;inset:100svh 0 0;pointer-events:none;background:linear-gradient(180deg,rgba(1,7,5,.08),rgba(1,6,4,.38)),url("assets/pawdrey-mushroom-entrance.svg?v=20260823-pawdrey-distant-1") center top/cover fixed no-repeat;filter:saturate(.76) brightness(.65);opacity:.92}
 main>section:not(#home){position:relative;isolation:isolate;background-color:rgba(2,9,6,.42)!important;background-image:linear-gradient(90deg,rgba(1,7,5,.84),rgba(2,9,6,.46) 28%,rgba(2,9,6,.28) 50%,rgba(2,9,6,.46) 72%,rgba(1,7,5,.84)),linear-gradient(180deg,rgba(2,8,6,.34),rgba(2,7,5,.54))!important;backdrop-filter:blur(.7px)}
 main>section:not(#home)::after{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background:radial-gradient(circle at 8% 28%,rgba(213,228,153,.16) 0 1px,transparent 2px),radial-gradient(circle at 91% 62%,rgba(163,201,118,.13) 0 1px,transparent 2px);background-size:190px 210px,240px 230px;opacity:.58}
 main>section+section{border-top:1px solid rgba(125,151,100,.12)!important}
