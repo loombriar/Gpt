@@ -1,0 +1,5 @@
+/* Succulent Cupcake photo gallery override */
+.cupcake-card{background:linear-gradient(180deg,rgba(2,6,4,.03),rgba(2,6,4,.2)),url("assets/succulent-cupcake-garden.jpg") center/cover no-repeat!important;box-shadow:0 30px 80px rgba(0,0,0,.55)!important}
+.cupcake-card:before{content:"LIVE PLANTS • $10 EACH"!important;white-space:normal!important;left:50%!important;top:auto!important;bottom:18px!important;transform:translateX(-50%)!important;width:82%!important;padding:10px 14px!important;border:1px solid rgba(212,174,105,.45)!important;border-radius:999px!important;background:rgba(2,7,5,.82)!important;font:600 .78rem/1.2 Inter,system-ui,sans-serif!important;letter-spacing:.12em!important;color:#f2dfb3!important;text-shadow:0 2px 8px #000!important;backdrop-filter:blur(8px)!important}
+.cupcake-card:after{display:none!important}
+@media(max-width:900px){.cupcake-card{background-position:center!important;min-height:460px!important}}
