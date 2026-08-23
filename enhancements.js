@@ -248,9 +248,9 @@
   thread.style.display='none';
   const ferretRunnerStyle=document.createElement('style');
   ferretRunnerStyle.textContent=`
-    .ferret-path-runner{position:fixed;left:50%;top:42vh;width:clamp(86px,10vw,150px);aspect-ratio:2/3;z-index:43;pointer-events:none;opacity:0;background:url("assets/ferret-faucet-run.svg?v=20260823-1") center/contain no-repeat;mix-blend-mode:screen;filter:drop-shadow(0 12px 9px rgba(0,0,0,.62)) saturate(.78) brightness(.82);transform:translate(-50%,-50%) scale(var(--ferret-scale,.7)) rotate(var(--ferret-turn,0deg));transform-origin:50% 70%;transition:opacity .35s ease,background-image .12s linear;will-change:transform,left,top}
+    .ferret-path-runner{position:fixed;left:50%;top:42vh;width:clamp(86px,10vw,150px);aspect-ratio:2/3;z-index:43;pointer-events:none;opacity:0;background:url("assets/ferret-faucet-down.svg?v=20260823-1") center/contain no-repeat;mix-blend-mode:screen;filter:drop-shadow(0 12px 9px rgba(0,0,0,.62)) saturate(.78) brightness(.82);transform:translate(-50%,-50%) scale(var(--ferret-scale,.7)) rotate(var(--ferret-turn,0deg));transform-origin:50% 70%;transition:opacity .35s ease,background-image .12s linear;will-change:transform,left,top}
     .ferret-path-runner.visible{opacity:.92}
-    .ferret-path-runner.returning{background-image:url("assets/ferret-faucet-return.svg?v=20260823-1")}
+    .ferret-path-runner.returning{background-image:url("assets/ferret-faucet-run.svg?v=20260823-1")}
     .ferret-path-runner.running{animation:ferretScamper .3s ease-in-out infinite alternate}
     @keyframes ferretScamper{from{margin-top:-3px}to{margin-top:3px}}
     @media(max-width:760px){.ferret-path-runner{width:82px;top:48vh}}
@@ -288,8 +288,8 @@
   /* The Path — one continuous garden walk with discoveries on either bank. */
   const walkingLayout=document.createElement('style');
   walkingLayout.textContent=`
-    main{background:transparent!important}
-    main:before{inset:0!important;background:linear-gradient(90deg,rgba(1,6,4,.12),transparent 24% 76%,rgba(1,6,4,.12)),url("assets/briar-trail-gate-moss-v2.svg?v=20260823-1") center top/100% 100% scroll no-repeat!important;filter:saturate(.98) contrast(1.08) brightness(.82)!important;opacity:1!important}
+    main{background:linear-gradient(90deg,rgba(1,6,4,.12),transparent 24% 76%,rgba(1,6,4,.12)),url("assets/briar-trail-gate-moss-v2.svg?v=20260823-1") center top/100% 100% scroll no-repeat!important}
+    main:before{display:none!important}
     main>section:not(#home),.character-walk,.character-walk>section{background:transparent!important;background-color:transparent!important;background-image:none!important;backdrop-filter:none!important;border:0!important;box-shadow:none!important}
     main>section:not(#home):after{display:none!important}
     main>section:not(#home){min-height:92vh!important;padding-left:clamp(22px,5vw,74px)!important;padding-right:clamp(22px,5vw,74px)!important}
