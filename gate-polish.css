@@ -72,6 +72,10 @@ body.pawdrey-secret-open{overflow:hidden}
 body{background:#07100a!important}
 main{position:relative;isolation:isolate}
 main::before{content:none!important;display:none!important}
+main{overflow:hidden!important;background:#07100a!important}
+.continuous-briar-background{position:absolute!important;top:0!important;right:0!important;bottom:0!important;left:0!important;z-index:0!important;display:block!important;width:100%!important;height:auto!important;max-width:none!important;object-fit:fill!important;pointer-events:none!important;filter:saturate(.98) contrast(1.06) brightness(.84)!important}
+main>section,#home,.character-walk,.forest-divider{position:relative!important;z-index:1!important;background-color:transparent!important;background-image:none!important}
+main>section::after{display:none!important}
 main>section+section{border-top:1px solid rgba(125,151,100,.12)!important}
 footer{position:relative;background:linear-gradient(180deg,rgba(2,8,6,.84),rgba(1,5,3,.96))!important;backdrop-filter:blur(3px)}
 @media(max-width:800px){body{background:#07100a!important}}
