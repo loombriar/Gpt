@@ -53,28 +53,33 @@ if (heroArt) {
   heroArt.style.backgroundImage = 'url("assets/pawdrey-hero.png")';
 }
 
-/* Render the real Succulent Cupcake photograph as an actual image element.
-   This bypasses the older CSS background/pseudo-element rules that could hide it. */
+/* Succulent Cupcakes: render the real photograph directly and let the image
+   determine the card height so there is no empty/gray block beneath it. */
 const cupcakeCard = document.querySelector("#cupcakes .cupcake-card");
 if (cupcakeCard) {
   cupcakeCard.innerHTML = "";
   cupcakeCard.style.setProperty("padding", "0", "important");
   cupcakeCard.style.setProperty("background", "#07110c", "important");
   cupcakeCard.style.setProperty("display", "block", "important");
+  cupcakeCard.style.setProperty("position", "relative", "important");
+  cupcakeCard.style.setProperty("min-height", "0", "important");
+  cupcakeCard.style.setProperty("height", "auto", "important");
+  cupcakeCard.style.setProperty("aspect-ratio", "auto", "important");
+  cupcakeCard.style.setProperty("overflow", "hidden", "important");
 
   const cupcakePhoto = document.createElement("img");
-  cupcakePhoto.src = "assets/succulent-cupcake-garden.jpg?v=20260823-direct-2";
+  cupcakePhoto.src = "assets/succulent-cupcake-garden.jpg?v=20260823-cardfix-1";
   cupcakePhoto.alt = "Assorted live succulent and cactus plants arranged in decorative cupcake-style planters";
   cupcakePhoto.className = "cupcake-photo-direct";
   cupcakePhoto.style.setProperty("display", "block", "important");
   cupcakePhoto.style.setProperty("visibility", "visible", "important");
   cupcakePhoto.style.setProperty("opacity", "1", "important");
-  cupcakePhoto.style.setProperty("position", "absolute", "important");
-  cupcakePhoto.style.setProperty("inset", "0", "important");
+  cupcakePhoto.style.setProperty("position", "relative", "important");
+  cupcakePhoto.style.setProperty("inset", "auto", "important");
   cupcakePhoto.style.setProperty("width", "100%", "important");
-  cupcakePhoto.style.setProperty("height", "100%", "important");
+  cupcakePhoto.style.setProperty("height", "auto", "important");
   cupcakePhoto.style.setProperty("max-height", "none", "important");
-  cupcakePhoto.style.setProperty("object-fit", "cover", "important");
+  cupcakePhoto.style.setProperty("object-fit", "contain", "important");
   cupcakePhoto.style.setProperty("object-position", "center", "important");
   cupcakePhoto.style.setProperty("z-index", "2", "important");
   cupcakeCard.appendChild(cupcakePhoto);
