@@ -38,9 +38,10 @@
     .briar-clock-section>.section-heading{max-width:760px!important;margin:0 auto 14px!important}
     .briar-clock-section>.section-heading h2{font-size:clamp(3.2rem,6vw,5.9rem)!important;line-height:.9!important;text-shadow:0 5px 24px rgba(0,0,0,.48)}
     .briar-clock-section>.section-heading p:last-child{max-width:620px;margin-inline:auto;color:#cbbd9f!important}
+    .briar-clock-section>.section-heading,.briar-clock-section>.clock-button,.briar-clock-section>.ferret-faucet{display:none!important}
 
     .briar-clock{
-      width:min(470px,94vw)!important;height:610px!important;margin:14px auto 4px!important;
+      width:min(470px,94vw)!important;height:610px!important;margin:0 auto!important;
       filter:drop-shadow(0 38px 58px rgba(0,0,0,.76))!important;
       transform:translateZ(0);position:relative!important;
     }
@@ -105,6 +106,9 @@
     .clock-crow:after{right:-19px!important;top:12px!important;border-left-width:24px!important;border-top-width:7px!important;border-bottom-width:7px!important;border-left-color:#b98a3e!important}
     .briar-clock.awake .clock-crow{opacity:1!important;transform:translate(-50%,-39px) scale(1)!important}
     .briar-clock:hover .clock-crow,.briar-clock:focus-within .clock-crow{opacity:1!important;transform:translate(-50%,-39px) scale(1)!important}
+    .crow-discount{position:absolute;z-index:8;right:-128px;top:142px;width:176px;padding:14px 15px;border:1px solid rgba(202,174,119,.56);border-radius:3px 18px 3px 18px;background:linear-gradient(145deg,rgba(12,18,29,.96),rgba(29,20,42,.97));box-shadow:0 16px 38px rgba(0,0,0,.58),0 0 22px rgba(123,105,184,.2);color:#ded4bf;text-align:center;font:500 .78rem/1.35 Inter,sans-serif;opacity:0;transform:translate(-16px,8px) scale(.86);animation:discountReveal .65s .35s cubic-bezier(.16,.88,.24,1.16) forwards;pointer-events:none}
+    .crow-discount strong{display:block;margin:.15rem 0;color:#f0dfb5;font:700 1.45rem/1.05 "Cormorant Garamond",serif}.crow-discount code{display:inline-block;margin-top:7px;padding:5px 9px;border:1px dashed rgba(223,203,156,.5);color:#fff0c7;background:rgba(255,255,255,.04);font:bold .82rem Inter,sans-serif;letter-spacing:.12em}.crow-discount small{display:block;margin-top:6px;color:#a99cb6;font-size:.62rem}
+    @keyframes discountReveal{to{opacity:1;transform:translate(0,0) scale(1)}}
 
     .clock-face{display:none!important;
       top:247px!important;width:188px!important;height:188px!important;
@@ -150,16 +154,25 @@
       .clock-face{top:222px!important;width:156px!important;height:156px!important;border-width:8px!important}
       .clock-face:before{height:44px!important}.clock-face:after{height:59px!important}
       .clock-pendulum{top:315px!important;width:58px!important;height:128px!important;margin-left:-29px!important}
+      .crow-discount{right:4px;top:166px;width:160px}
       .clock-house:before{left:23px!important;right:23px!important;height:45px!important}
     }
   `;
   document.head.appendChild(clockPolish);
 
-  const clock=document.querySelector('.briar-clock'); const button=document.getElementById('wakeCrow');
-  if(clock&&button){
-    let timer;
-    const wake=()=>{clearTimeout(timer);clock.classList.add('awake');button.textContent='The crow is out';timer=setTimeout(()=>{clock.classList.remove('awake');button.textContent='Call the Crow'},3200)};
-    button.addEventListener('click',wake);clock.addEventListener('click',e=>{if(e.target!==button)wake()});
+  const clock=document.querySelector('.briar-clock');
+  if(clock){
+    clock.setAttribute('tabindex','0');
+    let discountChecked=false;
+    const tryCrowGift=()=>{
+      if(discountChecked)return;discountChecked=true;
+      try{if(sessionStorage.getItem('loomBriarCrowChecked'))return;sessionStorage.setItem('loomBriarCrowChecked','1')}catch(e){}
+      if(Math.random()>=.15)return;
+      const gift=document.createElement('div');gift.className='crow-discount';gift.setAttribute('role','status');
+      gift.innerHTML='<span>A gift from the crow</span><strong>10% off</strong><code>CROW10</code><small>Mention this code when you send a raven.</small>';
+      clock.appendChild(gift);
+    };
+    clock.addEventListener('pointerenter',tryCrowGift,{once:true});clock.addEventListener('focus',tryCrowGift,{once:true});
   }
 
   /* The Briar Thread — a spool that tumbles while a thorned vine unravels down the page */
