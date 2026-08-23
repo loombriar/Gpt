@@ -315,7 +315,7 @@
     #briar.atelier-section{min-height:86vh!important;padding:8vh 3vw!important;display:flex!important;align-items:center!important;justify-content:center!important;background:transparent!important}
     #briar .atelier-scene{display:block;width:min(1500px,100%)!important;height:auto!important;max-height:82vh!important;object-fit:cover!important;border-radius:clamp(18px,3vw,46px)!important;box-shadow:0 34px 85px rgba(0,0,0,.58)!important;mask-image:radial-gradient(ellipse 94% 92% at center,#000 74%,transparent 100%);-webkit-mask-image:radial-gradient(ellipse 94% 92% at center,#000 74%,transparent 100%)}
     #cupcakes,.feature-product{isolation:isolate!important}
-    #cupcakes:before,.feature-product:before{content:""!important;display:block!important;position:absolute!important;z-index:-1!important;inset:-7vh calc(50% - 50vw)!important;pointer-events:none!important;background-position:center!important;background-size:cover!important;background-repeat:no-repeat!important;filter:saturate(.94) contrast(1.05) brightness(.78)!important;mask-image:linear-gradient(180deg,transparent 0,#000 13%,#000 87%,transparent 100%)!important;-webkit-mask-image:linear-gradient(180deg,transparent 0,#000 13%,#000 87%,transparent 100%)!important}
+    #cupcakes:before,.feature-product:before{content:""!important;display:block!important;position:absolute!important;z-index:0!important;inset:-7vh calc(50% - 50vw)!important;pointer-events:none!important;background-position:center!important;background-size:cover!important;background-repeat:no-repeat!important;filter:saturate(.94) contrast(1.05) brightness(.78)!important;mask-image:linear-gradient(180deg,transparent 0,#000 13%,#000 87%,transparent 100%)!important;-webkit-mask-image:linear-gradient(180deg,transparent 0,#000 13%,#000 87%,transparent 100%)!important}
     #cupcakes:before{background-image:linear-gradient(90deg,transparent 50%,rgba(1,6,4,.2)),url("assets/mushroom-pottery-zone.svg?v=20260823-1")!important}
     .feature-product.bloom:before{background-image:linear-gradient(90deg,transparent 48%,rgba(1,6,4,.22)),url("assets/briar-bloom-zone.svg?v=20260823-1")!important}
     .feature-product.luna:before{background-image:linear-gradient(90deg,rgba(1,6,4,.22),transparent 52%),url("assets/lunastray-crystal-zone.svg?v=20260823-1")!important}
@@ -332,6 +332,10 @@
     .contact-form{background:rgba(2,8,6,.16)!important;border-color:rgba(225,208,159,.24)!important;box-shadow:none!important;backdrop-filter:none!important}
     footer{background:rgba(1,5,3,.36)!important;backdrop-filter:none!important}
     @media(max-width:820px){
+      main{background:#07100a!important;overflow:hidden!important}
+      #home{background:linear-gradient(180deg,transparent 68%,rgba(3,9,6,.72)),url("assets/briar-opening-gate-v3.svg?v=20260823-1") center/cover no-repeat!important}
+      #cupcakes:before,.feature-product:before{inset:-28px -18px!important;background-size:cover!important;background-attachment:scroll!important;filter:saturate(.98) contrast(1.07) brightness(.82)!important;mask-image:linear-gradient(180deg,transparent,#000 8%,#000 92%,transparent)!important;-webkit-mask-image:linear-gradient(180deg,transparent,#000 8%,#000 92%,transparent)!important}
+      .character-walk,#journal,#raven{background:linear-gradient(180deg,rgba(3,9,6,.18),rgba(3,9,6,.36)),url("assets/briar-path-background-v3.svg?v=20260823-1") center/cover scroll no-repeat!important}
       .continuous-briar-background{object-fit:fill!important}
       main>section:not(#home){min-height:0!important;padding-top:76px!important;padding-bottom:76px!important}
       #cupcakes .cupcake-inner,.feature-product,.character-walk{grid-template-columns:1fr!important;gap:34px!important}
@@ -343,6 +347,8 @@
       #briar.atelier-section{min-height:0!important;padding:64px 14px!important}
       #briar .atelier-scene{border-radius:20px!important;mask-image:none;-webkit-mask-image:none}
       .character-walk .briar-clock-section{grid-row:1!important}.character-walk .pawdrey-section{grid-row:2!important}
+      .feature-product img,#cupcakes img{max-width:100%!important;height:auto!important}
+      .cupcake-copy,.feature-copy,.pawdrey-copy,.section-heading,.contact-copy{width:100%!important;max-width:100%!important}
     }
   `;
   document.head.appendChild(walkingLayout);
