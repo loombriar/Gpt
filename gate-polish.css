@@ -1,14 +1,16 @@
 @import url("gate-polish-base.css?v=20260823-1");
 @import url("cupcake-gallery.css?v=20260823-2");
 
-/* Force the actual Succulent Cupcake image to render visibly even if the older card background is cached. */
-#cupcakes .cupcake-card{position:relative!important;overflow:hidden!important;background:#07110c!important;min-height:470px!important}
-#cupcakes .cupcake-card::before{content:""!important;position:absolute!important;inset:0!important;display:block!important;width:100%!important;height:100%!important;transform:none!important;background-image:url("assets/succulent-cupcake-garden.jpg?v=20260823-2")!important;background-position:center!important;background-size:cover!important;background-repeat:no-repeat!important;z-index:1!important;border-radius:inherit!important}
-#cupcakes .cupcake-card::after{content:"LIVE PLANTS • $10 EACH"!important;display:block!important;position:absolute!important;left:50%!important;bottom:18px!important;top:auto!important;transform:translateX(-50%)!important;z-index:3!important;width:auto!important;max-width:86%!important;padding:10px 16px!important;border:1px solid rgba(212,174,105,.55)!important;border-radius:999px!important;background:rgba(2,7,5,.84)!important;color:#f2dfb3!important;font:600 .78rem/1.2 Inter,system-ui,sans-serif!important;letter-spacing:.12em!important;text-align:center!important;white-space:nowrap!important;text-shadow:0 2px 8px #000!important;backdrop-filter:blur(8px)!important}
+/* The source JPEG contains a blank gray lower half. Crop that area in the card
+   while preserving the photographed portion exactly as supplied. */
+#cupcakes .cupcake-card{position:relative!important;display:block!important;overflow:hidden!important;padding:0!important;min-height:0!important;height:auto!important;aspect-ratio:240/143!important;background:#07110c!important}
+#cupcakes .cupcake-card::before,#cupcakes .cupcake-card::after{content:none!important;display:none!important}
+#cupcakes .cupcake-photo{display:block!important;width:100%!important;height:100%!important;object-fit:cover!important;object-position:center top!important}
+#cupcakes .cupcake-card>span{position:absolute;left:50%;bottom:18px;z-index:3;transform:translateX(-50%);max-width:86%;padding:10px 16px;border:1px solid rgba(212,174,105,.55);border-radius:999px;background:rgba(2,7,5,.84);color:#f2dfb3;font:600 .78rem/1.2 Inter,system-ui,sans-serif;letter-spacing:.12em;text-align:center;white-space:nowrap;text-shadow:0 2px 8px #000;backdrop-filter:blur(8px)}
 
 /* Ocean Paws: use the real image elements in index.html. */
 .feature-product.ocean .ocean-stage{display:grid!important;grid-template-columns:1fr!important;gap:14px!important;background:none!important;min-height:0!important;height:auto!important;overflow:visible!important;padding:0!important}
 .feature-product.ocean .ocean-stage>.moss-backdrop{display:none!important}
 .feature-product.ocean .ocean-stage>img{display:block!important;visibility:visible!important;opacity:1!important;position:relative!important;inset:auto!important;width:100%!important;height:auto!important;max-width:100%!important;max-height:none!important;object-fit:contain!important;transform:none!important;border:1px solid rgba(212,174,105,.3)!important;border-radius:16px!important;box-shadow:0 24px 60px rgba(0,0,0,.45)!important}
 .feature-product.ocean .ocean-stage::before,.feature-product.ocean .ocean-stage::after{content:none!important;display:none!important}
-@media(max-width:900px){#cupcakes .cupcake-card{min-height:460px!important}#cupcakes .cupcake-card::before{background-position:center!important}.feature-product.ocean .ocean-stage{gap:10px!important}}
+@media(max-width:900px){.feature-product.ocean .ocean-stage{gap:10px!important}}
