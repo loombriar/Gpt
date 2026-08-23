@@ -290,7 +290,7 @@
   walkingLayout.textContent=`
     main{position:relative!important;background:#07100a!important;isolation:isolate!important}
     main:before{display:none!important}
-    .continuous-briar-background{position:absolute!important;inset:0!important;z-index:0!important;display:block!important;width:100%!important;height:100%!important;max-width:none!important;object-fit:fill!important;pointer-events:none!important;filter:saturate(.98) contrast(1.06) brightness(.84)!important}
+    .continuous-briar-background{position:absolute!important;top:0!important;right:0!important;bottom:0!important;left:0!important;z-index:0!important;display:block!important;width:100%!important;height:auto!important;max-width:none!important;object-fit:fill!important;pointer-events:none!important;filter:saturate(.98) contrast(1.06) brightness(.84)!important}
     main>section,#home,.character-walk,.forest-divider{position:relative!important;z-index:1!important}
     main>section:not(#home),.character-walk,.character-walk>section{background:transparent!important;background-color:transparent!important;background-image:none!important;backdrop-filter:none!important;border:0!important;box-shadow:none!important}
     main>section:not(#home):after{display:none!important}
