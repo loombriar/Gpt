@@ -53,6 +53,33 @@ if (heroArt) {
   heroArt.style.backgroundImage = 'url("assets/pawdrey-hero.png")';
 }
 
+/* Render the real Succulent Cupcake photograph as an actual image element.
+   This bypasses the older CSS background/pseudo-element rules that could hide it. */
+const cupcakeCard = document.querySelector("#cupcakes .cupcake-card");
+if (cupcakeCard) {
+  cupcakeCard.innerHTML = "";
+  cupcakeCard.style.setProperty("padding", "0", "important");
+  cupcakeCard.style.setProperty("background", "#07110c", "important");
+  cupcakeCard.style.setProperty("display", "block", "important");
+
+  const cupcakePhoto = document.createElement("img");
+  cupcakePhoto.src = "assets/succulent-cupcake-garden.jpg?v=20260823-direct-2";
+  cupcakePhoto.alt = "Assorted live succulent and cactus plants arranged in decorative cupcake-style planters";
+  cupcakePhoto.className = "cupcake-photo-direct";
+  cupcakePhoto.style.setProperty("display", "block", "important");
+  cupcakePhoto.style.setProperty("visibility", "visible", "important");
+  cupcakePhoto.style.setProperty("opacity", "1", "important");
+  cupcakePhoto.style.setProperty("position", "absolute", "important");
+  cupcakePhoto.style.setProperty("inset", "0", "important");
+  cupcakePhoto.style.setProperty("width", "100%", "important");
+  cupcakePhoto.style.setProperty("height", "100%", "important");
+  cupcakePhoto.style.setProperty("max-height", "none", "important");
+  cupcakePhoto.style.setProperty("object-fit", "cover", "important");
+  cupcakePhoto.style.setProperty("object-position", "center", "important");
+  cupcakePhoto.style.setProperty("z-index", "2", "important");
+  cupcakeCard.appendChild(cupcakePhoto);
+}
+
 window.setTimeout(() => {
   document.querySelectorAll(".reveal").forEach(el => el.classList.add("visible"));
 }, 1200);
