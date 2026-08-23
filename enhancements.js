@@ -288,8 +288,10 @@
   /* The Path — one continuous garden walk with discoveries on either bank. */
   const walkingLayout=document.createElement('style');
   walkingLayout.textContent=`
-    main{background:linear-gradient(90deg,rgba(1,6,4,.10),transparent 22% 78%,rgba(1,6,4,.10)),url("assets/briar-trail-gate-moss-v2.svg?v=20260823-1") center top/100% 100% scroll no-repeat!important}
+    main{position:relative!important;background:#07100a!important;isolation:isolate!important}
     main:before{display:none!important}
+    .continuous-briar-background{position:absolute!important;inset:0!important;z-index:0!important;display:block!important;width:100%!important;height:100%!important;max-width:none!important;object-fit:fill!important;pointer-events:none!important;filter:saturate(.98) contrast(1.06) brightness(.84)!important}
+    main>section,#home,.character-walk,.forest-divider{position:relative!important;z-index:1!important}
     main>section:not(#home),.character-walk,.character-walk>section{background:transparent!important;background-color:transparent!important;background-image:none!important;backdrop-filter:none!important;border:0!important;box-shadow:none!important}
     main>section:not(#home):after{display:none!important}
     main>section:not(#home){min-height:92vh!important;padding-left:clamp(22px,5vw,74px)!important;padding-right:clamp(22px,5vw,74px)!important}
@@ -323,7 +325,7 @@
     .contact-form{background:rgba(2,8,6,.16)!important;border-color:rgba(225,208,159,.24)!important;box-shadow:none!important;backdrop-filter:none!important}
     footer{background:rgba(1,5,3,.36)!important;backdrop-filter:none!important}
     @media(max-width:820px){
-      main{background-attachment:scroll!important;background-size:100% 100%!important;background-position:center top!important}
+      .continuous-briar-background{object-fit:fill!important}
       main>section:not(#home){min-height:0!important;padding-top:76px!important;padding-bottom:76px!important}
       #cupcakes .cupcake-inner,.feature-product,.character-walk{grid-template-columns:1fr!important;gap:34px!important}
       #cupcakes .cupcake-card,#cupcakes .cupcake-copy,.feature-product .feature-image,.feature-product .ocean-stage,.feature-product .feature-copy,.feature-product:nth-of-type(even) .feature-image,.feature-product:nth-of-type(even) .ocean-stage,.feature-product:nth-of-type(even) .feature-copy,.character-walk .pawdrey-section,.character-walk .briar-clock-section{grid-column:1!important;grid-row:auto!important;justify-self:center!important;text-align:left!important}
