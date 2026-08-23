@@ -288,7 +288,7 @@
   /* The Path — one continuous garden walk with discoveries on either bank. */
   const walkingLayout=document.createElement('style');
   walkingLayout.textContent=`
-    main{background:linear-gradient(90deg,rgba(1,6,4,.12),transparent 24% 76%,rgba(1,6,4,.12)),url("assets/briar-trail-gate-moss-v2.svg?v=20260823-1") center top/100% 100% scroll no-repeat!important}
+    main{background:linear-gradient(90deg,rgba(1,6,4,.14),transparent 22% 78%,rgba(1,6,4,.14)),url("assets/briar-path-background-v3.svg?v=20260823-1") center/cover fixed no-repeat!important}
     main:before{display:none!important}
     main>section:not(#home),.character-walk,.character-walk>section{background:transparent!important;background-color:transparent!important;background-image:none!important;backdrop-filter:none!important;border:0!important;box-shadow:none!important}
     main>section:not(#home):after{display:none!important}
@@ -323,7 +323,7 @@
     .contact-form{background:rgba(2,8,6,.16)!important;border-color:rgba(225,208,159,.24)!important;box-shadow:none!important;backdrop-filter:none!important}
     footer{background:rgba(1,5,3,.36)!important;backdrop-filter:none!important}
     @media(max-width:820px){
-      main:before{background-attachment:scroll!important;background-size:100% 100%!important;background-position:center top!important}
+      main{background-attachment:scroll!important;background-size:auto 100vh!important;background-position:center top!important}
       main>section:not(#home){min-height:0!important;padding-top:76px!important;padding-bottom:76px!important}
       #cupcakes .cupcake-inner,.feature-product,.character-walk{grid-template-columns:1fr!important;gap:34px!important}
       #cupcakes .cupcake-card,#cupcakes .cupcake-copy,.feature-product .feature-image,.feature-product .ocean-stage,.feature-product .feature-copy,.feature-product:nth-of-type(even) .feature-image,.feature-product:nth-of-type(even) .ocean-stage,.feature-product:nth-of-type(even) .feature-copy,.character-walk .pawdrey-section,.character-walk .briar-clock-section{grid-column:1!important;grid-row:auto!important;justify-self:center!important;text-align:left!important}
