@@ -243,4 +243,59 @@
     spool.style.setProperty('--spool-rotate',`${turns*360}deg`);
   };
   updateThread();window.addEventListener('scroll',updateThread,{passive:true});window.addEventListener('resize',updateThread);
+
+  /* The Path — one continuous garden walk with discoveries on either bank. */
+  const walkingLayout=document.createElement('style');
+  walkingLayout.textContent=`
+    main{background:transparent!important}
+    main:before{inset:100svh 0 0!important;background:linear-gradient(90deg,rgba(1,6,4,.2),transparent 26% 74%,rgba(1,6,4,.2)),url("assets/pawdrey-mushroom-entrance.svg?v=20260823-ferret-faucet-1") center top/cover fixed no-repeat!important;filter:saturate(.82) brightness(.72)!important;opacity:1!important}
+    main>section:not(#home),.character-walk,.character-walk>section{background:transparent!important;background-color:transparent!important;background-image:none!important;backdrop-filter:none!important;border:0!important;box-shadow:none!important}
+    main>section:not(#home):after{display:none!important}
+    main>section:not(#home){min-height:92vh!important;padding-left:clamp(22px,5vw,74px)!important;padding-right:clamp(22px,5vw,74px)!important}
+    .cupcake-inner,.feature-product,.story-section,.character-walk,.journal-grid,.contact-section{position:relative;z-index:2}
+    .cupcake-copy,.feature-copy,.story-copy,.pawdrey-copy,.section-heading,.contact-copy,.journal-card,.ferret-faucet{background:transparent!important;background-image:none!important;border:0!important;box-shadow:none!important;backdrop-filter:none!important}
+    .cupcake-copy,.feature-copy,.story-copy,.pawdrey-copy,.section-heading,.contact-copy,.journal-card{filter:drop-shadow(0 3px 3px rgba(0,0,0,.92)) drop-shadow(0 0 14px rgba(0,0,0,.6))}
+    .cupcake-copy p,.feature-copy p,.story-copy p,.pawdrey-copy p,.section-heading p,.contact-copy p,.journal-card p{color:#eee3d0!important;text-shadow:0 2px 4px #000,0 0 11px #000}
+    .cupcake-copy h2,.feature-copy h3,.story-copy h2,.pawdrey-copy h2,.section-heading h2,.contact-copy h2,.journal-card h3{color:#f3dfac!important;text-shadow:0 3px 5px #000,0 0 18px rgba(0,0,0,.9)}
+    #cupcakes{display:grid!important;align-items:center!important}
+    #cupcakes .cupcake-inner{width:min(1420px,100%)!important;margin:auto!important;display:grid!important;grid-template-columns:minmax(0,1fr) minmax(0,1fr)!important;gap:clamp(110px,16vw,250px)!important;align-items:center!important}
+    #cupcakes .cupcake-card{grid-column:1!important;grid-row:1!important;width:min(100%,500px)!important;justify-self:end!important;background:transparent!important;border:0!important;box-shadow:none!important}
+    #cupcakes .cupcake-copy{grid-column:2!important;grid-row:1!important;max-width:510px!important;padding:0!important;align-self:center!important}
+    #floor{padding-top:80px!important}
+    #floor>.section-heading{width:min(560px,40vw)!important;margin:0 5vw 70px auto!important;text-align:left!important}
+    .feature-product{width:min(1450px,100%)!important;max-width:none!important;min-height:76vh!important;margin:0 auto 8vh!important;display:grid!important;grid-template-columns:minmax(0,1fr) minmax(0,1fr)!important;gap:clamp(100px,15vw,240px)!important;align-items:center!important;overflow:visible!important;border:0!important;border-radius:0!important;background:transparent!important;box-shadow:none!important}
+    .feature-product .feature-image,.feature-product .ocean-stage{grid-column:1!important;grid-row:1!important;order:0!important;justify-self:end!important;width:100%!important;max-width:570px!important}
+    .feature-product .feature-copy{grid-column:2!important;grid-row:1!important;order:0!important;max-width:500px!important;padding:0!important;align-self:center!important}
+    .feature-product:nth-of-type(even) .feature-image,.feature-product:nth-of-type(even) .ocean-stage{grid-column:2!important;justify-self:start!important}
+    .feature-product:nth-of-type(even) .feature-copy{grid-column:1!important;justify-self:end!important;text-align:right!important}
+    .feature-product img{border:0!important;box-shadow:0 24px 52px rgba(0,0,0,.42)!important}
+    #briar{min-height:78vh!important;display:grid!important;grid-template-columns:minmax(0,1fr) minmax(0,1fr) minmax(0,1fr)!important;gap:clamp(70px,9vw,150px)!important;align-items:center!important}
+    #briar .story-copy{grid-column:1!important;padding:0!important}
+    #briar .motif-card{background:transparent!important;border:0!important;box-shadow:none!important}
+    #briar .motif-card figcaption{background:transparent!important;padding:18px 0!important;text-shadow:0 2px 5px #000}
+    .character-walk{min-height:100vh!important;padding:90px clamp(22px,5vw,74px)!important;display:grid!important;grid-template-columns:minmax(0,1fr) minmax(0,1fr)!important;gap:clamp(110px,16vw,250px)!important;align-items:center!important}
+    .character-walk .pawdrey-section,.character-walk .briar-clock-section{min-width:0!important;padding:0!important;margin:0!important;display:block!important;text-align:left!important}
+    .character-walk .pawdrey-section{grid-column:2!important;grid-row:1!important}
+    .character-walk .briar-clock-section{grid-column:1!important;grid-row:1!important}
+    .character-walk .pawdrey-image img{max-height:480px!important}
+    .character-walk .pawdrey-copy{margin-top:28px!important}
+    .character-walk .briar-clock{margin:0 auto!important;transform:scale(.88)}
+    .journal-card{padding:24px 8px!important}
+    .contact-form{background:rgba(2,8,6,.16)!important;border-color:rgba(225,208,159,.24)!important;box-shadow:none!important;backdrop-filter:none!important}
+    footer{background:rgba(1,5,3,.36)!important;backdrop-filter:none!important}
+    @media(max-width:820px){
+      main:before{background-attachment:scroll!important;background-size:auto 100vh!important}
+      main>section:not(#home){min-height:0!important;padding-top:76px!important;padding-bottom:76px!important}
+      #cupcakes .cupcake-inner,.feature-product,.character-walk{grid-template-columns:1fr!important;gap:34px!important}
+      #cupcakes .cupcake-card,#cupcakes .cupcake-copy,.feature-product .feature-image,.feature-product .ocean-stage,.feature-product .feature-copy,.feature-product:nth-of-type(even) .feature-image,.feature-product:nth-of-type(even) .ocean-stage,.feature-product:nth-of-type(even) .feature-copy,.character-walk .pawdrey-section,.character-walk .briar-clock-section{grid-column:1!important;grid-row:auto!important;justify-self:center!important;text-align:left!important}
+      #cupcakes .cupcake-card{grid-row:1!important}#cupcakes .cupcake-copy{grid-row:2!important}
+      #floor>.section-heading{width:auto!important;margin:0 0 55px!important}
+      .feature-product{min-height:0!important;margin-bottom:90px!important}
+      .feature-product:nth-of-type(even) .feature-copy{text-align:left!important}
+      #briar{grid-template-columns:1fr!important;gap:46px!important}
+      #briar .story-copy{grid-column:1!important}
+      .character-walk .briar-clock-section{grid-row:1!important}.character-walk .pawdrey-section{grid-row:2!important}
+    }
+  `;
+  document.head.appendChild(walkingLayout);
 })();
