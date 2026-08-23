@@ -47,12 +47,6 @@ document.querySelectorAll(".reveal").forEach(el => observer.observe(el));
 const year = document.getElementById("year");
 if (year) year.textContent = new Date().getFullYear();
 
-/* Keep Pawdrey artwork on the homepage hero only. Gate visuals live entirely in CSS. */
-const heroArt = document.querySelector(".hero-art");
-if (heroArt) {
-  heroArt.style.backgroundImage = 'url("assets/pawdrey-mushroom-entrance.svg?v=20260823-ferret-faucet-1")';
-}
-
 const pawdreySecret = document.getElementById("pawdreySecret");
 const openPawdreySecret = document.getElementById("openPawdreySecret");
 const closePawdreySecret = document.getElementById("closePawdreySecret");
