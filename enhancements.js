@@ -119,10 +119,8 @@
     .clock-face:before{height:53px!important;transform:rotate(18deg)!important}
     .clock-face:after{height:72px!important;transform:rotate(112deg)!important}
 
-    .clock-pendulum{z-index:2!important;top:369px!important;height:126px!important;width:3px!important;background:linear-gradient(#30364d,#c0bad8 48%,#50486e)!important;box-shadow:0 0 7px rgba(172,157,230,.48)!important;animation-duration:2.6s!important}
-    .clock-pendulum:before{content:""!important;position:absolute!important;left:50%!important;bottom:-53px!important;width:112px!important;height:78px!important;transform:translateX(-50%)!important;border-radius:50%!important;background:radial-gradient(ellipse,rgba(166,139,255,.5) 0%,rgba(89,122,221,.3) 34%,rgba(121,92,174,.13) 55%,transparent 74%)!important;filter:blur(10px)!important;box-shadow:0 0 30px rgba(124,105,218,.28)!important;animation:crystalMist 3.8s ease-in-out infinite alternate!important;pointer-events:none!important}
-    .clock-pendulum:after{width:64px!important;height:64px!important;bottom:-42px!important;border:2px solid rgba(224,222,255,.86)!important;background:radial-gradient(circle at 29% 23%,#fff 0 3%,rgba(222,233,255,.95) 5%,rgba(146,155,221,.82) 17%,rgba(105,80,165,.88) 42%,rgba(43,48,105,.94) 67%,rgba(17,16,48,.98) 82%)!important;box-shadow:0 10px 19px rgba(0,0,0,.66),inset -11px -13px 17px rgba(10,8,39,.62),inset 9px 8px 15px rgba(226,236,255,.5),0 0 28px rgba(145,119,236,.7),0 0 10px rgba(207,218,255,.9)!important}
-    @keyframes crystalMist{from{opacity:.58;transform:translateX(-50%) scale(.88)}to{opacity:1;transform:translateX(-50%) scale(1.12)}}
+    .clock-pendulum{z-index:2!important;left:50%!important;top:369px!important;width:70px!important;height:154px!important;margin-left:-35px!important;background:transparent url("assets/crystal-pendulum-real.svg?v=20260823-real-1") center top/contain no-repeat!important;box-shadow:none!important;filter:drop-shadow(0 7px 8px rgba(0,0,0,.58)) drop-shadow(0 0 8px rgba(117,120,190,.32))!important;transform-origin:50% 3px!important;animation-duration:2.8s!important}
+    .clock-pendulum:before,.clock-pendulum:after{content:none!important;display:none!important}
 
     .clock-button{
       margin-top:0!important;min-width:168px!important;min-height:48px!important;
@@ -151,7 +149,7 @@
       .clock-crow{top:122px!important}
       .clock-face{top:222px!important;width:156px!important;height:156px!important;border-width:8px!important}
       .clock-face:before{height:44px!important}.clock-face:after{height:59px!important}
-      .clock-pendulum{top:315px!important;height:105px!important}
+      .clock-pendulum{top:315px!important;width:58px!important;height:128px!important;margin-left:-29px!important}
       .clock-house:before{left:23px!important;right:23px!important;height:45px!important}
     }
   `;
