@@ -50,7 +50,7 @@ if (year) year.textContent = new Date().getFullYear();
 /* Keep Pawdrey artwork on the homepage hero only. Gate visuals live entirely in CSS. */
 const heroArt = document.querySelector(".hero-art");
 if (heroArt) {
-  heroArt.style.backgroundImage = 'url("assets/pawdrey-mushroom-entrance.svg?v=20260823-clock-path-1")';
+  heroArt.style.backgroundImage = 'url("assets/pawdrey-mushroom-entrance.svg?v=20260823-pawdrey-left-1")';
 }
 
 const pawdreySecret = document.getElementById("pawdreySecret");
