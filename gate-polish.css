@@ -51,3 +51,11 @@ body.pawdrey-secret-open{overflow:hidden}
 #briarGate .gate-copy{z-index:10!important}#briarGate .gate-copy::before{box-shadow:0 0 0 2px rgba(8,7,5,.95),0 0 0 3px rgba(176,139,78,.18),inset 0 0 75px rgba(0,0,0,.34),0 25px 55px rgba(0,0,0,.65),0 0 32px rgba(78,111,57,.28)!important}
 @media(max-width:700px){#briarGate .moss-one{left:2%;right:2%;top:-3%;height:40%}#briarGate .moss-two{left:0;right:0;height:18%}#briarGate .vine-one{left:4%}#briarGate .vine-two{right:4%}#briarGate .vine-three{left:16%;opacity:.8}#briarGate .vine-four{right:16%;opacity:.8}.gate-fireflies i:nth-child(5),.gate-fireflies i:nth-child(7),.gate-fireflies i:nth-child(13),.gate-fireflies i:nth-child(14){display:none}}
 @media(prefers-reduced-motion:reduce){.gate-fireflies i{animation:none}}
+
+/* Photoreal gate pass: use real moss and woody briars from the final artwork. */
+#briarGate .gate-art{inset:0!important;background-image:linear-gradient(90deg,rgba(0,2,1,.2),transparent 22% 78%,rgba(0,2,1,.26)),linear-gradient(180deg,rgba(0,2,1,.04),transparent 55%,rgba(0,2,1,.28)),url("assets/briar-gate-moss-real.svg?v=20260823-1")!important;background-position:center!important;background-size:cover!important;background-repeat:no-repeat!important;filter:saturate(.92) contrast(1.04) brightness(.84)!important}
+#briarGate .gate-moss,#briarGate .gate-vine,#briarGate .gate-mist{display:none!important}
+#briarGate .gate-copy::before,#briarGate .gate-copy::after{display:none!important}
+#briarGate .gate-copy{width:min(720px,72vw)!important;padding:86px 58px 64px!important;background:radial-gradient(ellipse at 50% 48%,rgba(0,5,3,.72) 0,rgba(0,4,3,.48) 45%,rgba(0,3,2,.12) 72%,transparent 82%)!important}
+#briarGate .gate-vignette{background:radial-gradient(ellipse at 50% 50%,transparent 0 28%,rgba(0,0,0,.05) 58%,rgba(0,0,0,.48) 100%),linear-gradient(180deg,rgba(0,0,0,.02),transparent 60%,rgba(0,2,1,.35))!important}
+@media(max-width:700px){#briarGate .gate-art{background-position:center!important}#briarGate .gate-copy{width:92vw!important;padding:72px 20px 44px!important}.gate-fireflies i{width:3px;height:3px}}
