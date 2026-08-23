@@ -165,10 +165,12 @@
     .briar-thread.loose{opacity:.9!important}
     .briar-vine-svg{position:absolute;inset:0;width:82px;height:100%;overflow:visible}
     .briar-vine-shadow{fill:none;stroke:rgba(0,0,0,.62);stroke-width:8;stroke-linecap:round;stroke-linejoin:round}
-    .briar-vine{fill:none;stroke:url(#briarVineGradient);stroke-width:4.4;stroke-linecap:round;stroke-linejoin:round;filter:drop-shadow(0 1px 2px rgba(0,0,0,.75))}
-    .briar-thorns{fill:none;stroke:#9a6338;stroke-width:2.25;stroke-linecap:round;stroke-linejoin:round;opacity:1;filter:drop-shadow(0 1px 1px #000)}
+    .briar-vine{fill:none;stroke:url(#briarVineGradient);stroke-width:5.2;stroke-linecap:round;stroke-linejoin:round;filter:drop-shadow(0 1px 2px rgba(0,0,0,.75))}
+    .briar-vine-highlight{fill:none;stroke:rgba(184,116,66,.52);stroke-width:1.15;stroke-linecap:round;stroke-dasharray:3 8}
+    .briar-bark{fill:none;stroke:rgba(31,15,9,.72);stroke-width:1.3;stroke-linecap:round;stroke-dasharray:1 10}
+    .briar-thorn{fill:url(#thornGradient);stroke:#32170d;stroke-width:.65;filter:drop-shadow(0 1px 1px rgba(0,0,0,.85))}
     .briar-leaf{fill:#334a2e;stroke:#172219;stroke-width:1.1;filter:drop-shadow(0 2px 2px rgba(0,0,0,.72))}
-    .thorn-spool{position:absolute!important;left:5px!important;width:72px!important;height:72px!important;overflow:visible!important;border:0!important;background:transparent url("assets/thorn-spool-real.svg?v=20260823-1") center/contain no-repeat!important;filter:drop-shadow(0 9px 8px rgba(0,0,0,.72)) drop-shadow(0 0 8px rgba(91,119,63,.18))!important;transform:translateY(-24px) rotate(var(--spool-rotate,0deg))!important;transform-origin:center!important;will-change:top,transform!important}
+    .thorn-spool{position:absolute!important;left:0;top:0;width:72px!important;height:72px!important;overflow:visible!important;border:0!important;background:transparent url("assets/thorn-spool-real.svg?v=20260823-1") center/contain no-repeat!important;filter:drop-shadow(0 9px 8px rgba(0,0,0,.72)) drop-shadow(0 0 8px rgba(91,119,63,.18))!important;transform:translate(-50%,-50%) rotate(var(--spool-rotate,0deg))!important;transform-origin:center!important;will-change:top,left,transform!important}
     .thorn-spool:before,.thorn-spool:after{content:none!important;display:none!important}
     .spool-crow-nudge{position:absolute!important;left:46px!important;top:-18px!important;width:28px!important;height:18px!important;background:#080b0a!important;border-radius:55% 45% 50% 50%!important;opacity:0;filter:drop-shadow(0 3px 3px rgba(0,0,0,.45))}
     .spool-crow-nudge:before{content:"";position:absolute;right:2px;top:-6px;width:10px;height:10px;border-radius:50%;background:#080b0a}
@@ -187,26 +189,26 @@
         <linearGradient id="briarVineGradient" x1="0" y1="0" x2="1" y2="0">
           <stop offset="0" stop-color="#160d08"/><stop offset=".28" stop-color="#4b2615"/><stop offset=".52" stop-color="#8a5130"/><stop offset=".72" stop-color="#422416"/><stop offset="1" stop-color="#171009"/>
         </linearGradient>
+        <linearGradient id="thornGradient" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#442214"/><stop offset=".55" stop-color="#9c5b35"/><stop offset="1" stop-color="#d29a68"/></linearGradient>
+        <clipPath id="briarReveal"><rect class="briar-reveal" x="0" y="0" width="82" height="0"/></clipPath>
       </defs>
       <path class="briar-vine-shadow" d="M39 0 C18 90,62 155,34 245 C12 316,61 384,37 470 C14 552,62 621,35 704 C16 775,58 840,33 928 C27 952,36 978,39 1000"/>
       <path class="briar-vine" d="M39 0 C18 90,62 155,34 245 C12 316,61 384,37 470 C14 552,62 621,35 704 C16 775,58 840,33 928 C27 952,36 978,39 1000"/>
-      <path class="briar-thorns" d="M31 104 l-13 -12 M45 157 l13 -15 M28 271 l-14 11 M49 352 l14 10 M29 488 l-13 -13 M47 569 l14 -14 M28 715 l-13 10 M46 812 l15 11 M31 918 l-14 -12"/>
-      <ellipse class="briar-leaf" cx="18" cy="211" rx="7" ry="3.5" transform="rotate(-28 18 211)"/>
-      <ellipse class="briar-leaf" cx="59" cy="421" rx="7" ry="3.5" transform="rotate(32 59 421)"/>
-      <ellipse class="briar-leaf" cx="17" cy="645" rx="7" ry="3.5" transform="rotate(-34 17 645)"/>
-      <ellipse class="briar-leaf" cx="57" cy="875" rx="7" ry="3.5" transform="rotate(27 57 875)"/>
+      <path class="briar-vine-highlight" d="M39 0 C18 90,62 155,34 245 C12 316,61 384,37 470 C14 552,62 621,35 704 C16 775,58 840,33 928 C27 952,36 978,39 1000"/>
+      <path class="briar-bark" d="M39 0 C18 90,62 155,34 245 C12 316,61 384,37 470 C14 552,62 621,35 704 C16 775,58 840,33 928 C27 952,36 978,39 1000"/>
+      <g clip-path="url(#briarReveal)"><path class="briar-thorn" d="M31 104 L14 89 L28 110 Z M45 157 L61 139 L48 164 Z M28 271 L12 283 L31 278 Z M49 352 L66 363 L47 359 Z M29 488 L13 472 L27 496 Z M47 569 L63 552 L49 577 Z M28 715 L12 727 L31 722 Z M46 812 L63 824 L44 819 Z M31 918 L14 903 L29 926 Z"/><ellipse class="briar-leaf" cx="18" cy="211" rx="8" ry="4" transform="rotate(-28 18 211)"/><ellipse class="briar-leaf" cx="59" cy="421" rx="8" ry="4" transform="rotate(32 59 421)"/><ellipse class="briar-leaf" cx="17" cy="645" rx="8" ry="4" transform="rotate(-34 17 645)"/><ellipse class="briar-leaf" cx="57" cy="875" rx="8" ry="4" transform="rotate(27 57 875)"/></g>
     </svg>
     <i class="spool-crow-nudge"></i><i class="thorn-spool"></i>`;
   document.body.appendChild(thread);
 
   const vine=thread.querySelector('.briar-vine');
   const vineShadow=thread.querySelector('.briar-vine-shadow');
-  const thorns=thread.querySelector('.briar-thorns');
-  const leaves=[...thread.querySelectorAll('.briar-leaf')];
+  const vineHighlight=thread.querySelector('.briar-vine-highlight');
+  const bark=thread.querySelector('.briar-bark');
+  const reveal=thread.querySelector('.briar-reveal');
   const spool=thread.querySelector('.thorn-spool');
   const length=vine.getTotalLength();
-  [vine,vineShadow].forEach(p=>{p.style.strokeDasharray=length;p.style.strokeDashoffset=length});
-  thorns.style.opacity='0'; leaves.forEach(l=>l.style.opacity='0');
+  [vine,vineShadow,vineHighlight,bark].forEach(p=>{p.style.strokeDasharray=length;p.style.strokeDashoffset=length});
 
   let loosened=false;
   const loosen=()=>{if(loosened)return;loosened=true;thread.classList.add('loose')};
@@ -218,13 +220,14 @@
     const p=Math.min(1,Math.max(0,window.scrollY/max));
     const draw=Math.max(.03,p);
     const dash=length*(1-draw);
-    vine.style.strokeDashoffset=dash;
-    vineShadow.style.strokeDashoffset=dash;
-    thorns.style.opacity=Math.min(1,p*4);
-    leaves.forEach((leaf,i)=>leaf.style.opacity=Math.max(0,Math.min(1,p*5-i*.22)));
-    const travel=Math.min(91,3+p*88);
-    spool.style.top=`calc(${travel}% - 10px)`;
-    spool.style.setProperty('--spool-rotate',(p*1280)+'deg');
+    [vine,vineShadow,vineHighlight,bark].forEach(path=>path.style.strokeDashoffset=dash);
+    reveal.setAttribute('height',String(1000*draw));
+    const point=vine.getPointAtLength(length*draw);
+    spool.style.left=`${point.x}px`;
+    spool.style.top=`${point.y/10}%`;
+    const renderedDistance=length*draw*(thread.clientHeight/1000);
+    const turns=renderedDistance/(Math.PI*72);
+    spool.style.setProperty('--spool-rotate',`${turns*360}deg`);
   };
   updateThread();window.addEventListener('scroll',updateThread,{passive:true});window.addEventListener('resize',updateThread);
 })();
