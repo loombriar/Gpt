@@ -45,7 +45,7 @@
       transform:translateZ(0);position:relative!important;
     }
     .briar-clock:before,.briar-clock:after{content:"";position:absolute;pointer-events:none}
-    .briar-clock:before{z-index:0;inset:0;left:50%;width:min(407px,87vw);height:610px;transform:translateX(-50%);background:url("assets/briar-clock-real.svg?v=20260823-jewel-1") center/100% 100% no-repeat;filter:drop-shadow(0 0 24px rgba(106,91,255,.28)) drop-shadow(0 0 12px rgba(197,96,255,.2));border-radius:42%}
+    .briar-clock:before{z-index:0;inset:0;left:50%;width:min(407px,87vw);height:610px;transform:translateX(-50%);background:url("assets/briar-clock-real.svg?v=20260823-muted-crystal-1") center/100% 100% no-repeat;filter:drop-shadow(0 0 20px rgba(89,105,175,.2)) drop-shadow(0 0 10px rgba(139,102,168,.14));border-radius:42%}
     .briar-clock:after{left:50%;bottom:44px;width:280px;height:48px;transform:translateX(-50%);border-radius:50%;background:rgba(0,0,0,.5);filter:blur(13px)}
 
     .clock-house{display:none!important;
@@ -119,8 +119,8 @@
     .clock-face:before{height:53px!important;transform:rotate(18deg)!important}
     .clock-face:after{height:72px!important;transform:rotate(112deg)!important}
 
-    .clock-pendulum{z-index:2!important;top:369px!important;height:148px!important;width:3px!important;background:linear-gradient(#6e4b2a,#e2bd72,#6e4b2a)!important;animation-duration:2.6s!important}
-    .clock-pendulum:after{width:36px!important;height:40px!important;bottom:-22px!important;background:radial-gradient(circle at 42% 32%,#d2ad70,#8f6238 68%,#4a2d19)!important;box-shadow:0 5px 10px rgba(0,0,0,.5),inset 0 0 0 1px rgba(244,220,169,.25)!important}
+    .clock-pendulum{z-index:2!important;top:369px!important;height:142px!important;width:3px!important;background:linear-gradient(#30364d,#aaa6c5 48%,#4b4565)!important;box-shadow:0 0 5px rgba(153,140,211,.35)!important;animation-duration:2.6s!important}
+    .clock-pendulum:after{width:46px!important;height:46px!important;bottom:-28px!important;border:1px solid rgba(211,205,255,.72)!important;background:radial-gradient(circle at 32% 25%,rgba(255,255,255,.95) 0 3%,rgba(194,214,255,.72) 5%,rgba(119,109,179,.7) 22%,rgba(45,50,100,.82) 58%,rgba(23,20,55,.96) 78%)!important;box-shadow:0 8px 16px rgba(0,0,0,.58),inset -7px -9px 12px rgba(14,10,42,.52),inset 6px 6px 10px rgba(202,218,255,.34),0 0 17px rgba(128,110,210,.42),0 0 4px rgba(220,214,255,.75)!important}
 
     .clock-button{
       margin-top:0!important;min-width:168px!important;min-height:48px!important;
