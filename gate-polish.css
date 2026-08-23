@@ -3,7 +3,7 @@
 
 /* The source JPEG contains a blank gray lower half. Crop that area in the card
    while preserving the photographed portion exactly as supplied. */
-#cupcakes .cupcake-card{position:relative!important;display:block!important;overflow:hidden!important;padding:0!important;min-height:0!important;height:auto!important;aspect-ratio:3/4!important;background:#07110c!important}
+#cupcakes .cupcake-card{position:relative!important;display:block!important;overflow:hidden!important;padding:0!important;min-height:0!important;height:auto!important;aspect-ratio:1122/1402!important;background:#07110c!important}
 #cupcakes .cupcake-card::before,#cupcakes .cupcake-card::after{content:none!important;display:none!important}
 #cupcakes .cupcake-photo{display:block!important;width:100%!important;height:100%!important;object-fit:cover!important;object-position:center top!important}
 #cupcakes .cupcake-card>span{position:absolute;left:50%;bottom:18px;z-index:3;transform:translateX(-50%);max-width:86%;padding:10px 16px;border:1px solid rgba(212,174,105,.55);border-radius:999px;background:rgba(2,7,5,.84);color:#f2dfb3;font:600 .78rem/1.2 Inter,system-ui,sans-serif;letter-spacing:.12em;text-align:center;white-space:nowrap;text-shadow:0 2px 8px #000;backdrop-filter:blur(8px)}
