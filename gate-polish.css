@@ -59,3 +59,15 @@ body.pawdrey-secret-open{overflow:hidden}
 #briarGate .gate-copy{width:min(720px,72vw)!important;padding:86px 58px 64px!important;background:radial-gradient(ellipse at 50% 48%,rgba(0,5,3,.72) 0,rgba(0,4,3,.48) 45%,rgba(0,3,2,.12) 72%,transparent 82%)!important}
 #briarGate .gate-vignette{background:radial-gradient(ellipse at 50% 50%,transparent 0 28%,rgba(0,0,0,.05) 58%,rgba(0,0,0,.48) 100%),linear-gradient(180deg,rgba(0,0,0,.02),transparent 60%,rgba(0,2,1,.35))!important}
 @media(max-width:700px){#briarGate .gate-art{background-position:center!important}#briarGate .gate-copy{width:92vw!important;padding:72px 20px 44px!important}.gate-fireflies i{width:3px;height:3px}}
+
+/* Pawdrey's mushroom clearing — silent entrance */
+#briarGate.briar-gate{display:block!important;background:#020707!important;cursor:default!important;transition:opacity .9s ease,visibility 0s linear .95s!important}
+#briarGate .gate-art{inset:0!important;transform:none!important;background-image:url("assets/pawdrey-mushroom-entrance.svg?v=20260823-overhead-1")!important;background-size:cover!important;background-position:center center!important;filter:saturate(.88) contrast(1.03) brightness(.9)!important}
+#briarGate .gate-vignette{display:block!important;z-index:-5!important;background:radial-gradient(ellipse at 60% 50%,transparent 0 18%,rgba(0,3,5,.04) 48%,rgba(0,2,3,.5) 100%),linear-gradient(180deg,rgba(2,8,10,.04),transparent 58%,rgba(0,3,4,.42))!important}
+#briarGate .gate-growth,#briarGate .gate-mist,#briarGate .gate-crow,#briarGate.briar-gate:before,#briarGate.briar-gate:after{display:none!important}
+#briarGate .gate-copy{position:static!important;width:0!important;height:0!important;margin:0!important;padding:0!important;background:none!important;box-shadow:none!important;text-shadow:none!important}
+#briarGate .gate-copy>*:not(.enter-button){display:none!important}
+#briarGate .enter-button{position:fixed!important;z-index:20!important;left:9%!important;top:14%!important;width:68vw!important;height:72vh!important;min-width:0!important;min-height:0!important;margin:0!important;padding:0!important;border:0!important;border-radius:38%!important;background:transparent!important;box-shadow:none!important;color:transparent!important;font-size:0!important;cursor:pointer!important;opacity:0!important}
+#briarGate .enter-button:before{display:none!important}
+#briarGate.open{opacity:0!important;visibility:hidden!important;pointer-events:none!important}
+@media(max-width:700px){#briarGate .gate-art{background-position:50% center!important}#briarGate .enter-button{left:10%!important;top:26%!important;width:80vw!important;height:48vh!important}}
