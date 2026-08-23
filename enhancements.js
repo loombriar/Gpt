@@ -93,19 +93,15 @@
     .briar-clock:hover .clock-door:after,.briar-clock:focus-within .clock-door:after{transform:perspective(130px) rotateY(82deg)!important}
 
     .clock-crow{z-index:3!important;
-      top:145px!important;width:74px!important;height:50px!important;
-      transform:translate(-50%,20px) scale(.28)!important;
-      filter:drop-shadow(0 9px 8px rgba(0,0,0,.72))!important;
+      top:136px!important;width:108px!important;height:113px!important;
+      background:transparent url("assets/briar-crow-real.svg?v=20260823-real-1") center/contain no-repeat!important;
+      transform:translate(-50%,18px) scale(.38)!important;
+      filter:drop-shadow(0 9px 8px rgba(0,0,0,.72)) drop-shadow(0 0 5px rgba(95,111,174,.22))!important;
       transition:.52s cubic-bezier(.16,.88,.24,1.18)!important;
     }
-    .clock-crow:before{
-      width:58px!important;height:41px!important;
-      background:linear-gradient(135deg,#030505,#111718 60%,#050708)!important;
-      box-shadow:27px 12px 0 -10px #070b0b!important;
-    }
-    .clock-crow:after{right:-19px!important;top:12px!important;border-left-width:24px!important;border-top-width:7px!important;border-bottom-width:7px!important;border-left-color:#b98a3e!important}
-    .briar-clock.awake .clock-crow{opacity:1!important;transform:translate(-50%,-39px) scale(1)!important}
-    .briar-clock:hover .clock-crow,.briar-clock:focus-within .clock-crow{opacity:1!important;transform:translate(-50%,-39px) scale(1)!important}
+    .clock-crow:before,.clock-crow:after{content:none!important;display:none!important}
+    .briar-clock.awake .clock-crow{opacity:1!important;transform:translate(-50%,-34px) scale(1)!important}
+    .briar-clock:hover .clock-crow,.briar-clock:focus-within .clock-crow{opacity:1!important;transform:translate(-50%,-34px) scale(1)!important}
     .crow-discount{position:absolute;z-index:8;right:-128px;top:142px;width:176px;padding:14px 15px;border:1px solid rgba(202,174,119,.56);border-radius:3px 18px 3px 18px;background:linear-gradient(145deg,rgba(12,18,29,.96),rgba(29,20,42,.97));box-shadow:0 16px 38px rgba(0,0,0,.58),0 0 22px rgba(123,105,184,.2);color:#ded4bf;text-align:center;font:500 .78rem/1.35 Inter,sans-serif;opacity:0;transform:translate(-16px,8px) scale(.86);animation:discountReveal .65s .35s cubic-bezier(.16,.88,.24,1.16) forwards;pointer-events:none}
     .crow-discount strong{display:block;margin:.15rem 0;color:#f0dfb5;font:700 1.45rem/1.05 "Cormorant Garamond",serif}.crow-discount code{display:inline-block;margin-top:7px;padding:5px 9px;border:1px dashed rgba(223,203,156,.5);color:#fff0c7;background:rgba(255,255,255,.04);font:bold .82rem Inter,sans-serif;letter-spacing:.12em}.crow-discount small{display:block;margin-top:6px;color:#a99cb6;font-size:.62rem}
     @keyframes discountReveal{to{opacity:1;transform:translate(0,0) scale(1)}}
@@ -123,7 +119,7 @@
     .clock-face:before{height:53px!important;transform:rotate(18deg)!important}
     .clock-face:after{height:72px!important;transform:rotate(112deg)!important}
 
-    .clock-pendulum{z-index:2!important;left:50%!important;top:369px!important;width:70px!important;height:154px!important;margin-left:-35px!important;background:transparent url("assets/crystal-pendulum-real.svg?v=20260823-real-1") center top/contain no-repeat!important;box-shadow:none!important;filter:drop-shadow(0 7px 8px rgba(0,0,0,.58)) drop-shadow(0 0 8px rgba(117,120,190,.32))!important;transform-origin:50% 3px!important;animation-duration:2.8s!important}
+    .clock-pendulum{z-index:2!important;left:50%!important;top:378px!important;width:56px!important;height:123px!important;margin-left:-28px!important;background:transparent url("assets/crystal-pendulum-real.svg?v=20260823-real-1") center top/contain no-repeat!important;box-shadow:none!important;filter:drop-shadow(0 7px 8px rgba(0,0,0,.58)) drop-shadow(0 0 7px rgba(117,120,190,.28))!important;transform-origin:50% 3px!important;animation-duration:2.8s!important}
     .clock-pendulum:before,.clock-pendulum:after{content:none!important;display:none!important}
 
     .clock-button{
@@ -150,10 +146,10 @@
       .briar-clock:before{width:347px;height:520px}
       .clock-house{width:292px!important;height:374px!important;top:70px!important}
       .clock-door{top:107px!important;width:88px!important;height:61px!important}
-      .clock-crow{top:122px!important}
+      .clock-crow{top:116px!important;width:92px!important;height:97px!important}
       .clock-face{top:222px!important;width:156px!important;height:156px!important;border-width:8px!important}
       .clock-face:before{height:44px!important}.clock-face:after{height:59px!important}
-      .clock-pendulum{top:315px!important;width:58px!important;height:128px!important;margin-left:-29px!important}
+      .clock-pendulum{top:322px!important;width:48px!important;height:105px!important;margin-left:-24px!important}
       .crow-discount{right:4px;top:166px;width:160px}
       .clock-house:before{left:23px!important;right:23px!important;height:45px!important}
     }
