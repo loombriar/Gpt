@@ -93,15 +93,15 @@
     .briar-clock:hover .clock-door:after,.briar-clock:focus-within .clock-door:after{transform:perspective(130px) rotateY(82deg)!important}
 
     .clock-crow{z-index:3!important;
-      top:109px!important;width:138px!important;height:138px!important;
-      background:transparent url("assets/briar-crow-real.svg?v=20260823-gift-1") center/contain no-repeat!important;
+      top:121px!important;width:96px!important;height:96px!important;
+      background:transparent url("assets/briar-crow-real.svg?v=20260823-crystal-door-1") center/contain no-repeat!important;
       transform:translate(-50%,18px) scale(.38)!important;
       filter:drop-shadow(0 9px 8px rgba(0,0,0,.72)) drop-shadow(0 0 5px rgba(95,111,174,.22))!important;
       transition:.52s cubic-bezier(.16,.88,.24,1.18)!important;
     }
     .clock-crow:before,.clock-crow:after{content:none!important;display:none!important}
-    .briar-clock.awake .clock-crow{opacity:1!important;transform:translate(-50%,0) scale(1)!important}
-    .briar-clock:hover .clock-crow,.briar-clock:focus-within .clock-crow{opacity:1!important;transform:translate(-50%,0) scale(1)!important}
+    .briar-clock.awake .clock-crow{opacity:1!important;transform:translate(-50%,0) scale(.88)!important}
+    .briar-clock:hover .clock-crow,.briar-clock:focus-within .clock-crow{opacity:1!important;transform:translate(-50%,0) scale(.88)!important}
     .crow-discount{position:absolute;z-index:8;right:-128px;top:142px;width:176px;padding:14px 15px;border:1px solid rgba(202,174,119,.56);border-radius:3px 18px 3px 18px;background:linear-gradient(145deg,rgba(12,18,29,.96),rgba(29,20,42,.97));box-shadow:0 16px 38px rgba(0,0,0,.58),0 0 22px rgba(123,105,184,.2);color:#ded4bf;text-align:center;font:500 .78rem/1.35 Inter,sans-serif;opacity:0;transform:translate(-16px,8px) scale(.86);animation:discountReveal .65s .35s cubic-bezier(.16,.88,.24,1.16) forwards;pointer-events:none}
     .crow-discount strong{display:block;margin:.15rem 0;color:#f0dfb5;font:700 1.45rem/1.05 "Cormorant Garamond",serif}.crow-discount code{display:inline-block;margin-top:7px;padding:5px 9px;border:1px dashed rgba(223,203,156,.5);color:#fff0c7;background:rgba(255,255,255,.04);font:bold .82rem Inter,sans-serif;letter-spacing:.12em}.crow-discount small{display:block;margin-top:6px;color:#a99cb6;font-size:.62rem}
     @keyframes discountReveal{to{opacity:1;transform:translate(0,0) scale(1)}}
@@ -146,7 +146,7 @@
       .briar-clock:before{width:347px;height:520px}
       .clock-house{width:292px!important;height:374px!important;top:70px!important}
       .clock-door{top:107px!important;width:88px!important;height:61px!important}
-      .clock-crow{top:93px!important;width:118px!important;height:118px!important}
+      .clock-crow{top:106px!important;width:82px!important;height:82px!important}
       .clock-face{top:222px!important;width:156px!important;height:156px!important;border-width:8px!important}
       .clock-face:before{height:44px!important}.clock-face:after{height:59px!important}
       .clock-pendulum{top:332px!important;width:38px!important;height:81px!important;margin-left:-19px!important}
