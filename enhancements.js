@@ -248,7 +248,7 @@
   const walkingLayout=document.createElement('style');
   walkingLayout.textContent=`
     main{background:transparent!important}
-    main:before{inset:100svh 0 0!important;background:linear-gradient(90deg,rgba(1,6,4,.2),transparent 26% 74%,rgba(1,6,4,.2)),url("assets/pawdrey-mushroom-entrance.svg?v=20260823-ferret-faucet-1") center top/cover fixed no-repeat!important;filter:saturate(.82) brightness(.72)!important;opacity:1!important}
+    main:before{inset:100svh 0 0!important;background:linear-gradient(90deg,rgba(1,6,4,.18),transparent 24% 76%,rgba(1,6,4,.18)),url("assets/briar-walk-long.svg?v=20260823-zoned-walk-1") center top/100% 100% scroll no-repeat!important;filter:saturate(.88) brightness(.76)!important;opacity:1!important}
     main>section:not(#home),.character-walk,.character-walk>section{background:transparent!important;background-color:transparent!important;background-image:none!important;backdrop-filter:none!important;border:0!important;box-shadow:none!important}
     main>section:not(#home):after{display:none!important}
     main>section:not(#home){min-height:92vh!important;padding-left:clamp(22px,5vw,74px)!important;padding-right:clamp(22px,5vw,74px)!important}
@@ -284,7 +284,7 @@
     .contact-form{background:rgba(2,8,6,.16)!important;border-color:rgba(225,208,159,.24)!important;box-shadow:none!important;backdrop-filter:none!important}
     footer{background:rgba(1,5,3,.36)!important;backdrop-filter:none!important}
     @media(max-width:820px){
-      main:before{background-attachment:scroll!important;background-size:auto 100vh!important}
+      main:before{background-attachment:scroll!important;background-size:100% 100%!important;background-position:center top!important}
       main>section:not(#home){min-height:0!important;padding-top:76px!important;padding-bottom:76px!important}
       #cupcakes .cupcake-inner,.feature-product,.character-walk{grid-template-columns:1fr!important;gap:34px!important}
       #cupcakes .cupcake-card,#cupcakes .cupcake-copy,.feature-product .feature-image,.feature-product .ocean-stage,.feature-product .feature-copy,.feature-product:nth-of-type(even) .feature-image,.feature-product:nth-of-type(even) .ocean-stage,.feature-product:nth-of-type(even) .feature-copy,.character-walk .pawdrey-section,.character-walk .briar-clock-section{grid-column:1!important;grid-row:auto!important;justify-self:center!important;text-align:left!important}
