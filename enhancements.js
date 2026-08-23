@@ -314,6 +314,13 @@
     .feature-product img{border:0!important;box-shadow:0 24px 52px rgba(0,0,0,.42)!important}
     #briar.atelier-section{min-height:86vh!important;padding:8vh 3vw!important;display:flex!important;align-items:center!important;justify-content:center!important;background:transparent!important}
     #briar .atelier-scene{display:block;width:min(1500px,100%)!important;height:auto!important;max-height:82vh!important;object-fit:cover!important;border-radius:clamp(18px,3vw,46px)!important;box-shadow:0 34px 85px rgba(0,0,0,.58)!important;mask-image:radial-gradient(ellipse 94% 92% at center,#000 74%,transparent 100%);-webkit-mask-image:radial-gradient(ellipse 94% 92% at center,#000 74%,transparent 100%)}
+    #cupcakes,.feature-product{isolation:isolate!important}
+    #cupcakes:before,.feature-product:before{content:""!important;display:block!important;position:absolute!important;z-index:-1!important;inset:-7vh calc(50% - 50vw)!important;pointer-events:none!important;background-position:center!important;background-size:cover!important;background-repeat:no-repeat!important;filter:saturate(.94) contrast(1.05) brightness(.78)!important;mask-image:linear-gradient(180deg,transparent 0,#000 13%,#000 87%,transparent 100%)!important;-webkit-mask-image:linear-gradient(180deg,transparent 0,#000 13%,#000 87%,transparent 100%)!important}
+    #cupcakes:before{background-image:linear-gradient(90deg,transparent 50%,rgba(1,6,4,.2)),url("assets/mushroom-pottery-zone.svg?v=20260823-1")!important}
+    .feature-product.bloom:before{background-image:linear-gradient(90deg,transparent 48%,rgba(1,6,4,.22)),url("assets/briar-bloom-zone.svg?v=20260823-1")!important}
+    .feature-product.luna:before{background-image:linear-gradient(90deg,rgba(1,6,4,.22),transparent 52%),url("assets/lunastray-crystal-zone.svg?v=20260823-1")!important}
+    .feature-product.ocean:before{background-image:linear-gradient(90deg,transparent 48%,rgba(1,6,4,.2)),url("assets/ocean-sandy-zone.svg?v=20260823-1")!important}
+    #cupcakes .cupcake-inner,.feature-product>*{position:relative!important;z-index:1!important}
     .character-walk{min-height:100vh!important;padding:90px clamp(22px,5vw,74px)!important;display:grid!important;grid-template-columns:minmax(0,1fr) minmax(0,1fr)!important;gap:clamp(110px,16vw,250px)!important;align-items:center!important}
     .character-walk .pawdrey-section,.character-walk .briar-clock-section{min-width:0!important;padding:0!important;margin:0!important;display:block!important;text-align:left!important}
     .character-walk .pawdrey-section{grid-column:2!important;grid-row:1!important}
