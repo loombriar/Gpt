@@ -248,8 +248,10 @@
   thread.style.display='none';
   const ferretRunnerStyle=document.createElement('style');
   ferretRunnerStyle.textContent=`
-    .ferret-path-runner{position:fixed;left:50%;top:42vh;width:clamp(86px,10vw,150px);aspect-ratio:2/3;z-index:43;pointer-events:none;opacity:0;background:url("assets/ferret-faucet-run.svg?v=20260823-1") center/contain no-repeat;mix-blend-mode:screen;filter:drop-shadow(0 12px 9px rgba(0,0,0,.62)) saturate(.78) brightness(.82);transform:translate(-50%,-50%) scale(var(--ferret-scale,.7)) rotate(var(--ferret-turn,0deg));transform-origin:50% 70%;transition:opacity .35s ease;will-change:transform,left,top;animation:ferretScamper .44s ease-in-out infinite alternate}
+    .ferret-path-runner{position:fixed;left:50%;top:42vh;width:clamp(86px,10vw,150px);aspect-ratio:2/3;z-index:43;pointer-events:none;opacity:0;background:url("assets/ferret-faucet-run.svg?v=20260823-1") center/contain no-repeat;mix-blend-mode:screen;filter:drop-shadow(0 12px 9px rgba(0,0,0,.62)) saturate(.78) brightness(.82);transform:translate(-50%,-50%) scale(var(--ferret-scale,.7)) rotate(var(--ferret-turn,0deg));transform-origin:50% 70%;transition:opacity .35s ease,background-image .12s linear;will-change:transform,left,top}
     .ferret-path-runner.visible{opacity:.92}
+    .ferret-path-runner.returning{background-image:url("assets/ferret-faucet-return.svg?v=20260823-1")}
+    .ferret-path-runner.running{animation:ferretScamper .3s ease-in-out infinite alternate}
     @keyframes ferretScamper{from{margin-top:-3px}to{margin-top:3px}}
     @media(max-width:760px){.ferret-path-runner{width:82px;top:48vh}}
     @media(prefers-reduced-motion:reduce){.ferret-path-runner{animation:none}}
@@ -269,13 +271,25 @@
     ferretRunner.style.setProperty('--ferret-scale',String(.54+p*.32));
     ferretRunner.style.setProperty('--ferret-turn',`${Math.sin(p*Math.PI*5)*-2.2}deg`);
   };
-  updateFerretRunner();window.addEventListener('scroll',updateFerretRunner,{passive:true});window.addEventListener('resize',updateFerretRunner);
+  let lastRunnerY=window.scrollY,runnerStopTimer;
+  const runFerretWithScroll=()=>{
+    const nextY=window.scrollY,delta=nextY-lastRunnerY;
+    if(Math.abs(delta)>1){
+      ferretRunner.classList.toggle('returning',delta<0);
+      ferretRunner.classList.add('running');
+      clearTimeout(runnerStopTimer);
+      runnerStopTimer=setTimeout(()=>ferretRunner.classList.remove('running'),120);
+      lastRunnerY=nextY;
+    }
+    updateFerretRunner();
+  };
+  updateFerretRunner();window.addEventListener('scroll',runFerretWithScroll,{passive:true});window.addEventListener('resize',updateFerretRunner);
 
   /* The Path — one continuous garden walk with discoveries on either bank. */
   const walkingLayout=document.createElement('style');
   walkingLayout.textContent=`
     main{background:transparent!important}
-    main:before{inset:100svh 0 0!important;background:linear-gradient(90deg,rgba(1,6,4,.16),transparent 24% 76%,rgba(1,6,4,.16)),url("assets/briar-walk-long.svg?v=20260823-zoned-walk-sharp-1") center top/100% 100% scroll no-repeat!important;filter:saturate(.9) contrast(1.03) brightness(.78)!important;opacity:1!important}
+    main:before{inset:0!important;background:linear-gradient(90deg,rgba(1,6,4,.12),transparent 24% 76%,rgba(1,6,4,.12)),url("assets/briar-trail-gate-moss-v2.svg?v=20260823-1") center top/100% 100% scroll no-repeat!important;filter:saturate(.98) contrast(1.08) brightness(.82)!important;opacity:1!important}
     main>section:not(#home),.character-walk,.character-walk>section{background:transparent!important;background-color:transparent!important;background-image:none!important;backdrop-filter:none!important;border:0!important;box-shadow:none!important}
     main>section:not(#home):after{display:none!important}
     main>section:not(#home){min-height:92vh!important;padding-left:clamp(22px,5vw,74px)!important;padding-right:clamp(22px,5vw,74px)!important}
