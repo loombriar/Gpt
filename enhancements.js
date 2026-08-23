@@ -288,7 +288,7 @@
   /* The Path — one continuous garden walk with discoveries on either bank. */
   const walkingLayout=document.createElement('style');
   walkingLayout.textContent=`
-    main{position:relative!important;background:#07100a!important;isolation:isolate!important}
+    main{position:relative!important;background:#07100a url("assets/briar-trail-gate-moss-v3.svg?v=20260823-1") center top/cover scroll no-repeat!important;isolation:isolate!important}
     main:before{display:none!important}
     .continuous-briar-background{position:absolute!important;top:0!important;right:0!important;bottom:0!important;left:0!important;z-index:0!important;display:block!important;width:100%!important;height:auto!important;max-width:none!important;object-fit:fill!important;pointer-events:none!important;filter:saturate(.98) contrast(1.06) brightness(.84)!important}
     main>section,#home,.character-walk,.forest-divider{position:relative!important;z-index:1!important}
