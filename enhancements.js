@@ -322,7 +322,14 @@
     .feature-product .feature-copy{grid-column:2!important;grid-row:1!important;order:0!important;max-width:500px!important;padding:0!important;align-self:center!important}
     .feature-product:nth-of-type(even) .feature-image,.feature-product:nth-of-type(even) .ocean-stage{grid-column:2!important;justify-self:start!important}
     .feature-product:nth-of-type(even) .feature-copy{grid-column:1!important;justify-self:end!important;text-align:right!important}
-    .feature-product img{border:0!important;box-shadow:0 24px 52px rgba(0,0,0,.42)!important}
+    .feature-product .feature-image,.feature-product .ocean-stage,#cupcakes .cupcake-card{background:transparent!important;border:0!important;box-shadow:none!important;overflow:visible!important}
+    .feature-product .feature-image img,#cupcakes .cupcake-photo,.approved-ocean-gallery img{border:0!important;border-radius:0!important;background:transparent!important;box-shadow:none!important;filter:saturate(.96) contrast(1.03) drop-shadow(0 20px 22px rgba(0,0,0,.52))!important;mask-image:radial-gradient(ellipse 94% 91% at center,#000 66%,rgba(0,0,0,.94) 75%,rgba(0,0,0,.52) 88%,transparent 100%)!important;-webkit-mask-image:radial-gradient(ellipse 94% 91% at center,#000 66%,rgba(0,0,0,.94) 75%,rgba(0,0,0,.52) 88%,transparent 100%)!important}
+    .feature-product.bloom .feature-image img{transform:rotate(-.7deg)!important}
+    .feature-product.luna .feature-image img{transform:rotate(.65deg)!important}
+    .approved-ocean-gallery{gap:0!important;overflow:visible!important}
+    .approved-ocean-gallery .ocean-sales{transform:rotate(-.6deg)!important;margin-bottom:-2%!important}
+    .approved-ocean-gallery .ocean-beauty{transform:rotate(.7deg)!important;margin-top:-2%!important}
+    #cupcakes .cupcake-photo{transform:rotate(-.5deg)!important}
     #briar.atelier-section{min-height:86vh!important;padding:8vh 3vw!important;display:flex!important;align-items:center!important;justify-content:center!important;background:transparent!important}
     #briar .atelier-stage{position:relative!important;width:min(1500px,100%)!important;margin:auto!important}
     #briar .atelier-scene{display:block;width:100%!important;height:auto!important;max-height:82vh!important;object-fit:cover!important;border-radius:clamp(18px,3vw,46px)!important;box-shadow:0 34px 85px rgba(0,0,0,.58)!important;mask-image:radial-gradient(ellipse 94% 92% at center,#000 74%,transparent 100%);-webkit-mask-image:radial-gradient(ellipse 94% 92% at center,#000 74%,transparent 100%)}
@@ -370,6 +377,7 @@
       #briar .atelier-gallery figcaption{font-size:1rem!important}
       .character-walk .briar-clock-section{grid-row:1!important}.character-walk .pawdrey-section{grid-row:2!important}
       .feature-product img,#cupcakes img{max-width:100%!important;height:auto!important}
+      .feature-product .feature-image img,#cupcakes .cupcake-photo,.approved-ocean-gallery img{filter:saturate(.98) contrast(1.04) drop-shadow(0 13px 16px rgba(0,0,0,.48))!important;mask-image:radial-gradient(ellipse 97% 94% at center,#000 71%,rgba(0,0,0,.9) 82%,transparent 100%)!important;-webkit-mask-image:radial-gradient(ellipse 97% 94% at center,#000 71%,rgba(0,0,0,.9) 82%,transparent 100%)!important}
       .cupcake-copy,.feature-copy,.pawdrey-copy,.section-heading,.contact-copy{width:100%!important;max-width:100%!important}
     }
   `;
