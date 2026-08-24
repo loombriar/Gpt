@@ -72,7 +72,7 @@ body.pawdrey-secret-open{overflow:hidden}
    The tall source artwork scrolls with the page so every section feels like
    another clearing along one uninterrupted woodland trail. */
 body{background:#07100a!important}
-main{position:relative;isolation:isolate;overflow:hidden!important;background:#07100a url("assets/loom-briar-story-path-v1.jpg?v=20260824-1") center top/auto 100% scroll no-repeat!important}
+main{position:relative;isolation:isolate;overflow:hidden!important;background:#07100a url("assets/loom-briar-story-path-v2.jpg?v=20260824-1") center top/auto 100% scroll no-repeat!important}
 main::before{content:""!important;display:block!important;position:absolute!important;inset:0!important;z-index:0!important;pointer-events:none!important;background:linear-gradient(180deg,rgba(1,6,4,.02),rgba(1,7,5,.12) 44%,rgba(1,5,3,.38)),radial-gradient(ellipse at center,transparent 30%,rgba(0,3,2,.22) 100%)!important}
 main::after{content:none!important;display:none!important}
 .continuous-briar-background{display:none!important}
