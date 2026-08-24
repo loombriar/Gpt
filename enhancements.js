@@ -407,9 +407,9 @@
     #home,#briar,.magic-section,.character-walk,#journal,#raven{background-position:center!important;background-size:cover!important;background-repeat:no-repeat!important;background-attachment:scroll!important}
     #home{background-image:linear-gradient(180deg,rgba(1,5,3,.05),rgba(1,5,3,.34)),url("assets/briar-woods-background-v4.jpg?v=20260824-woodland-1")!important}
     #briar{background-image:linear-gradient(180deg,rgba(1,5,3,.08),rgba(1,5,3,.3)),url("assets/loom-briar-story-path-v2.jpg?v=20260824-woodland-1")!important}
-    .feature-product.bloom:before{background-image:linear-gradient(90deg,rgba(1,5,3,.12),rgba(1,5,3,.2)),url("assets/loom-briar-moss-clearing-v2.jpg?v=20260824-woodland-1")!important}
-    .feature-product.luna:before{background-image:linear-gradient(90deg,rgba(1,5,3,.2),rgba(1,5,3,.12)),url("assets/loom-briar-moss-clearing-v2.jpg?v=20260824-woodland-1")!important}
-    .feature-product.ocean:before{background-image:linear-gradient(90deg,rgba(1,5,3,.12),rgba(1,5,3,.2)),url("assets/loom-briar-moss-clearing-v2.jpg?v=20260824-woodland-1")!important}
+    .feature-product.bloom:before{background-image:linear-gradient(90deg,rgba(1,5,3,.08),rgba(1,5,3,.18)),url("assets/story-scenes/03-briar-bloom.jpg?v=20260824-artmatch-2")!important}
+    .feature-product.luna:before{background-image:linear-gradient(90deg,rgba(1,5,3,.18),rgba(1,5,3,.08)),url("assets/story-scenes/04-lunastray.jpg?v=20260824-artmatch-2")!important}
+    .feature-product.ocean:before{background-image:linear-gradient(90deg,rgba(1,5,3,.08),rgba(1,5,3,.18)),url("assets/story-scenes/05-ocean-paws.jpg?v=20260824-artmatch-2")!important}
     #cupcakes:before{background-image:linear-gradient(90deg,rgba(1,5,3,.12),rgba(1,5,3,.2)),url("assets/loom-briar-moss-background-v1.jpg?v=20260824-woodland-1")!important}
     .magic-section{background-image:linear-gradient(180deg,rgba(1,5,3,.12),rgba(1,5,3,.3)),url("assets/loom-briar-story-path-v1.jpg?v=20260824-woodland-1")!important}
     .character-walk{background-image:linear-gradient(180deg,rgba(1,5,3,.1),rgba(1,5,3,.3)),url("assets/briar-woods-background-v4.jpg?v=20260824-woodland-1")!important;grid-template-columns:1fr!important}
