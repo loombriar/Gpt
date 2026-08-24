@@ -530,6 +530,17 @@
       #floor,#journal,#raven{background-size:auto 100%!important}
       #floor>.section-heading{padding:90px 22px!important}
     }
+
+    /* Remove the dark transition strip; repaired product cutouts remain visible */
+    .mist-scene-seam{display:none!important}
+    main>section,main>div,.feature-product,.magic-section,.character-walk{
+      margin-top:0!important;margin-bottom:0!important;
+    }
+    .feature-image,.ocean-stage{min-height:clamp(330px,48vw,620px)!important;display:grid!important;place-items:center!important}
+    .feature-image img,.ocean-stage img,.ocean-sales{
+      display:block!important;visibility:visible!important;opacity:1!important;
+      position:relative!important;z-index:4!important;
+    }
   `;
   document.head.appendChild(walkingLayout);
 
