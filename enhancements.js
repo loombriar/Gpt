@@ -357,6 +357,13 @@
     .feature-product.luna:before{background-image:linear-gradient(90deg,rgba(1,6,4,.22),transparent 52%),url("assets/lunastray-crystal-zone.svg?v=20260823-1")!important}
     .feature-product.ocean:before{background-image:linear-gradient(90deg,transparent 48%,rgba(1,6,4,.2)),url("assets/ocean-sandy-zone.svg?v=20260823-1")!important}
     #cupcakes .cupcake-inner,.feature-product>*{position:relative!important;z-index:1!important}
+    .product-discovery{display:block!important;width:min(100%,560px)!important;height:auto!important;margin:auto!important;cursor:pointer!important;mask-image:none!important;-webkit-mask-image:none!important;filter:drop-shadow(0 24px 20px rgba(0,0,0,.7)) saturate(.96)!important;transition:transform .32s ease,filter .32s ease!important}
+    .product-discovery:hover,.product-discovery:focus{transform:translateY(-7px) scale(1.025)!important;filter:drop-shadow(0 31px 25px rgba(0,0,0,.78)) saturate(1.04) brightness(1.05)!important;outline:none!important}
+    .feature-product:not(.details-open) .feature-copy,#cupcakes:not(.details-open) .cupcake-copy{opacity:0!important;visibility:hidden!important;pointer-events:none!important;transform:translateY(18px)!important}
+    .feature-copy,.cupcake-copy{transition:opacity .42s ease,transform .42s ease,visibility .42s!important}
+    .feature-product.details-open .feature-copy,#cupcakes.details-open .cupcake-copy{opacity:1!important;visibility:visible!important;pointer-events:auto!important;transform:translateY(0)!important}
+    .feature-image:has(.product-discovery):after,.ocean-stage:has(.product-discovery):after,#cupcakes .cupcake-card:has(.product-discovery):after{content:"Click to discover"!important;display:block!important;margin-top:-2.1rem!important;text-align:center!important;color:#efdca9!important;font:600 .75rem/1.2 Georgia,serif!important;letter-spacing:.16em!important;text-transform:uppercase!important;text-shadow:0 2px 8px #000!important;opacity:.78!important;pointer-events:none!important}
+    .details-open .feature-image:after,.details-open .ocean-stage:after,#cupcakes.details-open .cupcake-card:after{content:"Click to close"!important}
     .character-walk{min-height:100vh!important;padding:90px clamp(22px,5vw,74px)!important;display:grid!important;grid-template-columns:minmax(0,1fr) minmax(0,1fr)!important;gap:clamp(110px,16vw,250px)!important;align-items:center!important}
     .character-walk .pawdrey-section,.character-walk .briar-clock-section{min-width:0!important;padding:0!important;margin:0!important;display:block!important;text-align:left!important}
     .character-walk .pawdrey-section{grid-column:2!important;grid-row:1!important}
@@ -395,6 +402,14 @@
     }
   `;
   document.head.appendChild(walkingLayout);
+
+  /* Products appear as discoveries in the scenery; details arrive only when opened. */
+  document.querySelectorAll('.product-discovery').forEach(product=>{
+    const owner=product.closest('.feature-product,#cupcakes');
+    const toggle=()=>{const open=owner.classList.toggle('details-open');product.setAttribute('aria-expanded',String(open));if(open){owner.querySelector('.feature-copy,.cupcake-copy')?.scrollIntoView({behavior:'smooth',block:'nearest'})}};
+    product.addEventListener('click',toggle);
+    product.addEventListener('keydown',ev=>{if(ev.key==='Enter'||ev.key===' '){ev.preventDefault();toggle()}});
+  });
 
   /* Original art — small paintings on the Atelier wall, full-size when discovered. */
   const artLightbox=document.createElement('div');
