@@ -405,18 +405,18 @@
     main{background:#06100b!important}
     main::before,main::after,.continuous-briar-background{display:none!important}
     #home,#briar,.magic-section,.character-walk,#journal,#raven{background-position:center!important;background-size:cover!important;background-repeat:no-repeat!important;background-attachment:scroll!important}
-    #home{background-image:linear-gradient(180deg,rgba(1,5,3,.05),rgba(1,5,3,.34)),url("assets/story-scenes/01-arrival.jpg?v=20260824-cats-1")!important}
-    #briar{background-image:linear-gradient(180deg,rgba(1,5,3,.08),rgba(1,5,3,.3)),url("assets/story-scenes/02-briar.jpg?v=20260824-1")!important}
-    .feature-product.bloom:before{background-image:linear-gradient(90deg,rgba(1,5,3,.12),rgba(1,5,3,.2)),url("assets/story-scenes/03-briar-bloom.jpg?v=20260824-1")!important}
-    .feature-product.luna:before{background-image:linear-gradient(90deg,rgba(1,5,3,.2),rgba(1,5,3,.12)),url("assets/story-scenes/04-lunastray.jpg?v=20260824-1")!important}
-    .feature-product.ocean:before{background-image:linear-gradient(90deg,rgba(1,5,3,.12),rgba(1,5,3,.2)),url("assets/story-scenes/05-ocean-paws.jpg?v=20260824-1")!important}
-    #cupcakes:before{background-image:linear-gradient(90deg,rgba(1,5,3,.12),rgba(1,5,3,.2)),url("assets/story-scenes/06-succulent-cupcakes.jpg?v=20260824-1")!important}
-    .magic-section{background-image:linear-gradient(180deg,rgba(1,5,3,.12),rgba(1,5,3,.3)),url("assets/story-scenes/07-thermochromic.jpg?v=20260824-1")!important}
-    .character-walk{background-image:linear-gradient(180deg,rgba(1,5,3,.1),rgba(1,5,3,.3)),url("assets/story-scenes/08-pawdrey.jpg?v=20260824-1")!important;grid-template-columns:1fr!important}
+    #home{background-image:linear-gradient(180deg,rgba(1,5,3,.05),rgba(1,5,3,.34)),url("assets/briar-woods-background-v4.jpg?v=20260824-woodland-1")!important}
+    #briar{background-image:linear-gradient(180deg,rgba(1,5,3,.08),rgba(1,5,3,.3)),url("assets/loom-briar-story-path-v2.jpg?v=20260824-woodland-1")!important}
+    .feature-product.bloom:before{background-image:linear-gradient(90deg,rgba(1,5,3,.12),rgba(1,5,3,.2)),url("assets/loom-briar-moss-clearing-v2.jpg?v=20260824-woodland-1")!important}
+    .feature-product.luna:before{background-image:linear-gradient(90deg,rgba(1,5,3,.2),rgba(1,5,3,.12)),url("assets/loom-briar-moss-clearing-v2.jpg?v=20260824-woodland-1")!important}
+    .feature-product.ocean:before{background-image:linear-gradient(90deg,rgba(1,5,3,.12),rgba(1,5,3,.2)),url("assets/loom-briar-moss-clearing-v2.jpg?v=20260824-woodland-1")!important}
+    #cupcakes:before{background-image:linear-gradient(90deg,rgba(1,5,3,.12),rgba(1,5,3,.2)),url("assets/loom-briar-moss-background-v1.jpg?v=20260824-woodland-1")!important}
+    .magic-section{background-image:linear-gradient(180deg,rgba(1,5,3,.12),rgba(1,5,3,.3)),url("assets/loom-briar-story-path-v1.jpg?v=20260824-woodland-1")!important}
+    .character-walk{background-image:linear-gradient(180deg,rgba(1,5,3,.1),rgba(1,5,3,.3)),url("assets/briar-woods-background-v4.jpg?v=20260824-woodland-1")!important;grid-template-columns:1fr!important}
     .character-walk .pawdrey-section{grid-column:1!important;max-width:1180px!important;margin:auto!important}
     .character-walk .briar-clock-section{display:none!important}
-    #journal{background-image:linear-gradient(180deg,rgba(1,5,3,.12),rgba(1,5,3,.32)),url("assets/story-scenes/09-journal.jpg?v=20260824-1")!important}
-    #raven{background-image:linear-gradient(180deg,rgba(1,5,3,.12),rgba(1,5,3,.36)),url("assets/story-scenes/10-raven.jpg?v=20260824-1")!important}
+    #journal{background-image:linear-gradient(180deg,rgba(1,5,3,.12),rgba(1,5,3,.32)),url("assets/loom-briar-moss-background-v1.jpg?v=20260824-woodland-1")!important}
+    #raven{background-image:linear-gradient(180deg,rgba(1,5,3,.12),rgba(1,5,3,.36)),url("assets/loom-briar-story-path-v2.jpg?v=20260824-woodland-1")!important}
     #home,#briar,.magic-section,.character-walk,#journal,#raven,#cupcakes,.feature-product{min-height:100svh!important}
     #cupcakes:before,.feature-product:before{inset:0 calc(50% - 50vw)!important;mask-image:none!important;-webkit-mask-image:none!important;filter:saturate(.96) contrast(1.03) brightness(.8)!important}
     @media(max-width:820px){
@@ -427,9 +427,9 @@
     /* Seam fixes: make the ten scenes read as one continuous trail */
     .forest-divider{display:none!important}
     main>section,.character-walk,.feature-product{margin-top:-2px!important;margin-bottom:-2px!important}
-    main #home.hero{background-image:linear-gradient(180deg,rgba(1,5,3,.03),rgba(1,5,3,.3)),url("assets/story-scenes/01-arrival.jpg?v=20260824-cats-1")!important;background-position:center top!important;background-size:cover!important;background-repeat:no-repeat!important}
+    main #home.hero{background-image:linear-gradient(180deg,rgba(1,5,3,.03),rgba(1,5,3,.3)),url("assets/briar-woods-background-v4.jpg?v=20260824-woodland-1")!important;background-position:center top!important;background-size:cover!important;background-repeat:no-repeat!important}
     main #home .hero-art{display:none!important}
-    #floor{position:relative!important;background:#06100b url("assets/story-scenes/03-briar-bloom.jpg?v=20260824-1") center/cover scroll no-repeat!important;margin-block:-2px!important}
+    #floor{position:relative!important;background:#06100b url("assets/loom-briar-moss-clearing-v2.jpg?v=20260824-woodland-1") center/cover scroll no-repeat!important;margin-block:-2px!important}
     #floor:before{content:"";position:absolute;inset:-3px 0;background:linear-gradient(180deg,rgba(6,16,11,.18),rgba(6,16,11,.08));pointer-events:none}
     #floor>*{position:relative;z-index:1}
     #cupcakes:before,.feature-product:before{inset:-3px calc(50% - 50vw)!important}
@@ -495,7 +495,7 @@
       width:100vw;height:188px;z-index:18;pointer-events:none;
       background:
         linear-gradient(180deg,rgba(6,16,11,0) 0%,rgba(6,16,11,.1) 18%,rgba(6,16,11,.08) 78%,rgba(6,16,11,0) 100%),
-        url("assets/story-scenes/mist-tree-transition.jpg?v=20260824-1") center/cover no-repeat;
+        url("assets/loom-briar-story-path-v2.jpg?v=20260824-woodland-1") center/cover no-repeat;
       -webkit-mask-image:linear-gradient(180deg,transparent 0%,#000 18%,#000 82%,transparent 100%);
       mask-image:linear-gradient(180deg,transparent 0%,#000 18%,#000 82%,transparent 100%);
       filter:saturate(.94) contrast(1.04);
@@ -508,7 +508,7 @@
     #floor,#journal,#raven{
       background:
         linear-gradient(180deg,rgba(2,8,5,.16),rgba(2,8,5,.28)),
-        url("assets/story-scenes/mist-tree-transition.jpg?v=20260824-2") center/cover scroll no-repeat!important;
+        url("assets/loom-briar-story-path-v2.jpg?v=20260824-woodland-1") center/cover scroll no-repeat!important;
       background-color:#06100b!important;
     }
     #floor>.section-heading{
