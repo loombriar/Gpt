@@ -1,7 +1,18 @@
 (() => {
-  const cursor=document.createElement('div'); cursor.className='briar-cursor'; document.body.appendChild(cursor);
-  window.addEventListener('pointermove',e=>{cursor.style.left=e.clientX+'px';cursor.style.top=e.clientY+'px'});
-  document.querySelectorAll('a,button,input,textarea,select').forEach(el=>{el.addEventListener('mouseenter',()=>cursor.classList.add('hover'));el.addEventListener('mouseleave',()=>cursor.classList.remove('hover'))});
+  const cursor=document.createElement('div'); cursor.className='briar-cursor'; cursor.setAttribute('aria-hidden','true'); document.body.appendChild(cursor);
+  let cursorX=innerWidth/2,cursorY=innerHeight/2,flyX=cursorX,flyY=cursorY,lastSpark=0;
+  const driftFirefly=()=>{flyX+=(cursorX-flyX)*.18;flyY+=(cursorY-flyY)*.18;cursor.style.transform=`translate(${flyX}px,${flyY}px) translate(-50%,-50%)`;requestAnimationFrame(driftFirefly)};
+  requestAnimationFrame(driftFirefly);
+  window.addEventListener('pointermove',e=>{
+    cursorX=e.clientX;cursorY=e.clientY;cursor.classList.add('awake');
+    const now=performance.now();
+    if(now-lastSpark>72&&Math.hypot(e.movementX||0,e.movementY||0)>3){
+      lastSpark=now;const spark=document.createElement('i');spark.className='briar-cursor-spark';
+      spark.style.left=e.clientX+'px';spark.style.top=e.clientY+'px';spark.style.setProperty('--spark-x',(-8+Math.random()*16)+'px');spark.style.setProperty('--spark-y',(8+Math.random()*14)+'px');
+      document.body.appendChild(spark);setTimeout(()=>spark.remove(),650)
+    }
+  },{passive:true});
+  document.addEventListener('pointerover',e=>cursor.classList.toggle('hover',!!e.target.closest('a,button,input,textarea,select,[role="button"]')));
 
   const field=document.createElement('div'); field.className='firefly-field'; field.setAttribute('aria-hidden','true'); document.body.appendChild(field);
   for(let i=0;i<15;i++){
