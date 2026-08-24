@@ -79,3 +79,8 @@ main>section::after{display:none!important}
 main>section+section{border-top:1px solid rgba(125,151,100,.14)!important}
 footer{position:relative;background:linear-gradient(180deg,rgba(2,8,6,.88),rgba(1,5,3,.97))!important;backdrop-filter:blur(4px)}
 @media(max-width:800px){body{background:#050b07!important}main::before{background-position:center!important;filter:saturate(.86) brightness(.64)!important}}
+
+
+/* Product visibility safeguard: keepsakes always sit above the moss backdrop. */
+#floor .feature-product,#floor .feature-image,#floor .ocean-stage{position:relative!important;z-index:3!important;visibility:visible!important;opacity:1!important}
+#floor .product-discovery,#floor .feature-image img,#floor .ocean-stage img{display:block!important;visibility:visible!important;opacity:1!important;position:relative!important;z-index:4!important;filter:drop-shadow(0 24px 24px rgba(0,0,0,.78)) saturate(1)!important}
