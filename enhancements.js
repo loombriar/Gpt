@@ -436,6 +436,55 @@
     @media(max-width:820px){
       #cupcakes:before,.feature-product:before{inset:-3px -18px!important}
     }
+
+    /* Fully seamless trail and free-floating product boxes */
+    html,body,main{margin:0!important;padding:0!important;background:#06100b!important}
+    main{overflow:hidden!important}
+    main>section,main>div,.feature-product,.magic-section,.character-walk{
+      border:0!important;outline:0!important;box-shadow:none!important;
+      margin-block:-8px!important;
+    }
+    #home,#briar,#floor,#cupcakes,.magic-section,.character-walk,#journal,#raven{
+      border:0!important;outline:0!important;box-shadow:none!important;
+    }
+    #floor{padding-top:8px!important;padding-bottom:8px!important}
+    .feature-product{
+      position:relative!important;background:transparent!important;
+      border-radius:0!important;overflow:visible!important;
+      padding-block:clamp(72px,9vw,130px)!important;
+    }
+    .feature-product:before,#cupcakes:before{
+      inset:-12px calc(50% - 50vw)!important;
+      background-size:cover!important;background-repeat:no-repeat!important;
+    }
+    .feature-image,.ocean-stage,.approved-ocean-gallery,
+    .feature-product .feature-copy{
+      background:transparent!important;border:0!important;outline:0!important;
+      box-shadow:none!important;border-radius:0!important;
+    }
+    .feature-image:before,.feature-image:after,.ocean-stage:before,.ocean-stage:after,
+    .feature-product .feature-copy:before,.feature-product .feature-copy:after{
+      display:none!important;content:none!important;
+    }
+    .feature-image img,.ocean-stage img,.ocean-sales{
+      display:block!important;width:min(100%,680px)!important;height:auto!important;
+      object-fit:contain!important;margin:auto!important;border:0!important;
+      outline:0!important;border-radius:0!important;background:transparent!important;
+      box-shadow:none!important;filter:drop-shadow(0 22px 22px rgba(0,0,0,.48))!important;
+    }
+    .feature-product .feature-copy{
+      padding:clamp(18px,3vw,34px)!important;
+      text-shadow:0 2px 5px rgba(0,0,0,.95),0 0 18px rgba(0,0,0,.8)!important;
+    }
+    .feature-product .feature-copy p,.feature-product .feature-copy h3,
+    .feature-product .feature-copy .price{filter:drop-shadow(0 2px 4px rgba(0,0,0,.85))}
+    .forest-divider{display:none!important;height:0!important;min-height:0!important;padding:0!important;margin:0!important}
+    @media(max-width:820px){
+      main>section,main>div,.feature-product,.magic-section,.character-walk{margin-block:-6px!important}
+      .feature-product:before,#cupcakes:before{inset:-10px -18px!important}
+      .feature-product{padding-block:72px!important}
+      .feature-image img,.ocean-stage img,.ocean-sales{width:min(94vw,620px)!important}
+    }
   `;
   document.head.appendChild(walkingLayout);
 
