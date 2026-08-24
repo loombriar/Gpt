@@ -405,7 +405,7 @@
     main{background:#06100b!important}
     main::before,main::after,.continuous-briar-background{display:none!important}
     #home,#briar,.magic-section,.character-walk,#journal,#raven{background-position:center!important;background-size:cover!important;background-repeat:no-repeat!important;background-attachment:scroll!important}
-    #home{background-image:linear-gradient(180deg,rgba(1,5,3,.05),rgba(1,5,3,.34)),url("assets/story-scenes/01-arrival.jpg?v=20260824-1")!important}
+    #home{background-image:linear-gradient(180deg,rgba(1,5,3,.05),rgba(1,5,3,.34)),url("assets/story-scenes/01-arrival.jpg?v=20260824-cats-1")!important}
     #briar{background-image:linear-gradient(180deg,rgba(1,5,3,.08),rgba(1,5,3,.3)),url("assets/story-scenes/02-briar.jpg?v=20260824-1")!important}
     .feature-product.bloom:before{background-image:linear-gradient(90deg,rgba(1,5,3,.12),rgba(1,5,3,.2)),url("assets/story-scenes/03-briar-bloom.jpg?v=20260824-1")!important}
     .feature-product.luna:before{background-image:linear-gradient(90deg,rgba(1,5,3,.2),rgba(1,5,3,.12)),url("assets/story-scenes/04-lunastray.jpg?v=20260824-1")!important}
@@ -422,6 +422,19 @@
     @media(max-width:820px){
       #home,#briar,.magic-section,.character-walk,#journal,#raven{background-position:center top!important}
       #cupcakes:before,.feature-product:before{inset:0 -18px!important;background-position:center top!important}
+    }
+
+    /* Seam fixes: make the ten scenes read as one continuous trail */
+    .forest-divider{display:none!important}
+    main>section,.character-walk,.feature-product{margin-top:-2px!important;margin-bottom:-2px!important}
+    main #home.hero{background-image:linear-gradient(180deg,rgba(1,5,3,.03),rgba(1,5,3,.3)),url("assets/story-scenes/01-arrival.jpg?v=20260824-cats-1")!important;background-position:center top!important;background-size:cover!important;background-repeat:no-repeat!important}
+    main #home .hero-art{display:none!important}
+    #floor{position:relative!important;background:#06100b url("assets/story-scenes/03-briar-bloom.jpg?v=20260824-1") center/cover scroll no-repeat!important;margin-block:-2px!important}
+    #floor:before{content:"";position:absolute;inset:-3px 0;background:linear-gradient(180deg,rgba(6,16,11,.18),rgba(6,16,11,.08));pointer-events:none}
+    #floor>*{position:relative;z-index:1}
+    #cupcakes:before,.feature-product:before{inset:-3px calc(50% - 50vw)!important}
+    @media(max-width:820px){
+      #cupcakes:before,.feature-product:before{inset:-3px -18px!important}
     }
   `;
   document.head.appendChild(walkingLayout);
