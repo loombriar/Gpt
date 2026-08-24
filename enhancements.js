@@ -485,8 +485,37 @@
       .feature-product{padding-block:72px!important}
       .feature-image img,.ocean-stage img,.ocean-sales{width:min(94vw,620px)!important}
     }
+
+    /* Organic tree-and-mist bridges cover every remaining scene join */
+    #home,#briar,.feature-product,#cupcakes,.magic-section,.character-walk,#journal{
+      position:relative!important;overflow:visible!important;
+    }
+    .mist-scene-seam{
+      position:absolute;left:50%;bottom:-94px;transform:translateX(-50%);
+      width:100vw;height:188px;z-index:18;pointer-events:none;
+      background:
+        linear-gradient(180deg,rgba(6,16,11,0) 0%,rgba(6,16,11,.1) 18%,rgba(6,16,11,.08) 78%,rgba(6,16,11,0) 100%),
+        url("assets/story-scenes/mist-tree-transition.jpg?v=20260824-1") center/cover no-repeat;
+      -webkit-mask-image:linear-gradient(180deg,transparent 0%,#000 18%,#000 82%,transparent 100%);
+      mask-image:linear-gradient(180deg,transparent 0%,#000 18%,#000 82%,transparent 100%);
+      filter:saturate(.94) contrast(1.04);
+    }
+    @media(max-width:820px){
+      .mist-scene-seam{height:150px;bottom:-75px;background-position:center center}
+    }
   `;
   document.head.appendChild(walkingLayout);
+
+  /* Forest transition bridges */
+  document.querySelectorAll('#home,#briar,.feature-product.bloom,.feature-product.luna,.feature-product.ocean,#cupcakes,.magic-section,.character-walk,#journal').forEach(scene=>{
+    if(!scene.querySelector(':scope > .mist-scene-seam')){
+      const seam=document.createElement('div');
+      seam.className='mist-scene-seam';
+      seam.setAttribute('aria-hidden','true');
+      scene.appendChild(seam);
+    }
+  });
+
 
   /* Products appear as discoveries in the scenery; details arrive only when opened. */
   document.querySelectorAll('.product-discovery').forEach(product=>{
