@@ -71,7 +71,7 @@ body.pawdrey-secret-open{overflow:hidden}
 /* Mossy woodland reset: one cohesive atmosphere matching the entrance gate. */
 body{background:#050b07!important}
 main{position:relative;isolation:isolate;overflow:hidden!important;background:#050b07!important}
-main::before{content:""!important;display:block!important;position:fixed!important;inset:0!important;z-index:0!important;pointer-events:none!important;background:#050b07 url("assets/loom-briar-moss-background-v1.jpg?v=20260824-1") center center/cover no-repeat!important;filter:saturate(.88) brightness(.72)!important;transform:translateZ(0)}
+main::before{content:""!important;display:block!important;position:fixed!important;inset:0!important;z-index:0!important;pointer-events:none!important;background:#050b07 url("assets/loom-briar-moss-clearing-v2.jpg?v=20260824-1") center center/cover no-repeat!important;filter:saturate(.88) brightness(.86)!important;transform:translateZ(0)}
 main::after{content:""!important;display:block!important;position:fixed!important;inset:0!important;z-index:0!important;pointer-events:none!important;background:linear-gradient(180deg,rgba(1,5,3,.08),rgba(1,5,3,.22) 50%,rgba(1,5,3,.38)),radial-gradient(ellipse at center,transparent 16%,rgba(0,2,1,.18) 100%)!important}
 .continuous-briar-background{display:none!important}
 main>section,#home,.character-walk,.forest-divider{position:relative!important;z-index:1!important;background-color:rgba(3,9,6,.28)!important;background-image:none!important;backdrop-filter:blur(1px)}
