@@ -10,9 +10,15 @@ body.gate-locked .briar-world{height:100vh;overflow:hidden}
 body.gate-locked .firefly-field{z-index:1001}
 
 /* Cursor */
-.briar-cursor{position:fixed;left:0;top:0;width:11px;height:11px;border:1px solid rgba(247,231,160,.86);border-radius:50%;pointer-events:none;z-index:2000;transform:translate(-50%,-50%);box-shadow:0 0 7px rgba(247,231,160,.65),0 0 15px rgba(173,217,124,.38);transition:width .15s,height .15s,background .15s,opacity .15s}
-.briar-cursor:after{content:"";position:absolute;inset:3px;border-radius:50%;background:#f7e7a0;box-shadow:0 0 9px #f7e7a0}
-.briar-cursor.hover{width:20px;height:20px;background:rgba(109,151,82,.12)}
+.briar-cursor{position:fixed;left:0;top:0;width:15px;height:15px;pointer-events:none;z-index:2000;opacity:0;border-radius:50%;background:radial-gradient(circle,#fff8c2 0 12%,#d9dc80 24%,rgba(137,169,75,.42) 48%,transparent 72%);box-shadow:0 0 8px rgba(241,224,137,.88),0 0 19px rgba(154,190,91,.55),0 0 34px rgba(104,145,70,.28);transition:width .2s,height .2s,opacity .24s,filter .2s;will-change:transform}
+.briar-cursor.awake{opacity:.94}
+.briar-cursor:after{content:"";position:absolute;left:50%;top:50%;width:3px;height:3px;transform:translate(-50%,-50%);border-radius:50%;background:#fffbd2;box-shadow:0 0 8px 3px rgba(238,224,137,.84);animation:cursorPulse 1.8s ease-in-out infinite}
+.briar-cursor:before{content:"";position:absolute;inset:-10px;border:1px solid transparent;border-radius:50%;opacity:0;transform:scale(.65) rotate(0);transition:opacity .18s,transform .25s;background:conic-gradient(from 0deg,transparent 0 8%,rgba(151,110,61,.9) 9% 11%,transparent 12% 20%,rgba(151,110,61,.9) 21% 23%,transparent 24% 33%,rgba(151,110,61,.9) 34% 36%,transparent 37% 45%,rgba(151,110,61,.9) 46% 48%,transparent 49% 58%,rgba(151,110,61,.9) 59% 61%,transparent 62% 70%,rgba(151,110,61,.9) 71% 73%,transparent 74% 83%,rgba(151,110,61,.9) 84% 86%,transparent 87%);-webkit-mask:radial-gradient(circle,transparent 0 51%,#000 53% 61%,transparent 63%);mask:radial-gradient(circle,transparent 0 51%,#000 53% 61%,transparent 63%)}
+.briar-cursor.hover{width:18px;height:18px;filter:brightness(1.2)}
+.briar-cursor.hover:before{opacity:.9;transform:scale(1) rotate(18deg)}
+.briar-cursor-spark{position:fixed;z-index:1999;width:3px;height:3px;pointer-events:none;border-radius:50%;background:#e4dd8e;box-shadow:0 0 7px #c6d47d;animation:cursorSpark .62s ease-out forwards}
+@keyframes cursorPulse{50%{opacity:.62;transform:translate(-50%,-50%) scale(.72)}}
+@keyframes cursorSpark{to{opacity:0;transform:translate(var(--spark-x),var(--spark-y)) scale(.2)}}
 
 /* Fireflies */
 .firefly-field{position:fixed;inset:0;pointer-events:none;z-index:45;overflow:hidden}
