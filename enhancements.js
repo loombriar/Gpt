@@ -353,9 +353,9 @@
     #cupcakes,.feature-product{isolation:isolate!important}
     #cupcakes:before,.feature-product:before{content:""!important;display:block!important;position:absolute!important;z-index:0!important;inset:-7vh calc(50% - 50vw)!important;pointer-events:none!important;background-position:center!important;background-size:cover!important;background-repeat:no-repeat!important;filter:saturate(.94) contrast(1.05) brightness(.78)!important;mask-image:linear-gradient(180deg,transparent 0,#000 13%,#000 87%,transparent 100%)!important;-webkit-mask-image:linear-gradient(180deg,transparent 0,#000 13%,#000 87%,transparent 100%)!important}
     #cupcakes:before{background-image:linear-gradient(90deg,transparent 50%,rgba(1,6,4,.2)),url("assets/mushroom-pottery-zone.svg?v=20260823-1")!important}
-    .feature-product.bloom:before{background-image:linear-gradient(90deg,transparent 48%,rgba(1,6,4,.22)),url("assets/briar-bloom-zone.svg?v=20260823-1")!important}
-    .feature-product.luna:before{background-image:linear-gradient(90deg,rgba(1,6,4,.22),transparent 52%),url("assets/lunastray-crystal-zone.svg?v=20260823-1")!important}
-    .feature-product.ocean:before{background-image:linear-gradient(90deg,transparent 48%,rgba(1,6,4,.2)),url("assets/ocean-sandy-zone.svg?v=20260823-1")!important}
+    .feature-product.bloom:before{background-image:linear-gradient(90deg,rgba(1,5,3,.08),rgba(1,5,3,.18)),url("assets/story-scenes/03-briar-bloom.jpg?v=20260824-artmatch-1")!important}
+    .feature-product.luna:before{background-image:linear-gradient(90deg,rgba(1,5,3,.18),rgba(1,5,3,.08)),url("assets/story-scenes/04-lunastray.jpg?v=20260824-artmatch-1")!important}
+    .feature-product.ocean:before{background-image:linear-gradient(90deg,rgba(1,5,3,.08),rgba(1,5,3,.18)),url("assets/story-scenes/05-ocean-paws.jpg?v=20260824-artmatch-1")!important}
     #cupcakes .cupcake-inner,.feature-product>*{position:relative!important;z-index:1!important}
     .product-discovery{display:block!important;width:min(100%,560px)!important;height:auto!important;margin:auto!important;cursor:pointer!important;mask-image:none!important;-webkit-mask-image:none!important;filter:drop-shadow(0 24px 20px rgba(0,0,0,.7)) saturate(.96)!important;transition:transform .32s ease,filter .32s ease!important}
     .product-discovery:hover,.product-discovery:focus{transform:translateY(-7px) scale(1.025)!important;filter:drop-shadow(0 31px 25px rgba(0,0,0,.78)) saturate(1.04) brightness(1.05)!important;outline:none!important}
