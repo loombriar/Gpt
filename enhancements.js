@@ -400,6 +400,29 @@
       .feature-product .feature-image img,#cupcakes .cupcake-photo,.approved-ocean-gallery img{filter:saturate(.98) contrast(1.04) drop-shadow(0 13px 16px rgba(0,0,0,.48))!important;mask-image:radial-gradient(ellipse 97% 94% at center,#000 71%,rgba(0,0,0,.9) 82%,transparent 100%)!important;-webkit-mask-image:radial-gradient(ellipse 97% 94% at center,#000 71%,rgba(0,0,0,.9) 82%,transparent 100%)!important}
       .cupcake-copy,.feature-copy,.pawdrey-copy,.section-heading,.contact-copy{width:100%!important;max-width:100%!important}
     }
+
+    /* Ten connected bird's-eye trail scenes */
+    main{background:#06100b!important}
+    main::before,main::after,.continuous-briar-background{display:none!important}
+    #home,#briar,.magic-section,.character-walk,#journal,#raven{background-position:center!important;background-size:cover!important;background-repeat:no-repeat!important;background-attachment:scroll!important}
+    #home{background-image:linear-gradient(180deg,rgba(1,5,3,.05),rgba(1,5,3,.34)),url("assets/story-scenes/01-arrival.jpg?v=20260824-1")!important}
+    #briar{background-image:linear-gradient(180deg,rgba(1,5,3,.08),rgba(1,5,3,.3)),url("assets/story-scenes/02-briar.jpg?v=20260824-1")!important}
+    .feature-product.bloom:before{background-image:linear-gradient(90deg,rgba(1,5,3,.12),rgba(1,5,3,.2)),url("assets/story-scenes/03-briar-bloom.jpg?v=20260824-1")!important}
+    .feature-product.luna:before{background-image:linear-gradient(90deg,rgba(1,5,3,.2),rgba(1,5,3,.12)),url("assets/story-scenes/04-lunastray.jpg?v=20260824-1")!important}
+    .feature-product.ocean:before{background-image:linear-gradient(90deg,rgba(1,5,3,.12),rgba(1,5,3,.2)),url("assets/story-scenes/05-ocean-paws.jpg?v=20260824-1")!important}
+    #cupcakes:before{background-image:linear-gradient(90deg,rgba(1,5,3,.12),rgba(1,5,3,.2)),url("assets/story-scenes/06-succulent-cupcakes.jpg?v=20260824-1")!important}
+    .magic-section{background-image:linear-gradient(180deg,rgba(1,5,3,.12),rgba(1,5,3,.3)),url("assets/story-scenes/07-thermochromic.jpg?v=20260824-1")!important}
+    .character-walk{background-image:linear-gradient(180deg,rgba(1,5,3,.1),rgba(1,5,3,.3)),url("assets/story-scenes/08-pawdrey.jpg?v=20260824-1")!important;grid-template-columns:1fr!important}
+    .character-walk .pawdrey-section{grid-column:1!important;max-width:1180px!important;margin:auto!important}
+    .character-walk .briar-clock-section{display:none!important}
+    #journal{background-image:linear-gradient(180deg,rgba(1,5,3,.12),rgba(1,5,3,.32)),url("assets/story-scenes/09-journal.jpg?v=20260824-1")!important}
+    #raven{background-image:linear-gradient(180deg,rgba(1,5,3,.12),rgba(1,5,3,.36)),url("assets/story-scenes/10-raven.jpg?v=20260824-1")!important}
+    #home,#briar,.magic-section,.character-walk,#journal,#raven,#cupcakes,.feature-product{min-height:100svh!important}
+    #cupcakes:before,.feature-product:before{inset:0 calc(50% - 50vw)!important;mask-image:none!important;-webkit-mask-image:none!important;filter:saturate(.96) contrast(1.03) brightness(.8)!important}
+    @media(max-width:820px){
+      #home,#briar,.magic-section,.character-walk,#journal,#raven{background-position:center top!important}
+      #cupcakes:before,.feature-product:before{inset:0 -18px!important;background-position:center top!important}
+    }
   `;
   document.head.appendChild(walkingLayout);
 
