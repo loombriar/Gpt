@@ -334,7 +334,18 @@
     #briar .atelier-stage{position:relative!important;width:min(1500px,100%)!important;margin:auto!important}
     #briar .atelier-scene{display:block;width:100%!important;height:auto!important;max-height:82vh!important;object-fit:cover!important;border-radius:clamp(18px,3vw,46px)!important;box-shadow:0 34px 85px rgba(0,0,0,.58)!important;mask-image:radial-gradient(ellipse 94% 92% at center,#000 74%,transparent 100%);-webkit-mask-image:radial-gradient(ellipse 94% 92% at center,#000 74%,transparent 100%)}
     #briar .atelier-gallery{position:absolute!important;z-index:3!important;left:44%!important;right:5.5%!important;top:16%!important;bottom:14%!important;display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:clamp(8px,1.4vw,24px)!important;align-items:center!important;pointer-events:auto!important}
-    #briar .atelier-gallery.real-art-set{grid-template-columns:minmax(0,1.18fr) minmax(0,.78fr) minmax(0,.78fr)!important;grid-template-rows:1fr 1fr!important;left:36%!important;right:3.5%!important;top:7%!important;bottom:6%!important}\n    #briar .atelier-gallery.real-art-set figure:nth-child(1){grid-column:1!important;grid-row:1!important;transform:rotate(-.8deg)!important}\n    #briar .atelier-gallery.real-art-set figure:nth-child(2){grid-column:2!important;grid-row:1 / span 2!important;transform:rotate(.8deg)!important}\n    #briar .atelier-gallery.real-art-set figure:nth-child(3){grid-column:1!important;grid-row:2!important;transform:rotate(.5deg)!important}\n    #briar .atelier-gallery.real-art-set figure:nth-child(4){grid-column:3!important;grid-row:1!important;transform:rotate(-.6deg)!important}\n    #briar .atelier-gallery.real-art-set figure:nth-child(5){grid-column:3!important;grid-row:2!important;transform:rotate(.7deg)!important}\n    #briar .atelier-gallery.real-art-set figure img{max-height:25vh!important}\n    #briar .atelier-gallery.real-art-set figure:nth-child(2) img{max-height:54vh!important}\n    #briar .atelier-gallery figure{margin:0!important;padding:clamp(5px,.7vw,11px)!important;background:linear-gradient(135deg,#806330,#291b0e 45%,#b4914d 70%,#34200e)!important;border:1px solid rgba(238,211,143,.7)!important;box-shadow:0 14px 30px rgba(0,0,0,.72),inset 0 0 0 2px rgba(23,12,5,.75)!important;transform:rotate(-1.2deg)!important}
+    #briar .atelier-gallery.real-art-set{display:block!important;left:0!important;right:0!important;top:0!important;bottom:0!important;perspective:1100px!important;pointer-events:none!important}
+    #briar .atelier-gallery.real-art-set figure{position:absolute!important;z-index:3!important;padding:clamp(2px,.32vw,6px)!important;border:1px solid rgba(218,174,91,.62)!important;background:linear-gradient(135deg,#563718,#171008 34%,#8b612b 62%,#241509)!important;box-shadow:8px 12px 17px rgba(0,0,0,.76),inset 0 0 0 2px rgba(10,6,3,.78)!important;transform-origin:center bottom!important;pointer-events:auto!important;cursor:pointer!important;transition:filter .2s,box-shadow .2s!important}
+    #briar .atelier-gallery.real-art-set figure:before{content:""!important;position:absolute!important;inset:4px!important;z-index:2!important;pointer-events:none!important;box-shadow:inset 0 0 7px rgba(244,190,97,.22),inset 0 0 0 1px rgba(255,230,165,.18)!important}
+    #briar .atelier-gallery.real-art-set figure:nth-child(1){left:55.2%!important;top:27%!important;width:10.5%!important;transform:rotateY(-2deg) rotate(-.7deg)!important}
+    #briar .atelier-gallery.real-art-set figure:nth-child(2){left:66.2%!important;top:28%!important;width:5.5%!important;transform:rotateY(-5deg) rotate(.8deg)!important}
+    #briar .atelier-gallery.real-art-set figure:nth-child(3){left:54.6%!important;top:48.5%!important;width:10.8%!important;transform:rotateY(-2deg) rotate(.45deg)!important}
+    #briar .atelier-gallery.real-art-set figure:nth-child(4){left:47.2%!important;top:42%!important;width:5.8%!important;transform:rotateY(4deg) rotate(-1.2deg)!important}
+    #briar .atelier-gallery.real-art-set figure:nth-child(5){left:66.4%!important;top:52.5%!important;width:5.2%!important;transform:rotateY(-5deg) rotate(.65deg)!important}
+    #briar .atelier-gallery.real-art-set figure img{width:100%!important;height:auto!important;max-height:none!important;filter:sepia(.04) brightness(.84) contrast(1.04) saturate(.92)!important}
+    #briar .atelier-gallery.real-art-set figcaption{display:none!important}
+    #briar .atelier-gallery.real-art-set figure:hover,#briar .atelier-gallery.real-art-set figure:focus{z-index:8!important;filter:brightness(1.18)!important;box-shadow:9px 15px 24px rgba(0,0,0,.84),0 0 15px rgba(231,191,100,.18)!important;outline:1px solid rgba(242,211,137,.55)!important}
+    #briar .atelier-gallery figure{margin:0!important;padding:clamp(5px,.7vw,11px)!important;background:linear-gradient(135deg,#806330,#291b0e 45%,#b4914d 70%,#34200e)!important;border:1px solid rgba(238,211,143,.7)!important;box-shadow:0 14px 30px rgba(0,0,0,.72),inset 0 0 0 2px rgba(23,12,5,.75)!important;transform:rotate(-1.2deg)!important}
     #briar .atelier-gallery figure:nth-child(2){transform:translateY(-8%) rotate(1deg)!important}
     #briar .atelier-gallery figure:nth-child(3){transform:translateY(6%) rotate(-.5deg)!important}
     #briar .atelier-gallery img{display:block!important;width:100%!important;aspect-ratio:auto!important;max-height:52vh!important;object-fit:contain!important;object-position:center!important;filter:none!important}
@@ -372,7 +383,9 @@
       #briar.atelier-section{min-height:0!important;padding:64px 14px!important}
       #briar .atelier-scene{border-radius:20px!important;mask-image:none;-webkit-mask-image:none}
       #briar .atelier-gallery{position:relative!important;left:auto!important;right:auto!important;top:auto!important;bottom:auto!important;margin:-8px 8px 0!important;padding:18px 10px 8px!important;grid-template-columns:1fr!important;gap:24px!important;background:linear-gradient(180deg,rgba(15,23,14,.94),rgba(4,11,7,.78))!important;border-radius:0 0 18px 18px!important}
-      #briar .atelier-gallery figure,#briar .atelier-gallery figure:nth-child(2),#briar .atelier-gallery figure:nth-child(3){width:min(88%,430px)!important;margin:auto!important;transform:none!important}
+      #briar .atelier-gallery.real-art-set{display:grid!important;position:relative!important;left:auto!important;right:auto!important;top:auto!important;bottom:auto!important;grid-template-columns:1fr!important;pointer-events:auto!important}
+      #briar .atelier-gallery figure,#briar .atelier-gallery figure:nth-child(2),#briar .atelier-gallery figure:nth-child(3),#briar .atelier-gallery.real-art-set figure:nth-child(4),#briar .atelier-gallery.real-art-set figure:nth-child(5){position:relative!important;left:auto!important;top:auto!important;grid-column:1!important;grid-row:auto!important;width:min(88%,430px)!important;margin:auto!important;transform:none!important}
+      #briar .atelier-gallery.real-art-set figcaption{display:block!important}
       #briar .atelier-gallery img{aspect-ratio:auto!important;height:auto!important;object-fit:contain!important}
       #briar .atelier-gallery figcaption{font-size:1rem!important}
       .character-walk .briar-clock-section{grid-row:1!important}.character-walk .pawdrey-section{grid-row:2!important}
@@ -382,4 +395,29 @@
     }
   `;
   document.head.appendChild(walkingLayout);
+
+  /* Original art — small paintings on the Atelier wall, full-size when discovered. */
+  const artLightbox=document.createElement('div');
+  artLightbox.className='atelier-lightbox';artLightbox.hidden=true;
+  artLightbox.innerHTML='<button class="atelier-lightbox-backdrop" type="button" aria-label="Close painting"></button><div class="atelier-lightbox-card" role="dialog" aria-modal="true" aria-label="Original Loom Briar painting"><button class="atelier-lightbox-close" type="button" aria-label="Close">×</button><img alt=""><p></p></div>';
+  document.body.appendChild(artLightbox);
+  const lightboxImage=artLightbox.querySelector('img'),lightboxTitle=artLightbox.querySelector('p');
+  const closeArtwork=()=>{artLightbox.hidden=true;document.body.classList.remove('artwork-open')};
+  document.querySelectorAll('#briar .atelier-gallery figure').forEach(frame=>{
+    frame.tabIndex=0;frame.setAttribute('role','button');frame.setAttribute('aria-label','Enlarge '+(frame.querySelector('figcaption')?.textContent||'painting'));
+    const open=()=>{const source=frame.querySelector('img');lightboxImage.src=source.src;lightboxImage.alt=source.alt;lightboxTitle.textContent=frame.querySelector('figcaption')?.textContent||'';artLightbox.hidden=false;document.body.classList.add('artwork-open');artLightbox.querySelector('.atelier-lightbox-close').focus()};
+    frame.addEventListener('click',open);frame.addEventListener('keydown',ev=>{if(ev.key==='Enter'||ev.key===' '){ev.preventDefault();open()}});
+  });
+  artLightbox.querySelector('.atelier-lightbox-backdrop').addEventListener('click',closeArtwork);
+  artLightbox.querySelector('.atelier-lightbox-close').addEventListener('click',closeArtwork);
+  document.addEventListener('keydown',ev=>{if(ev.key==='Escape'&&!artLightbox.hidden)closeArtwork()});
+  const artLightboxStyle=document.createElement('style');artLightboxStyle.textContent=`
+    .atelier-lightbox[hidden]{display:none!important}.atelier-lightbox{position:fixed;inset:0;z-index:2200;display:grid;place-items:center;padding:clamp(16px,4vw,52px)}
+    .atelier-lightbox-backdrop{position:absolute;inset:0;border:0;background:rgba(1,5,3,.9);backdrop-filter:blur(8px)}
+    .atelier-lightbox-card{position:relative;z-index:1;max-width:min(1100px,92vw);max-height:92vh;padding:clamp(8px,1.2vw,16px);background:linear-gradient(135deg,#6b4720,#1d1209 38%,#96703a 68%,#241409);border:1px solid rgba(239,209,137,.68);box-shadow:0 32px 90px #000}
+    .atelier-lightbox-card img{display:block;max-width:100%;max-height:82vh;width:auto;height:auto;object-fit:contain;background:#090b08}
+    .atelier-lightbox-card p{margin:.65rem .2rem .15rem;color:#f0dca7;text-align:center;font:600 clamp(1.1rem,2vw,1.55rem) Georgia,serif;letter-spacing:.05em}
+    .atelier-lightbox-close{position:absolute;right:-13px;top:-13px;z-index:2;width:38px;height:38px;border-radius:50%;border:1px solid #d4ae69;background:#11140f;color:#f3dfac;font-size:1.5rem}
+    body.artwork-open{overflow:hidden}
+  `;document.head.appendChild(artLightboxStyle);
 })();
