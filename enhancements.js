@@ -503,6 +503,33 @@
     @media(max-width:820px){
       .mist-scene-seam{height:150px;bottom:-75px;background-position:center center}
     }
+
+    /* Fill the former dark clearings with visible forest depth */
+    #floor,#journal,#raven{
+      background:
+        linear-gradient(180deg,rgba(2,8,5,.16),rgba(2,8,5,.28)),
+        url("assets/story-scenes/mist-tree-transition.jpg?v=20260824-2") center/cover scroll no-repeat!important;
+      background-color:#06100b!important;
+    }
+    #floor>.section-heading{
+      max-width:none!important;width:100vw!important;
+      margin-left:calc(50% - 50vw)!important;margin-right:calc(50% - 50vw)!important;
+      padding:clamp(90px,12vw,170px) clamp(24px,14vw,220px)!important;
+      margin-bottom:0!important;
+      background:linear-gradient(90deg,rgba(2,8,5,.48),rgba(2,8,5,.12) 28%,rgba(2,8,5,.12) 72%,rgba(2,8,5,.48))!important;
+    }
+    #journal{background-position:center top!important}
+    #raven{background-position:center bottom!important}
+    .journal-card{
+      border:0!important;outline:0!important;box-shadow:none!important;
+      background:rgba(3,10,7,.42)!important;
+      backdrop-filter:blur(2px)!important;
+    }
+    .journal-card:before,.journal-card:after{display:none!important;content:none!important}
+    @media(max-width:820px){
+      #floor,#journal,#raven{background-size:auto 100%!important}
+      #floor>.section-heading{padding:90px 22px!important}
+    }
   `;
   document.head.appendChild(walkingLayout);
 
