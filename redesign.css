@@ -23,3 +23,8 @@ footer{padding:55px 20px;text-align:center;background:#020408;border-top:1px sol
  #atelier .product-card>img{position:absolute;z-index:4;right:14.5%;top:35%;width:92px!important;max-width:92px!important;max-height:132px!important;object-fit:contain;filter:drop-shadow(0 6px 7px rgba(0,0,0,.38));transform:rotate(-1.5deg)}
 }
 @media(max-width:760px){.product-card img{max-width:min(180px,50vw)!important;max-height:20svh!important}#atelier .product-card>img{max-width:130px!important}}
+
+/* Correct journey background stacking */
+.journey-art{z-index:0!important}
+.journey-shade{z-index:1!important;pointer-events:none}
+.chapter{position:relative;z-index:2}
