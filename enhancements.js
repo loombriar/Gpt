@@ -593,6 +593,33 @@
   `;
   document.head.appendChild(gardenDaylight);
 
+  /* One continuous product discovery: flowers left, path center, pawprint beach right. */
+  const discoveryWorld=document.createElement('style');
+  discoveryWorld.textContent=`
+    #floor{position:relative!important;background:linear-gradient(180deg,rgba(8,21,15,.06),rgba(8,21,15,.12)),url("assets/flower-beach-product-trail.svg?v=20260824-1") center top/cover scroll no-repeat!important;background-color:#233a2c!important;overflow:hidden!important}
+    #floor .feature-product:before{background:none!important;background-image:none!important;filter:none!important}
+    #floor>.section-heading{position:relative!important;z-index:2!important}
+    .feature-product.bloom .feature-image{grid-column:1!important;justify-self:end!important}
+    .feature-product.bloom .feature-copy{grid-column:2!important;text-align:left!important}
+    .feature-product.ocean .ocean-stage{grid-column:2!important;justify-self:start!important}
+    .feature-product.ocean .feature-copy{grid-column:1!important;justify-self:end!important;text-align:right!important}
+    .feature-product.bloom .product-discovery{filter:drop-shadow(0 25px 20px rgba(0,0,0,.55)) saturate(1.04) brightness(1.08)!important}
+    .feature-product.ocean .product-discovery{filter:drop-shadow(0 25px 20px rgba(0,0,0,.52)) saturate(1.03) brightness(1.09)!important}
+    .character-walk{padding-top:10vh!important;padding-bottom:10vh!important;background:linear-gradient(180deg,rgba(23,43,31,.16),rgba(15,32,23,.2)),url("assets/loom-briar-story-path-v2.jpg?v=20260824-woodland-1") center/cover no-repeat!important}
+    .character-walk .pawdrey-section{position:relative!important;display:grid!important;grid-template-columns:minmax(0,.88fr) minmax(0,1.12fr)!important;gap:clamp(24px,4vw,60px)!important;align-items:center!important;width:min(1180px,94vw)!important;margin:auto!important;padding:clamp(24px,4vw,58px)!important;overflow:hidden!important;border:clamp(5px,.8vw,12px) solid #3a2614!important;border-radius:clamp(18px,3vw,40px)!important;background:radial-gradient(circle at 72% 14%,rgba(230,235,211,.15),transparent 18%),linear-gradient(90deg,rgba(3,10,7,.15),rgba(5,15,11,.38)),url("assets/briar-woods-background-v4.jpg?v=20260824-woodland-1") center/cover no-repeat!important;box-shadow:0 35px 80px rgba(0,0,0,.68),inset 0 0 0 2px rgba(212,174,105,.35),inset 0 0 80px rgba(0,0,0,.35)!important}
+    .character-walk .pawdrey-section:before{content:""!important;position:absolute!important;right:10%!important;top:8%!important;width:clamp(64px,8vw,120px)!important;aspect-ratio:1!important;border-radius:50%!important;background:radial-gradient(circle at 42% 38%,#eef0d5 0 48%,#b8c5b1 60%,rgba(198,214,202,.18) 71%,transparent 74%)!important;box-shadow:0 0 36px rgba(220,231,210,.32)!important;opacity:.82!important;z-index:0!important}
+    .character-walk .pawdrey-image,.character-walk .pawdrey-copy{position:relative!important;z-index:1!important}
+    .character-walk .pawdrey-image img{width:100%!important;max-height:560px!important;object-fit:contain!important;border:0!important;border-radius:0!important;box-shadow:none!important;mask-image:radial-gradient(ellipse 90% 91% at center,#000 68%,rgba(0,0,0,.88) 79%,transparent 100%)!important;-webkit-mask-image:radial-gradient(ellipse 90% 91% at center,#000 68%,rgba(0,0,0,.88) 79%,transparent 100%)!important}
+    .character-walk .pawdrey-copy{margin:0!important}
+    @media(max-width:820px){
+      #floor{background-position:48% top!important}
+      .feature-product.bloom .feature-image,.feature-product.bloom .feature-copy,.feature-product.ocean .ocean-stage,.feature-product.ocean .feature-copy{grid-column:1!important;justify-self:center!important;text-align:left!important}
+      .character-walk .pawdrey-section{grid-template-columns:1fr!important;padding:22px!important}
+      .character-walk .pawdrey-section:before{right:9%!important;top:5%!important}
+    }
+  `;
+  document.head.appendChild(discoveryWorld);
+
   /* Products appear as discoveries in the scenery; details arrive only when opened. */
   document.querySelectorAll('.product-discovery').forEach(product=>{
     const owner=product.closest('.feature-product,#cupcakes');
