@@ -555,6 +555,17 @@
   });
 
 
+  /* Brighter clearings keep the colorful products readable without brightening Lunastray. */
+  const productLighting=document.createElement('style');
+  productLighting.textContent=`
+    .feature-product.bloom:before{background-image:radial-gradient(circle at 27% 50%,rgba(224,207,153,.24),transparent 36%),linear-gradient(90deg,rgba(77,116,75,.1),rgba(1,5,3,.04)),url("assets/story-scenes/03-briar-bloom.jpg?v=20260824-artmatch-2")!important;filter:saturate(1.04) contrast(1.01) brightness(1.14)!important}
+    .feature-product.ocean:before{background-image:radial-gradient(ellipse at 27% 53%,rgba(255,224,168,.34),transparent 40%),linear-gradient(90deg,rgba(139,120,84,.15),rgba(4,13,15,.02)),url("assets/story-scenes/05-ocean-paws.jpg?v=20260824-artmatch-2")!important;filter:saturate(1.02) contrast(.98) brightness(1.23)!important}
+    .feature-product.bloom .product-discovery{filter:drop-shadow(0 25px 21px rgba(0,0,0,.65)) saturate(1.04) brightness(1.06)!important}
+    .feature-product.ocean .product-discovery{filter:drop-shadow(0 25px 21px rgba(0,0,0,.62)) saturate(1.03) brightness(1.08)!important}
+    @media(max-width:820px){.feature-product.bloom:before{filter:saturate(1.03) contrast(1.01) brightness(1.12)!important}.feature-product.ocean:before{filter:saturate(1.02) contrast(.98) brightness(1.2)!important}}
+  `;
+  document.head.appendChild(productLighting);
+
   /* Products appear as discoveries in the scenery; details arrive only when opened. */
   document.querySelectorAll('.product-discovery').forEach(product=>{
     const owner=product.closest('.feature-product,#cupcakes');
