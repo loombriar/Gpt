@@ -566,6 +566,33 @@
   `;
   document.head.appendChild(productLighting);
 
+  /* Softer moonlit daylight throughout the walk: enchanted, not oppressive. */
+  const gardenDaylight=document.createElement('style');
+  gardenDaylight.textContent=`
+    main{background-color:#172b20!important}
+    main #home.hero,#briar,.magic-section,.character-walk,#journal,#raven{background-color:#263d30!important;background-blend-mode:screen,screen!important}
+    main #home.hero{background-image:linear-gradient(180deg,rgba(156,184,174,.08),rgba(7,18,12,.1)),url("assets/briar-woods-background-v4.jpg?v=20260824-woodland-1")!important}
+    #briar{background-image:linear-gradient(180deg,rgba(163,188,169,.1),rgba(7,18,12,.12)),url("assets/loom-briar-story-path-v2.jpg?v=20260824-woodland-1")!important}
+    .magic-section{background-image:linear-gradient(180deg,rgba(157,185,166,.1),rgba(7,18,12,.12)),url("assets/loom-briar-story-path-v1.jpg?v=20260824-woodland-1")!important}
+    .character-walk{background-image:linear-gradient(180deg,rgba(151,181,170,.1),rgba(7,18,12,.12)),url("assets/briar-woods-background-v4.jpg?v=20260824-woodland-1")!important}
+    #journal{background-image:linear-gradient(180deg,rgba(157,187,164,.1),rgba(7,18,12,.12)),url("assets/loom-briar-moss-background-v1.jpg?v=20260824-woodland-1")!important}
+    #raven{background-image:linear-gradient(180deg,rgba(157,187,164,.1),rgba(7,18,12,.14)),url("assets/loom-briar-story-path-v2.jpg?v=20260824-woodland-1")!important}
+    #cupcakes:before,.feature-product:before{filter:saturate(1.02) contrast(.97) brightness(1.15)!important}
+    .feature-product.bloom:before{filter:saturate(1.05) contrast(.98) brightness(1.25)!important}
+    .feature-product.luna:before{filter:saturate(1.02) contrast(.98) brightness(1.12)!important}
+    .feature-product.ocean:before{filter:saturate(1.03) contrast(.96) brightness(1.31)!important}
+    #briar .atelier-scene{filter:saturate(1.02) contrast(.98) brightness(1.13)!important}
+    .forest-divider{background:rgba(17,35,25,.42)!important}
+    footer{background:#0d1c14!important}
+    @media(max-width:820px){
+      main #home.hero,#briar,.magic-section,.character-walk,#journal,#raven{background-color:#2b4234!important}
+      #cupcakes:before,.feature-product:before{filter:saturate(1.02) contrast(.97) brightness(1.16)!important}
+      .feature-product.bloom:before{filter:saturate(1.04) brightness(1.23)!important}
+      .feature-product.ocean:before{filter:saturate(1.02) brightness(1.28)!important}
+    }
+  `;
+  document.head.appendChild(gardenDaylight);
+
   /* Products appear as discoveries in the scenery; details arrive only when opened. */
   document.querySelectorAll('.product-discovery').forEach(product=>{
     const owner=product.closest('.feature-product,#cupcakes');
