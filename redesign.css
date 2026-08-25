@@ -37,7 +37,7 @@ footer{padding:55px 20px;text-align:center;background:#020408;border-top:1px sol
 #visitors{--scene:url("assets/redesign/scenes/03-enchanted-ufo-flower-meadow.png?v=2")}
 #atelier{--scene:url("assets/redesign/scenes/04-enchanted-artist-cottage.webp?v=4")}
 #fashion{--scene:url("assets/redesign/scenes/05-enchanted-textile-atelier.webp?v=2")}
-#ocean{--scene:url("assets/redesign/scenes/06-sunset-path.webp?v=1")}
+#ocean{--scene:url("assets/redesign/scenes/06-enchanted-ocean-sunset.webp?v=2")}
 #river{--scene:url("assets/redesign/scenes/07-moon-mushrooms.webp?v=1")}
 @media(max-width:760px){.chapter{background-position:center;background-image:linear-gradient(0deg,rgba(1,4,7,.5),rgba(1,4,7,.04) 55%,rgba(1,4,7,.2)),var(--scene)}}
 
@@ -92,3 +92,10 @@ footer{padding:55px 20px;text-align:center;background:#020408;border-top:1px sol
  #fashion .product-card{margin-left:0;margin-right:auto}
  #fashion .product-card>img{left:3.5%;right:auto;top:12%;width:min(27vw,340px)!important;max-width:340px!important;max-height:54svh!important}
 }
+
+/* Ocean Paws sunset scene: product low-left, horizon and path open */
+#ocean{justify-content:flex-start;align-items:flex-end;padding-bottom:clamp(30px,5vh,56px)}
+#ocean .product-card{margin-left:0;margin-right:auto;text-align:left;width:min(420px,90vw)!important}
+#ocean .product-card>img{margin-left:0;margin-right:auto;max-width:min(260px,58vw)!important;max-height:30svh!important}
+#ocean .actions{justify-content:flex-start}
+@media(max-width:760px){#ocean{align-items:flex-end;padding-bottom:26px}#ocean .product-card{width:min(390px,94vw)!important}#ocean .product-card>img{max-width:min(210px,52vw)!important;max-height:25svh!important}}
