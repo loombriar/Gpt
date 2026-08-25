@@ -40,7 +40,7 @@ footer{padding:55px 20px;text-align:center;background:#020408;border-top:1px sol
 
 /* Scroll-linked kitten and Briar thread */
 .path-chaser{--path-x:50%;--path-y:2.5%;position:absolute;z-index:5;left:var(--path-x);top:var(--path-y);width:clamp(112px,12vw,180px);aspect-ratio:3/2;transform:translate(-50%,-50%);filter:drop-shadow(0 10px 10px rgba(0,0,0,.72));will-change:left,top,transform;pointer-events:none}
-.realistic-kitten{display:block;width:100%;height:100%;object-fit:contain;animation:kitten-bound .68s ease-in-out infinite alternate;user-select:none}
-@keyframes kitten-bound{from{transform:translateY(2px) rotate(-1deg)}to{transform:translateY(-5px) rotate(1.5deg)}}
+.realistic-kitten{--kitten-facing:1;display:block;width:100%;height:100%;object-fit:contain;animation:kitten-bound .68s ease-in-out infinite alternate;transform-origin:center;transition:filter .18s ease;user-select:none}
+@keyframes kitten-bound{from{transform:scaleX(var(--kitten-facing)) translateY(2px) rotate(-1deg)}to{transform:scaleX(var(--kitten-facing)) translateY(-5px) rotate(1.5deg)}}
 @media(max-width:760px){.path-chaser{width:clamp(86px,24vw,118px)}}
 @media(prefers-reduced-motion:reduce){.path-chaser{display:none}}

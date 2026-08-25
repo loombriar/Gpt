@@ -1,9 +1,12 @@
 (() => {
   const journey = document.getElementById("journey");
   const chaser = document.getElementById("pathChaser");
+  const kitten = chaser?.querySelector(".realistic-kitten");
   const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
   const points = [[50,3],[33,13],[45,25],[31,38],[24,49],[43,60],[42,71],[36,82],[51,96]];
   let ticking = false;
+  let lastScrollY = window.scrollY;
+  let scrollDirection = 1;
 
   function placeChaser() {
     ticking = false;
@@ -24,6 +27,13 @@
   }
 
   function requestUpdate() {
+    const currentScrollY = window.scrollY;
+    const difference = currentScrollY - lastScrollY;
+    if (Math.abs(difference) > 2) {
+      scrollDirection = difference > 0 ? 1 : -1;
+      kitten?.style.setProperty("--kitten-facing", String(scrollDirection));
+      lastScrollY = currentScrollY;
+    }
     if (ticking) return;
     ticking = true;
     window.requestAnimationFrame(placeChaser);
@@ -34,4 +44,3 @@
   if (reducedMotion.addEventListener) reducedMotion.addEventListener("change", requestUpdate);
   requestUpdate();
 })();
-
