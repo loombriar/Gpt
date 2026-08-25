@@ -51,6 +51,11 @@ footer{padding:55px 20px;text-align:center;background:#020408;border-top:1px sol
 .button{padding:11px 16px;border:1px solid rgba(238,213,157,.28);color:#fff4de}
 @media(max-width:760px){.journey-art img{object-fit:cover}.product-card,.product-card.light{padding:20px!important;background:rgba(5,10,15,.84)!important}}
 
+/* Transparent promo presentation — let each woodland scene remain visible */
+.product-card,.product-card.light{background:transparent!important;border-color:transparent!important;box-shadow:none!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important}
+.product-card h2,.product-card p,.product-card .kicker,.product-card .price{filter:drop-shadow(0 2px 2px #000) drop-shadow(0 5px 9px rgba(0,0,0,.96))}
+@media(max-width:760px){.product-card,.product-card.light{background:transparent!important}}
+
 
 /* Scroll-linked kitten and Briar thread */
 .path-chaser{--path-x:50%;--path-y:2.5%;position:absolute;z-index:5;left:var(--path-x);top:var(--path-y);width:clamp(112px,12vw,180px);aspect-ratio:3/2;transform:translate(-50%,-50%);filter:drop-shadow(0 10px 10px rgba(0,0,0,.72));will-change:left,top,transform;pointer-events:none}
