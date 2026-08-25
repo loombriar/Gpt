@@ -33,7 +33,7 @@ footer{padding:55px 20px;text-align:center;background:#020408;border-top:1px sol
 .journey-art,.journey-shade{display:none}
 .chapter{overflow:hidden;background-color:#020408;background-image:linear-gradient(90deg,rgba(1,4,7,.34),rgba(1,4,7,.04) 35% 65%,rgba(1,4,7,.34)),var(--scene);background-position:center;background-size:cover;background-repeat:no-repeat;border-bottom:1px solid rgba(239,220,176,.14)}
 #moon{--scene:url("assets/redesign/scenes/01-loombriar-moonlit-cats.png?v=2")}
-#succulents{--scene:url("assets/redesign/scenes/02-golden-woods.webp?v=1")}
+#succulents{--scene:url("assets/redesign/scenes/02-golden-succulent-path.png?v=2")}
 #visitors{--scene:url("assets/redesign/scenes/03-ufo-meadow.webp?v=1")}
 #atelier{--scene:url("assets/redesign/scenes/04-artist-cottage.webp?v=1")}
 #fashion{--scene:url("assets/redesign/scenes/05-textile-atelier.webp?v=1")}
