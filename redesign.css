@@ -109,3 +109,7 @@ footer{padding:55px 20px;text-align:center;background:#020408;border-top:1px sol
 #river .lunastray-card .actions{justify-content:flex-end}
 #river .product-card>img{max-width:min(210px,24vw)!important;max-height:25svh!important}
 @media(max-width:760px){#river{display:flex;flex-direction:column;justify-content:flex-end;align-items:stretch;gap:8px;min-height:145svh;padding-bottom:24px}#river .product-card{width:94vw!important;margin-inline:auto;padding-block:12px!important}#river .lunastray-card{text-align:left}#river .lunastray-card img{margin-left:0;margin-right:auto}#river .lunastray-card .actions{justify-content:flex-start}#river .product-card>img{max-width:min(175px,44vw)!important;max-height:20svh!important}}
+
+/* Loom Briar Studio identity */
+.brand img{width:68px;height:68px;border-radius:12px;object-fit:contain;background:#02070b;border:1px solid rgba(230,189,112,.7);box-shadow:0 5px 18px rgba(0,0,0,.42)}
+@media(max-width:760px){.brand img{width:54px;height:54px;border-radius:10px}.site-header{padding-block:9px}}
