@@ -44,8 +44,9 @@ footer{padding:55px 20px;text-align:center;background:#020408;border-top:1px sol
 /* Clear, readable cards over the detailed journey artwork */
 .product-card,.product-card.light{width:min(430px,90vw)!important;padding:24px 26px!important;border:1px solid rgba(239,220,176,.34)!important;border-radius:4px 28px 4px 28px!important;background:linear-gradient(145deg,rgba(5,10,15,.9),rgba(6,14,18,.74))!important;color:var(--cream)!important;box-shadow:0 20px 55px rgba(0,0,0,.58)!important;backdrop-filter:blur(10px)!important;text-shadow:0 3px 12px rgba(0,0,0,.9)!important}
 .product-card img{max-width:min(235px,58vw)!important;max-height:27svh!important}
-.cupcake-card{width:min(500px,92vw)!important}
-.cupcake-card .cupcake-promo{width:100%!important;max-width:100%!important;max-height:52svh!important;object-fit:contain!important;margin:0 auto 20px!important;border:1px solid rgba(239,202,126,.42);border-radius:3px 22px 3px 22px;box-shadow:0 16px 40px rgba(0,0,0,.5)}
+.cupcake-card{width:min(640px,94vw)!important}
+.cupcake-card .cupcake-promo{width:100%!important;max-width:100%!important;max-height:68svh!important;object-fit:contain!important;margin:0 auto 22px!important;border:1px solid rgba(239,202,126,.42);border-radius:3px 22px 3px 22px;box-shadow:0 16px 40px rgba(0,0,0,.5)}
+@media(max-width:760px){.cupcake-card{width:96vw!important}.cupcake-card .cupcake-promo{max-height:62svh!important}}
 .product-card h2{font-size:clamp(2.7rem,5vw,4.7rem);color:#fff1cf}
 .product-card p{opacity:1;color:#eadfc9}.product-card .kicker,.product-card .price{color:#efc978}
 .button{padding:11px 16px;border:1px solid rgba(238,213,157,.28);color:#fff4de}
