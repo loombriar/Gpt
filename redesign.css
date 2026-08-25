@@ -113,3 +113,9 @@ footer{padding:55px 20px;text-align:center;background:#020408;border-top:1px sol
 /* Loom Briar Studio identity */
 .brand img{width:68px;height:68px;border-radius:12px;object-fit:contain;background:#02070b;border:1px solid rgba(230,189,112,.7);box-shadow:0 5px 18px rgba(0,0,0,.42)}
 @media(max-width:760px){.brand img{width:54px;height:54px;border-radius:10px}.site-header{padding-block:9px}}
+
+/* Pawdrey Hepburn moonlit gallery */
+#pawdrey-hepburn{--scene:url("assets/redesign/scenes/08-pawdrey-hepburn-moonlit-gallery.webp?v=1");justify-content:flex-start;align-items:flex-end;padding-bottom:clamp(34px,6vh,68px)}
+#pawdrey-hepburn .product-card{position:static;margin-left:0;margin-right:auto;width:min(410px,88vw)!important;text-align:left}
+#pawdrey-hepburn .pawdrey-painting{position:absolute;z-index:4;right:12.7%;top:22.8%;width:19.5%!important;height:48.7%;max-width:none!important;max-height:none!important;object-fit:cover;margin:0!important;border:2px solid rgba(214,174,98,.8);box-shadow:0 10px 28px rgba(0,0,0,.68);transform:rotate(.4deg);filter:saturate(.94) contrast(1.03)}
+@media(max-width:760px){#pawdrey-hepburn{align-items:flex-end;padding-bottom:26px;background-position:center}#pawdrey-hepburn .product-card{width:94vw!important}#pawdrey-hepburn .pawdrey-painting{position:relative;right:auto;top:auto;width:min(230px,58vw)!important;height:auto;max-width:230px!important;max-height:32svh!important;object-fit:contain;margin:0 auto 14px!important;transform:none;border:1px solid rgba(214,174,98,.7)}}
