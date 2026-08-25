@@ -35,7 +35,7 @@ footer{padding:55px 20px;text-align:center;background:#020408;border-top:1px sol
 #moon{--scene:url("assets/redesign/scenes/01-loombriar-moonlit-cats.png?v=2")}
 #succulents{--scene:url("assets/redesign/scenes/02-golden-succulent-path.png?v=2")}
 #visitors{--scene:url("assets/redesign/scenes/03-enchanted-ufo-flower-meadow.png?v=2")}
-#atelier{--scene:url("assets/redesign/scenes/04-artist-cottage.webp?v=1")}
+#atelier{--scene:url("assets/redesign/scenes/04-enchanted-artist-cottage.png?v=2")}
 #fashion{--scene:url("assets/redesign/scenes/05-textile-atelier.webp?v=1")}
 #ocean{--scene:url("assets/redesign/scenes/06-sunset-path.webp?v=1")}
 #river{--scene:url("assets/redesign/scenes/07-moon-mushrooms.webp?v=1")}
@@ -71,3 +71,10 @@ footer{padding:55px 20px;text-align:center;background:#020408;border-top:1px sol
 #visitors .product-card img{margin-right:0;margin-left:auto}
 #visitors .actions{justify-content:flex-end}
 @media(max-width:760px){#visitors{justify-content:flex-end;align-items:flex-end;padding-bottom:30px}#visitors .product-card{margin-left:auto;margin-right:0;width:min(360px,88vw)!important}}
+
+/* Llama Love atelier: original artwork on the easel, sale copy at left */
+#atelier{justify-content:flex-start;align-items:center}
+#atelier .product-card{margin-right:auto;margin-left:0;text-align:left}
+#atelier .actions{justify-content:flex-start}
+@media(min-width:761px){#atelier .product-card>img{right:31.2%;top:40.2%;width:112px!important;max-width:112px!important;max-height:145px!important;transform:perspective(240px) rotateY(-2deg) rotate(-1deg);filter:drop-shadow(0 4px 5px rgba(0,0,0,.38))}}
+@media(max-width:760px){#atelier{align-items:flex-end;padding-bottom:30px}#atelier .product-card>img{max-width:120px!important;margin-left:0;margin-right:auto}}
