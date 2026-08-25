@@ -36,7 +36,7 @@ footer{padding:55px 20px;text-align:center;background:#020408;border-top:1px sol
 #succulents{--scene:url("assets/redesign/scenes/02-golden-succulent-path.png?v=2")}
 #visitors{--scene:url("assets/redesign/scenes/03-enchanted-ufo-flower-meadow.png?v=2")}
 #atelier{--scene:url("assets/redesign/scenes/04-enchanted-artist-cottage.webp?v=4")}
-#fashion{--scene:url("assets/redesign/scenes/05-textile-atelier.webp?v=1")}
+#fashion{--scene:url("assets/redesign/scenes/05-enchanted-textile-atelier.webp?v=2")}
 #ocean{--scene:url("assets/redesign/scenes/06-sunset-path.webp?v=1")}
 #river{--scene:url("assets/redesign/scenes/07-moon-mushrooms.webp?v=1")}
 @media(max-width:760px){.chapter{background-position:center;background-image:linear-gradient(0deg,rgba(1,4,7,.5),rgba(1,4,7,.04) 55%,rgba(1,4,7,.2)),var(--scene)}}
@@ -78,3 +78,10 @@ footer{padding:55px 20px;text-align:center;background:#020408;border-top:1px sol
 #atelier .actions{justify-content:flex-start}
 @media(min-width:761px){#atelier .product-card>img{right:31.2%;top:40.2%;width:112px!important;max-width:112px!important;max-height:145px!important;transform:perspective(240px) rotateY(-2deg) rotate(-1deg);filter:drop-shadow(0 4px 5px rgba(0,0,0,.38))}}
 @media(max-width:760px){#atelier{align-items:flex-end;padding-bottom:30px}#atelier .product-card>img{max-width:120px!important;margin-left:0;margin-right:auto}}
+
+/* Moonlit Briar textile atelier: outfit at the dress form, details at left */
+#fashion{justify-content:flex-start;align-items:center}
+#fashion .product-card{position:static;margin-right:auto;margin-left:0;text-align:left;width:min(390px,86vw)!important}
+#fashion .actions{justify-content:flex-start}
+@media(min-width:761px){#fashion .product-card>img{position:absolute;z-index:4;right:7%;top:20%;width:min(30vw,390px)!important;max-width:390px!important;max-height:68svh!important;object-fit:contain;filter:drop-shadow(0 18px 24px rgba(0,0,0,.64))}}
+@media(max-width:760px){#fashion{align-items:flex-end;padding-bottom:28px}#fashion .product-card>img{max-width:min(230px,58vw)!important;max-height:34svh!important;margin-left:0;margin-right:auto}}
