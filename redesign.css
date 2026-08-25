@@ -29,6 +29,18 @@ footer{padding:55px 20px;text-align:center;background:#020408;border-top:1px sol
 .journey-shade{z-index:1!important;pointer-events:none}
 .chapter{position:relative;z-index:2}
 
+/* Separate full-screen journey scenes — avoids stretching one tall master image */
+.journey-art,.journey-shade{display:none}
+.chapter{overflow:hidden;background-color:#020408;background-image:linear-gradient(90deg,rgba(1,4,7,.34),rgba(1,4,7,.04) 35% 65%,rgba(1,4,7,.34)),var(--scene);background-position:center;background-size:cover;background-repeat:no-repeat;border-bottom:1px solid rgba(239,220,176,.14)}
+#moon{--scene:url("assets/redesign/scenes/01-moonlit-cats.webp?v=1")}
+#succulents{--scene:url("assets/redesign/scenes/02-golden-woods.webp?v=1")}
+#visitors{--scene:url("assets/redesign/scenes/03-ufo-meadow.webp?v=1")}
+#atelier{--scene:url("assets/redesign/scenes/04-artist-cottage.webp?v=1")}
+#fashion{--scene:url("assets/redesign/scenes/05-textile-atelier.webp?v=1")}
+#ocean{--scene:url("assets/redesign/scenes/06-sunset-path.webp?v=1")}
+#river{--scene:url("assets/redesign/scenes/07-moon-mushrooms.webp?v=1")}
+@media(max-width:760px){.chapter{background-position:center;background-image:linear-gradient(0deg,rgba(1,4,7,.5),rgba(1,4,7,.04) 55%,rgba(1,4,7,.2)),var(--scene)}}
+
 /* Clear, readable cards over the detailed journey artwork */
 .product-card,.product-card.light{width:min(430px,90vw)!important;padding:24px 26px!important;border:1px solid rgba(239,220,176,.34)!important;border-radius:4px 28px 4px 28px!important;background:linear-gradient(145deg,rgba(5,10,15,.9),rgba(6,14,18,.74))!important;color:var(--cream)!important;box-shadow:0 20px 55px rgba(0,0,0,.58)!important;backdrop-filter:blur(10px)!important;text-shadow:0 3px 12px rgba(0,0,0,.9)!important}
 .product-card img{max-width:min(235px,58vw)!important;max-height:27svh!important}
