@@ -76,6 +76,34 @@ main{background:#02080b;isolation:isolate}main:before{content:"";position:absolu
 @media(max-width:700px){.crow-flight>.crow-perched{right:8%;top:44%}}
 @media(prefers-reduced-motion:reduce){.crow-flight>.crow-flying{display:none}.crow-flight>.crow-perched{opacity:1;animation:none!important}}
 .shop-hub{position:relative;z-index:13;padding:clamp(78px,10vw,132px) clamp(18px,6vw,80px);background:radial-gradient(circle at 50% 0,rgba(80,121,91,.24),transparent 38%),linear-gradient(180deg,#06100d,#0c1710 50%,#040b09);text-align:center}.shop-heading{width:min(720px,92vw);margin:0 auto 34px}.shop-heading h2{font-size:clamp(44px,6vw,76px)}.shop-heading p:last-child{margin:0 auto;max-width:610px;color:#d6cbb7;font:15px/1.65 Arial,sans-serif}.collections{width:min(1100px,100%);margin:0 auto;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}.collection-card{position:relative;min-height:360px;display:flex;align-items:flex-end;overflow:hidden;border:1px solid rgba(222,190,119,.3);color:#fff;text-align:left;text-decoration:none;box-shadow:0 20px 50px rgba(0,0,0,.35);isolation:isolate;transition:transform .25s ease,border-color .25s ease}.collection-card:hover,.collection-card:focus-visible{transform:translateY(-6px);border-color:#e2c47e}.collection-card:before{content:"";position:absolute;z-index:-2;inset:0;background:var(--card-image) center/cover no-repeat;transition:transform .5s ease}.collection-card:hover:before{transform:scale(1.04)}.collection-card:after{content:"";position:absolute;z-index:-1;inset:0;background:linear-gradient(180deg,transparent 25%,rgba(1,6,5,.95))}.collection-card div{padding:24px}.collection-card strong{display:block;margin-bottom:7px;font-size:clamp(24px,2.6vw,36px);font-weight:400}.collection-card span{font:700 9px/1.5 Arial,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#e2c47e}.collection-keepsakes{--card-image:url('assets/secret-bloom-front-mossy.webp')}.collection-fashion{--card-image:url('assets/lavender-palm-outfit-front-themed.webp')}.collection-art{--card-image:url('assets/art-raven-moon.webp')}.shop-actions{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:30px}.shop-action{padding:13px 19px;border:1px solid rgba(224,196,127,.62);color:#fff1ca;text-decoration:none;font:700 9px Arial,sans-serif;letter-spacing:.17em;text-transform:uppercase}.shop-action.primary{background:#d5b970;color:#102018;border-color:#f2d793}@media(max-width:700px){.nav{padding:9px 12px}.nav .brand small{display:none}.nav-links{display:flex;gap:8px}.nav-links a{display:none}.nav-links a:first-child{display:inline-block;padding:9px 12px;border:1px solid rgba(224,196,127,.65);background:#d5b970;color:#102018}.shop-hub{padding:76px 14px}.shop-heading{margin-bottom:22px}.shop-heading p:last-child{font-size:13px}.collections{grid-template-columns:1fr;gap:10px}.collection-card{min-height:235px}.collection-card div{padding:18px}.collection-card strong{font-size:29px}}
+
+/* Mossy forest redesign: one continuous world, no treehouse levels. */
+body{background:#07110b}
+body::before{content:"";position:fixed;z-index:-3;inset:0;background:
+linear-gradient(180deg,rgba(6,18,12,.16),rgba(2,10,7,.34)),
+url('assets/briar-woods-background-v4.jpg') center/cover no-repeat;transform:translateZ(0)}
+main{background:linear-gradient(180deg,rgba(4,15,9,.08),rgba(4,15,9,.22))}
+.intro-scene,.scene{--bg:none!important;background-image:
+linear-gradient(90deg,rgba(2,13,8,.62),rgba(2,13,8,.08) 52%,rgba(2,13,8,.32))!important;
+background-color:transparent!important;background-size:cover!important}
+.scene+.scene{margin-top:0}
+.scene:before{background:
+radial-gradient(circle at 78% 18%,rgba(207,239,174,.12),transparent 24%),
+linear-gradient(180deg,rgba(2,10,7,.15),transparent 24%,transparent 76%,rgba(2,10,7,.42))}
+.balcony,.tree-stairs,.sky-signs,.crow-flight,.candle-glow,.briar-spine{display:none!important}
+.copy-inner{border:1px solid rgba(190,211,151,.18);border-radius:18px;background:
+linear-gradient(135deg,rgba(7,24,14,.82),rgba(8,29,17,.42))!important;
+box-shadow:0 18px 55px rgba(0,0,0,.28);backdrop-filter:blur(5px)}
+.product,.art-card,.pawdrey-feature{background:rgba(7,24,14,.68);border:1px solid rgba(190,211,151,.18);
+box-shadow:0 14px 38px rgba(0,0,0,.28)}
+@media(max-width:700px){
+ body::before{background-position:58% center}
+ .scene{min-height:96svh;background-size:cover!important;background-position:center!important}
+ .scene+.scene{margin-top:0}
+ .copy{min-height:96svh}
+ .copy-inner{background:rgba(7,24,14,.76)!important}
+}
+
 </style>
 </head>
 <body>
@@ -117,4 +145,17 @@ if(bloomCopy){
   bloomCopy.querySelector('.bloom-notes')?.insertAdjacentHTML('beforebegin','<video class="bloom-color-video" controls muted loop playsinline preload="metadata" poster="assets/secret-bloom-cutout.webp" aria-label="Secret Bloom changing from completely cold to full warm color"><source src="assets/secret-bloom-color-change.mp4" type="video/mp4"></video>');
 }
 </script>
+
+<script>
+/* Forest labels replace the former treehouse levels while preserving every shop and gallery link. */
+[
+ ['.fashion .eyebrow','Wearable art among the briars'],
+ ['.garden .eyebrow','Keepsakes in the moss'],
+ ['.parlor .eyebrow','Paintings beneath the trees'],
+ ['.ground .eyebrow','Living art on the forest floor'],
+ ['.cats .eyebrow','Keeper of the Briar Woods'],
+ ['.roots .eyebrow','The artist behind the magic']
+].forEach(([selector,label])=>{const node=document.querySelector(selector);if(node)node.textContent=label});
+</script>
+
 </body></html>
