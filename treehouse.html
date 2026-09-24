@@ -129,8 +129,9 @@ body>main{position:relative;z-index:1}
  .garden .product,.fashion .product,.ground .product{
    position:relative!important;inset:auto!important;width:100%!important;padding:8px}
  .garden .product img,.fashion .product img,.ground .product img{
-   width:100%!important;height:auto!important;max-height:none;aspect-ratio:4/5;object-fit:cover!important;
-   object-position:center top!important}
+   width:100%!important;height:auto!important;max-height:72svh;aspect-ratio:auto!important;
+   object-fit:contain!important;object-position:center!important;background:rgba(3,13,8,.38)}
+ .golden-top-views img,.bloom-main{height:auto!important;aspect-ratio:auto!important;object-fit:contain!important}
  .garden .product strong,.fashion .product strong,.ground .product strong{font-size:13px!important}
  .garden .product span,.fashion .product span,.ground .product span{font-size:8px!important}
  .art-gallery{position:relative;order:2;inset:auto;width:100%;margin:0;gap:10px}
@@ -143,6 +144,11 @@ body>main{position:relative;z-index:1}
    max(14px,env(safe-area-inset-bottom)) max(10px,env(safe-area-inset-left))}
  .photo-lightbox-close{top:max(10px,env(safe-area-inset-top));right:max(10px,env(safe-area-inset-right))}
 }
+
+
+/* Preserve artwork proportions and show keyboard focus on every enlargable photo. */
+.golden-top-views img:focus-visible,.bloom-main:focus-visible{outline:3px solid #f2d793;outline-offset:4px}
+.bloom-main{cursor:zoom-in}
 
 </style>
 </head>
@@ -178,7 +184,7 @@ body>main{position:relative;z-index:1}
 <script>const bloomCard=document.getElementById('secret-bloom-card'),bloomDialog=document.getElementById('secret-bloom-promo'),bloomMain=document.getElementById('bloom-main-photo'),bloomThumbs=[...bloomDialog.querySelectorAll('.bloom-thumb')];bloomCard.addEventListener('click',event=>{event.preventDefault();bloomDialog.showModal()});bloomDialog.querySelector('.bloom-close').addEventListener('click',()=>bloomDialog.close());bloomDialog.addEventListener('click',event=>{if(event.target===bloomDialog)bloomDialog.close()});bloomThumbs.forEach(button=>button.addEventListener('click',()=>{bloomMain.src=button.dataset.src;bloomMain.alt=button.dataset.alt;bloomThumbs.forEach(item=>item.setAttribute('aria-selected',String(item===button))) }))</script>
 <script>const goldenTopCard=document.getElementById('golden-top-card'),goldenTopDialog=document.getElementById('golden-top-details');goldenTopCard.addEventListener('click',event=>{event.preventDefault();goldenTopDialog.showModal()});goldenTopDialog.querySelector('.golden-top-close').addEventListener('click',()=>goldenTopDialog.close());goldenTopDialog.addEventListener('click',event=>{if(event.target===goldenTopDialog)goldenTopDialog.close()})</script>
 <script>const lavenderOutfitCard=document.getElementById('lavender-outfit-card'),lavenderOutfitDialog=document.getElementById('lavender-outfit-details');lavenderOutfitCard.addEventListener('click',event=>{event.preventDefault();lavenderOutfitDialog.showModal()});lavenderOutfitDialog.querySelector('.golden-top-close').addEventListener('click',()=>lavenderOutfitDialog.close());lavenderOutfitDialog.addEventListener('click',event=>{if(event.target===lavenderOutfitDialog)lavenderOutfitDialog.close()})</script>
-<script>const photoLightbox=document.getElementById('photo-lightbox'),lightboxImage=photoLightbox.querySelector('img'),lightboxClose=photoLightbox.querySelector('.photo-lightbox-close');const openPhotoLightbox=image=>{lightboxImage.src=image.currentSrc||image.src;lightboxImage.alt=image.alt;if(!photoLightbox.open)photoLightbox.showModal()};const closePhotoLightbox=()=>{if(photoLightbox.open)photoLightbox.close()};document.querySelectorAll('.golden-top-views img').forEach(image=>{image.tabIndex=0;image.setAttribute('role','button');image.setAttribute('aria-label',`${image.alt}. Open enlarged view`);image.addEventListener('click',()=>openPhotoLightbox(image));image.addEventListener('keydown',event=>{if(event.key==='Enter'||event.key===' '){event.preventDefault();openPhotoLightbox(image)}})});lightboxClose.addEventListener('click',closePhotoLightbox);photoLightbox.addEventListener('click',event=>{if(event.target===photoLightbox)closePhotoLightbox()});photoLightbox.addEventListener('close',()=>{lightboxImage.src=''})</script>
+<script>const photoLightbox=document.getElementById('photo-lightbox'),lightboxImage=photoLightbox.querySelector('img'),lightboxClose=photoLightbox.querySelector('.photo-lightbox-close');const openPhotoLightbox=image=>{lightboxImage.src=image.currentSrc||image.src;lightboxImage.alt=image.alt;if(!photoLightbox.open)photoLightbox.showModal()};const closePhotoLightbox=()=>{if(photoLightbox.open)photoLightbox.close()};document.querySelectorAll('.golden-top-views img, #bloom-main-photo').forEach(image=>{image.tabIndex=0;image.setAttribute('role','button');image.setAttribute('aria-label',`${image.alt}. Open enlarged view`);image.addEventListener('click',()=>openPhotoLightbox(image));image.addEventListener('keydown',event=>{if(event.key==='Enter'||event.key===' '){event.preventDefault();openPhotoLightbox(image)}})});lightboxClose.addEventListener('click',closePhotoLightbox);photoLightbox.addEventListener('click',event=>{if(event.target===photoLightbox)closePhotoLightbox()});photoLightbox.addEventListener('close',()=>{lightboxImage.src=''})</script>
 <script>
 const bloomCopy=document.querySelector('#secret-bloom-promo .bloom-copy');
 if(bloomCopy){
