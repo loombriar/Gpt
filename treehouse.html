@@ -104,6 +104,46 @@ box-shadow:0 14px 38px rgba(0,0,0,.28)}
  .copy-inner{background:rgba(7,24,14,.76)!important}
 }
 
+
+/* Mobile forest repair: visible background and natural document flow. */
+body::before{z-index:0;pointer-events:none}
+body>main{position:relative;z-index:1}
+.shop-hub{background:linear-gradient(180deg,rgba(6,16,13,.84),rgba(12,23,16,.78) 50%,rgba(4,11,9,.86))}
+@media(max-width:700px){
+ html,body{overflow-x:hidden}
+ body::before{z-index:0;background:
+ linear-gradient(180deg,rgba(5,18,11,.18),rgba(2,10,7,.4)),
+ url('assets/briar-woods-background-v4.jpg') 58% center/cover no-repeat}
+ body>main{z-index:1}
+ .intro-scene{min-height:88svh;background:linear-gradient(180deg,rgba(2,13,8,.2),rgba(2,13,8,.65))!important}
+ .shop-hub{padding:64px 14px;background:rgba(5,18,11,.78)}
+ .scene{min-height:auto!important;display:flex!important;flex-direction:column;align-items:stretch;
+   justify-content:flex-start;padding:72px 14px 42px;overflow:visible;background:
+   linear-gradient(180deg,rgba(2,13,8,.3),rgba(2,13,8,.62))!important}
+ .scene .copy{position:relative;order:1;width:100%;min-height:0!important;display:block}
+ .scene .copy-inner{width:100%;max-width:520px;margin:0 auto 24px!important;padding:22px 18px}
+ .garden .products,.fashion .fashion-products,.ground .products{
+   position:relative!important;order:2;inset:auto!important;width:min(100%,430px)!important;
+   margin:0 auto;display:grid!important;grid-template-columns:1fr!important;gap:12px;
+   pointer-events:auto}
+ .garden .product,.fashion .product,.ground .product{
+   position:relative!important;inset:auto!important;width:100%!important;padding:8px}
+ .garden .product img,.fashion .product img,.ground .product img{
+   width:100%!important;height:auto!important;max-height:none;aspect-ratio:4/5;object-fit:cover!important;
+   object-position:center top!important}
+ .garden .product strong,.fashion .product strong,.ground .product strong{font-size:13px!important}
+ .garden .product span,.fashion .product span,.ground .product span{font-size:8px!important}
+ .art-gallery{position:relative;order:2;inset:auto;width:100%;margin:0;gap:10px}
+ .art-card{width:50%;transform:none!important}
+ .pawdrey-feature{position:relative;order:2;inset:auto!important;width:min(100%,430px);margin:0 auto}
+ .pawdrey-feature img{max-height:none}
+ .parlor .copy-inner,.cats .copy-inner,.ground .copy-inner,.garden .copy-inner,.fashion .copy-inner{margin-bottom:24px!important}
+ .roots{min-height:76svh!important}
+ .photo-lightbox{padding:max(14px,env(safe-area-inset-top)) max(10px,env(safe-area-inset-right))
+   max(14px,env(safe-area-inset-bottom)) max(10px,env(safe-area-inset-left))}
+ .photo-lightbox-close{top:max(10px,env(safe-area-inset-top));right:max(10px,env(safe-area-inset-right))}
+}
+
 </style>
 </head>
 <body>
